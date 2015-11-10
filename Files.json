@@ -1,0 +1,16 @@
+{
+	"rootUrl":						"https://raw.githubusercontent.com/neuromore/Doc/master/",
+	"chapters":
+	[
+		{
+			"name":						"neuromore Studio",
+			"subchapters":
+			[
+				{
+					"name":					"OSC Tutorial",
+					"relative":				"neuromoreStudio/OSC/OSCTutorial.md"
+				}
+			]
+		}
+	]
+}
