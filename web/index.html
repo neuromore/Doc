@@ -1,0 +1,126 @@
+
+<!doctype html>
+<html>
+<head>
+  <!-- Meta -->
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta content="neuromore Docs" property="og:title">
+  <meta content="neuromore Documentation." name="description">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <title>neuromore Documentation</title>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <!-- Flatdoc -->
+  <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js'></script>
+  <!-- <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'></script> -->
+  <!-- <script src='http://docs.openbci.com/js/flatdoc.js'></script> -->
+  <script src='js/flatdoc.js'></script>
+
+  <!-- Flatdoc theme -->
+  <!-- <link  href='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css' rel='stylesheet'> -->
+  <!-- <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js'></script> -->
+  <link href='css/flatdoc.css' rel='stylesheet'>
+
+  <!-- lightbox -->
+  <script src='js/lightbox.js'></script>
+  <link  href='css/lightbox.css' rel='stylesheet'>
+
+  <!-- neuromore style -->
+  <link href='css/style.css' rel='stylesheet'>
+
+</head>
+
+<body role='flatdoc' class="big-h3">
+  <nav class="headline">
+    <!-- <div class="header">
+      <div class="left">
+        <a href="http://www.neuromore.com"><img class="headerlogo" src="img/logo.png"></a>
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="http://www.neuromore.com" target="_blank">WEBSITE</a></li>
+          <li><a href="http://support.neuromore.com/forums/" target="_blank">FORUM</a></li>
+          <li><a href="https://github.com/neuromore/Doc" target="_blank">GITHUB</a></li>
+        </ul>
+      </div>
+    </div> -->
+  <div class="subnav" id="main_menu"></div>
+  </nav>
+
+
+  <!-- Page Menu on left side -->
+  <div class='pagemenu' id="page_menu"></div>
+
+  <div class='content-root pushContent'>
+    <div class='menubar' role='flatdoc-menu'></div>
+    <div role='flatdoc-content' class='content'></div>
+  </div>
+</body>
+</html>
+
+
+<script>
+  var urlParas = window.location.search.replace('?','').split('&');
+  var parameters = {};
+  for(var x = 0; x < urlParas.length; x++){
+      parameters[urlParas[x].split('=')[0]] = urlParas[x].split('=')[1];
+  }
+  var refresh = function(){
+    window.location.reload();
+  };
+
+
+  //$.getJSON('https://s3.amazonaws.com/documentation.neuromore.com/file.json', function(data) {
+  $.getJSON('https://raw.githubusercontent.com/neuromore/Doc/master/Files.json', function(data) {
+    console.log(data);
+    for (var i = 0; i < data.chapters.length; i++) {
+      var mainMenuLink = document.createElement('a');
+      var linkText = document.createTextNode(data.chapters[i].name);
+      mainMenuLink.appendChild(linkText);
+      mainMenuLink.title = data.chapters[i].name;
+      mainMenuLink.href = '?cat='+i+'&page=0';
+      var div = document.getElementById("main_menu");
+      div.appendChild(mainMenuLink);
+
+      // Set default categorie and page if not exist
+      if(parameters.cat === undefined && i === 0){
+        console.log("no categorie found set first");
+        window.location.search = "?cat="+i;
+      }
+      if(parameters.page === undefined && i === 0){
+        console.log("no page found set first");
+        window.location.search = window.location.search+"&page=0";
+      }
+
+      // Selected main menu
+      if(parameters.cat == i){
+        mainMenuLink.className = 'selected';
+
+        for (var j = 0; j < data.chapters[parameters.cat].subchapters.length; j++) {
+          var pageMenuLink = document.createElement('a');
+          var pageLinkText = document.createTextNode(data.chapters[parameters.cat].subchapters[j].name);
+          pageMenuLink.appendChild(pageLinkText);
+          pageMenuLink.title = data.chapters[parameters.cat].subchapters[j].name;
+          pageMenuLink.href = '?cat='+i+'&page='+j;
+
+          if(parameters.page == j){
+            pageMenuLink.className = 'selectedPage mainMenuItem';
+          }
+          else{
+            pageMenuLink.className = 'unSelected mainMenuItem';
+          }
+          var div2 = document.getElementById("page_menu");
+          div2.appendChild(pageMenuLink);
+        }
+      }
+    }
+    var link = data.rootUrl+data.chapters[parameters.cat].subchapters[parameters.page].relative;
+    console.log(link);
+    Flatdoc.run({fetcher: Flatdoc.file(link)});
+  });
+
+</script>
