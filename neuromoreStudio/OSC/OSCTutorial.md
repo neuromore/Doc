@@ -18,7 +18,7 @@ Add your OSC input port (Default in neuromore Studio is 4545) to the OSC Data Mo
 
 Now you can open up neuromore Studio, create a new or load your already existing classifier and drag & drop an OSC input node to it. Be sure to connect it to a feedback node or something else so that it becomes active. Select your OSC input node to see its settings and enter the OSC address that you have chosen for your value.
 
-![OSC input node attributes](Images/02.png)
+![OSC input node attributes](../../neuromoreStudio/OSC/Images/02.png)
 
 Note that incoming OSC values get resampled to a constant sample rate to comply with our signal processing principles. This means that you don’t need to make sure that OSC messages come in with a fixed timing, we’ll take care of that. In case you work with a different sample rate inside your classifier, please adjust the node’s sample rate.
 
