@@ -1,7 +1,0 @@
-#Devices
-
-##Interaxon Muse
-
-##Mitsar
-
-...

@@ -15,16 +15,16 @@
 					"relative":				"neuromoreStudio/Tutorial_Basics.md"
 				},
 				{
+					"name":					"Biosensors",
+					"relative":				"neuromoreStudio/Biosensors.md"
+				},
+				{
 					"name":					"Layouts",
 					"relative":				"neuromoreStudio/Tutorial_Layouts.md"
 				},
 				{
 					"name":					"Session",
 					"relative":				"neuromoreStudio/Tutorial_Session.md"
-				},
-				{
-					"name":					"Devices",
-					"relative":				"neuromoreStudio/Devices.md"
 				},
 				{
 					"name":					"Plugins",
