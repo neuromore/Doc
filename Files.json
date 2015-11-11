@@ -7,6 +7,10 @@
 			"subchapters":
 			[
 				{
+					"name":					"Installation",
+					"relative":				"neuromoreStudio/Installation.md"
+				},
+				{
 					"name":					"Basics",
 					"relative":				"neuromoreStudio/Tutorial_Basics.md"
 				},
