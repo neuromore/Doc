@@ -7,9 +7,33 @@
 			"subchapters":
 			[
 				{
-					"name":					"OSC Tutorial",
-					"relative":				"neuromoreStudio/OSC/OSCTutorial.md"
-				}
+					"name":					"Basics",
+					"relative":				"neuromoreStudio/Tutorial_Basics.md"
+				},
+				{
+					"name":					"Layouts",
+					"relative":				"neuromoreStudio/Tutorial_Layouts.md"
+				},
+				{
+					"name":					"Session",
+					"relative":				"neuromoreStudio/Tutorial_Session.md"
+				},
+				{
+					"name":					"Devices",
+					"relative":				"neuromoreStudio/Devices.md"
+				},
+				{
+					"name":					"Plugins",
+					"relative":				"neuromoreStudio/Plugins.md"
+				},
+				{
+					"name":					"Nodes",
+					"relative":				"neuromoreStudio/Nodes.md"
+				},
+				{
+					"name":					"OSC",
+					"relative":				"neuromoreStudio/OSC.md"
+				},
 			]
 		}
 	]

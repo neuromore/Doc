@@ -14,11 +14,11 @@ Add your OSC input port (Default in neuromore Studio is 4545) to the OSC Data Mo
 
 (4545) /my/custom/osc/address 0.264 (float)
 
-![OSC Data Monitor](../../neuromoreStudio/OSC/Images/01.png)
+![OSC Data Monitor](../../neuromoreStudio/Images/OSC/01.png)
 
 Now you can open up neuromore Studio, create a new or load your already existing classifier and drag & drop an OSC input node to it. Be sure to connect it to a feedback node or something else so that it becomes active. Select your OSC input node to see its settings and enter the OSC address that you have chosen for your value.
 
-![OSC input node attributes](../../neuromoreStudio/OSC/Images/02.png)
+![OSC input node attributes](../../neuromoreStudio/Images/OSC/02.png)
 
 Note that incoming OSC values get resampled to a constant sample rate to comply with our signal processing principles. This means that you don’t need to make sure that OSC messages come in with a fixed timing, we’ll take care of that. In case you work with a different sample rate inside your classifier, please adjust the node’s sample rate.
 
@@ -28,14 +28,14 @@ Next to feeding in custom values, you can also send given values of your classif
 
 To send custom OSC network messages from neuromore Studio, our classifier needs an “OSC Output” node from the “Output” category. Enter the value’s OSC address inside the node attributes. You can also choose if the node shall upload its samples to our cloud after finishing a session or not. The resolution sets the transmission rate of the OSC network messages. “Low” will send 4 messages per second, “Mid” will do 30 and “High” will update 60 times per second.
 
-![OSC output node attributes](../../neuromoreStudio/OSC/Images/03.png)
+![OSC output node attributes](../../neuromoreStudio/Images/OSC/03.png)
 
 As described in the feeding section of this tutorial, the values sent by the OSC output nodes can be checked using the OSC Data Monitor (see screenshot below). Please make sure that you connected an input to the OSC output node. It only sends network messages with a valid input. Note that the default port for outgoing OSC network messages in neuromore Studio is 32767.
 
-![OSC Data Monitor](../../neuromoreStudio/OSC/Images/04.png) 
+![OSC Data Monitor](../../neuromoreStudio/Images/OSC/04.png) 
 
 ##OSC settings in neuromore Studio
 
 Using the menu “Edit->Settings” and then selecting the “Network” category on the left you can access our OSC settings. On default, neuromore Studio only sends OSC network messages from feedback and OSC output nodes to localhost (127.0.0.1). Feel free to change the IP in case you’re using another machine for your receiver application. You can adjust the input UDP port for feeding neuromore Studio with custom data as well as the port for outgoing OSC messages from your OSC output nodes.
 
-![Network settings](../../neuromoreStudio/OSC/Images/05.png)
+![Network settings](../../neuromoreStudio/Images/OSC/05.png)
