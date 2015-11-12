@@ -1,10 +1,20 @@
 /* Main Menu */
 
+
 .img-js {
-  float: right !important;
+  /*float: right !important;
   clear: both !important;
-	margin-right: -500px;
+	margin-right: -500px;*/
  }
+
+ @media(min-width:1440px) {
+   .img-js {
+     float: right !important;
+     clear: both !important;
+    margin-right: -500px;
+   }
+ }
+
 
 #nav {
 	padding: 30px 10px 30px 20px;
@@ -107,11 +117,11 @@
 }
 .menubar {
 	padding: 5px;
-	height: 100vh;
 	float: left;
 	left:160px;
 	top:60px;
 	position: fixed;
+  border-right: solid 1px #dfe2e7;
 }
 
 
@@ -154,8 +164,8 @@ a.mainMenuItem{
 }
 
 .content-img img {
-	width: 100%;
-	height: 100%;
+	max-width: 350px;
+	height:auto;
 }
 
 h1{

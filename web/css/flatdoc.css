@@ -513,7 +513,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   body:not(.no-literate) .content {
     padding-left: 0;
     padding-right: 0;
-    width: 930px;
+    width: 100%;
     max-width: none;
   }
   body:not(.no-literate) .content > p,
@@ -531,8 +531,8 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 0px;
+    padding-left: 20px;
   }
   body:not(.no-literate) .content > h1,
   body:not(.no-literate) .content > h2,
@@ -727,12 +727,25 @@ a.big.button:hover:visited {
 @media (max-width: 480px) {
   .menubar {
     padding: 20px;
-    border-bottom: solid 1px #dfe2e7;
+    visibility: hidden;
+  }
+  .pushContent {
+    float: left;
+    left: 120px;
+    top: 30px;
+    background-color: #FFF !important;
+    width: calc(100% - 120px) !important;
   }
 }
 @media (max-width: 768px) {
   .menubar {
-    display: none;
+  }
+  .pushContent {
+    float: left;
+    left: 230px;
+    top: 30px;
+    background-color: #FFF !important;
+    width: calc(100% - 120px) !important;
   }
 }
 @media (min-width: 768px) {

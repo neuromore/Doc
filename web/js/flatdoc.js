@@ -453,6 +453,36 @@
    * to the elements.
    */
 
+   var currentScrollPos = 0;
+   function smoothScroll(startY, stopY) {
+     var distance = stopY > startY ? stopY - startY : startY - stopY;
+     if (distance < 100) {
+         scrollTo(0, stopY); return;
+     }
+     var speed = Math.round(distance / 100);
+     if (speed >= 20) speed = 20;
+     var step = Math.round(distance / 25);
+     var leapY = stopY > startY ? startY + step : startY - step;
+     var timer = 0;
+     if (stopY > startY) {
+         for ( var i=startY; i<stopY; i+=step ) {
+             setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+             leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+         } return;
+     }
+     for ( var i=startY; i>stopY; i-=step ) {
+         setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+         leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+     }
+   }
+   $(window).on('hashchange', function(data) {
+     var element = document.getElementById(window.location.hash.replace('#',''));
+     var offset = element.offsetTop -30;
+     smoothScroll(currentScrollPos, offset);
+     currentScrollPos = offset;
+   });
+
+
   Runner.prototype.run = function() {
     var doc = this;
     $(doc.root).trigger('flatdoc:loading');
@@ -463,12 +493,12 @@
       }
       var data = Flatdoc.parser.parse(markdown, doc.highlight);
       doc.applyData(data, doc);
-      var id = location.hash.substr(1);
-      if (id) {
-        var el = document.getElementById(id);
-        if (el) el.scrollIntoView(true);
-      }
-      $(doc.root).trigger('flatdoc:ready');
+      // var id = location.hash.substr(1);
+      // if (id) {
+      //   var el = document.getElementById(id);
+      //   if (el) el.scrollIntoView(true);
+      // }
+      // $(doc.root).trigger('flatdoc:ready');
     });
   };
 
@@ -534,7 +564,7 @@ s.prototype.outputLink=function(t,e){
 }
 else{
   //changes
-  var prefixUrl = "https://raw.githubusercontent.com/neuromore/Doc/master/";
+  var prefixUrl = "https://raw.githubusercontent.com/neuromore/Doc/master";
   var imageUrl = e.href.split("../").join("");
     var image = '<img src="'+r(prefixUrl+'/'+imageUrl)+'" alt="'+r(t[1])+'"'+(e.title?' title="'+r(e.title)+'"':"")+">"
     var lightbox = '<p class="img-js"><a data-lightbox="image-1" data-title="image" href="'+r(prefixUrl+'/'+imageUrl)+'" class="content-img">'+image+'</a></p>';

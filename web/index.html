@@ -17,7 +17,6 @@
   <!-- Flatdoc -->
   <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js'></script>
   <!-- <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'></script> -->
-  <!-- <script src='http://docs.openbci.com/js/flatdoc.js'></script> -->
   <script src='js/flatdoc.js'></script>
 
   <!-- Flatdoc theme -->
@@ -31,6 +30,10 @@
 
   <!-- neuromore style -->
   <link href='css/style.css' rel='stylesheet'>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+
+
 
 </head>
 
@@ -69,14 +72,20 @@
   for(var x = 0; x < urlParas.length; x++){
       parameters[urlParas[x].split('=')[0]] = urlParas[x].split('=')[1];
   }
+  // Set default categorie and page if not exist
+  var searchParas = '';
+  if(parameters.cat === undefined){
+    parameters.cat = 0;
+  }
+  if(parameters.page === undefined){
+    parameters.page = 0;
+  }
+  <!-- window.location = window.location.href; -->
   var refresh = function(){
     window.location.reload();
   };
 
-
-  //$.getJSON('https://s3.amazonaws.com/documentation.neuromore.com/file.json', function(data) {
   $.getJSON('https://raw.githubusercontent.com/neuromore/Doc/master/Files.json', function(data) {
-    console.log(data);
     for (var i = 0; i < data.chapters.length; i++) {
       var mainMenuLink = document.createElement('a');
       var linkText = document.createTextNode(data.chapters[i].name);
@@ -85,16 +94,6 @@
       mainMenuLink.href = '?cat='+i+'&page=0';
       var div = document.getElementById("main_menu");
       div.appendChild(mainMenuLink);
-
-      // Set default categorie and page if not exist
-      if(parameters.cat === undefined && i === 0){
-        console.log("no categorie found set first");
-        window.location.search = "?cat="+i;
-      }
-      if(parameters.page === undefined && i === 0){
-        console.log("no page found set first");
-        window.location.search = window.location.search+"&page=0";
-      }
 
       // Selected main menu
       if(parameters.cat == i){
@@ -119,8 +118,6 @@
       }
     }
     var link = data.rootUrl+data.chapters[parameters.cat].subchapters[parameters.page].relative;
-    console.log(link);
     Flatdoc.run({fetcher: Flatdoc.file(link)});
   });
-
 </script>
