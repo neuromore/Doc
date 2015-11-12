@@ -9,5 +9,5 @@ There are three different ways to switch between layouts:
 ![Layout ComboBox](../neuromoreStudio/Images/Layouts/LayoutComboBox.png)
 2. Use the combo box on the top right to switch between layouts. Predefined layouts are at the top, your custom layouts are at the bottom.
 
-![Layout Menu](../neuromoreStudio/Images/Layouts/LayoutMenu.png)
+![Layout Menu](../neuromoreStudio/Images/Layouts/LayoutsMenu.png)
 3. Use the 'Layouts' menu entry to switch between layouts.

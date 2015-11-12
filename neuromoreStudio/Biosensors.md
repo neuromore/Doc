@@ -8,19 +8,19 @@ Windows and OSX
 
 Windows and OSX
 
-![InteraXon Muse](../neuromoreStudio/Images/Biosensors/InteraXon Muse.png)
+![InteraXon Muse](../neuromoreStudio/Images/Biosensors/InteraXonMuse.png)
 
 #Emotiv EPOC
 
 Windows only
 
-![Emotiv EPOC](../neuromoreStudio/Images/Biosensors/Emotiv EPOC.png)
+![Emotiv EPOC](../neuromoreStudio/Images/Biosensors/EmotivEPOC.png)
 
 #Emotiv Insight
 
 Windows only
 
-![Emotiv Insight](../neuromoreStudio/Images/Biosensors/Emotiv Insight.png)
+![Emotiv Insight](../neuromoreStudio/Images/Biosensors/EmotivInsight.png)
 
 #SenseLabs Versus
 
@@ -32,16 +32,16 @@ Windows only
 
 Windows only
 
-![B-Alert X24](../neuromoreStudio/Images/Biosensors/B-Alert X24.png)
+![B-Alert X24](../neuromoreStudio/Images/Biosensors/BAlertX24.png)
 
 #Mitsar EEG 201
 
 Windows only
 
-![Mitsar](../neuromoreStudio/Images/Biosensors/Mitsar EEG 202-31.png)
+![Mitsar](../neuromoreStudio/Images/Biosensors/MitsarEEG202-31.png)
 
 #Bluetooth Smart Heart Rate Sensors
 
 OSX only
 
-![BTLE Heart Rate Sensor](../neuromoreStudio/Images/Biosensors/Bluetooth Smart Device.png)
+![BTLE Heart Rate Sensor](../neuromoreStudio/Images/Biosensors/BluetoothSmartDevice.png)
