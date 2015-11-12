@@ -1,3 +1,5 @@
+#Getting Started
+
 #Logging in
 
 ![Login Window](../neuromoreStudio/Images/Basics/Login.png)

@@ -11,8 +11,8 @@
 					"relative":				"neuromoreStudio/Installation.md"
 				},
 				{
-					"name":					"Basics",
-					"relative":				"neuromoreStudio/Tutorial_Basics.md"
+					"name":					"Getting Started",
+					"relative":				"neuromoreStudio/Tutorial_GettingStarted.md"
 				},
 				{
 					"name":					"Biosensors",
@@ -35,7 +35,7 @@
 					"relative":				"neuromoreStudio/Nodes.md"
 				},
 				{
-					"name":					"OSC",
+					"name":					"OSC Tutorial",
 					"relative":				"neuromoreStudio/OSC.md"
 				}
 			]
