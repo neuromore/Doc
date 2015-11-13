@@ -16,13 +16,13 @@
 
   <!-- Flatdoc -->
   <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js'></script>
-  <!-- <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'></script> -->
   <script src='js/flatdoc.js'></script>
+  <!-- <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'></script> -->
+  <!-- <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js'></script> -->
 
   <!-- Flatdoc theme -->
-  <!-- <link  href='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css' rel='stylesheet'> -->
-  <!-- <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js'></script> -->
   <link href='css/flatdoc.css' rel='stylesheet'>
+  <!-- <link  href='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css' rel='stylesheet'> -->
 
   <!-- lightbox -->
   <script src='js/lightbox.js'></script>
@@ -31,35 +31,18 @@
   <!-- neuromore style -->
   <link href='css/style.css' rel='stylesheet'>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
-
-
-
 </head>
+
 
 <body role='flatdoc' class="big-h3">
   <nav class="headline">
-    <!-- <div class="header">
-      <div class="left">
-        <a href="http://www.neuromore.com"><img class="headerlogo" src="img/logo.png"></a>
-      </div>
-      <div class="right">
-        <ul>
-          <li><a href="http://www.neuromore.com" target="_blank">WEBSITE</a></li>
-          <li><a href="http://support.neuromore.com/forums/" target="_blank">FORUM</a></li>
-          <li><a href="https://github.com/neuromore/Doc" target="_blank">GITHUB</a></li>
-        </ul>
-      </div>
-    </div> -->
-  <div class="subnav" id="main_menu"></div>
+    <div class="subnav" id="main_menu"></div>
   </nav>
-
 
   <!-- Page Menu on left side -->
   <div class='pagemenu' id="page_menu"></div>
-
+  <div class='menubar' role='flatdoc-menu'></div>
   <div class='content-root pushContent'>
-    <div class='menubar' role='flatdoc-menu'></div>
     <div role='flatdoc-content' class='content'></div>
   </div>
 </body>
@@ -97,7 +80,7 @@
 
       // Selected main menu
       if(parameters.cat == i){
-        mainMenuLink.className = 'selected';
+        mainMenuLink.className = 'subnavSelected';
 
         for (var j = 0; j < data.chapters[parameters.cat].subchapters.length; j++) {
           var pageMenuLink = document.createElement('a');
@@ -107,10 +90,10 @@
           pageMenuLink.href = '?cat='+i+'&page='+j;
 
           if(parameters.page == j){
-            pageMenuLink.className = 'selectedPage mainMenuItem';
+            pageMenuLink.className = 'pageSelect mainMenuItem';
           }
           else{
-            pageMenuLink.className = 'unSelected mainMenuItem';
+            pageMenuLink.className = 'pageUnselect mainMenuItem';
           }
           var div2 = document.getElementById("page_menu");
           div2.appendChild(pageMenuLink);

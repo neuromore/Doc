@@ -733,8 +733,6 @@ a.big.button:hover:visited {
     float: left;
     left: 120px;
     top: 30px;
-    background-color: #FFF !important;
-    width: calc(100% - 120px) !important;
   }
 }
 @media (max-width: 768px) {
@@ -744,8 +742,6 @@ a.big.button:hover:visited {
     float: left;
     left: 230px;
     top: 30px;
-    background-color: #FFF !important;
-    width: calc(100% - 120px) !important;
   }
 }
 @media (min-width: 768px) {
