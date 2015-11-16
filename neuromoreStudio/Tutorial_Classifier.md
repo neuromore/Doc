@@ -6,7 +6,9 @@ Classifiers are the essence of our tool. They define how the signal processing p
 
 #Loading examples
 
-#Edit Classifiers
+Under construction
+
+#File system
 
 This article shows how to create new folders, new classifiers and edit existing ones. Right clicking on a given item enables a context menu presenting several options like to save, remove or rename. Different items might have different permissions (read-only, write) and thus show different context menu options.
 
