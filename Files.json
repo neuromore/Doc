@@ -37,6 +37,10 @@
 				{
 					"name":					"OSC Tutorial",
 					"relative":				"neuromoreStudio/OSC.md"
+				},
+				{
+					"name":					"Tutorial Videos",
+					"relative":				"neuromoreStudio/Videos.md"
 				}
 			]
 		}

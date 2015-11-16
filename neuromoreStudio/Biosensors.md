@@ -6,7 +6,7 @@
 
 neuromore Studio currently only supports the 8/32-bit OpenBCI with 8-channels (without Daisy module).
 
-Please follow the official ['OpenBCI on Windows'](http://docs.openbci.com/tutorials/10-OpenBCI_on_Windows) and ['Fixing FTDI for OSX'](http://docs.openbci.com/tutorials/09-Mac_FTDI_Driver_Fix) before using it with neuromore Studio.
+Please follow the official [OpenBCI on Windows](http://docs.openbci.com/tutorials/10-OpenBCI_on_Windows) and [Fixing FTDI for OSX](http://docs.openbci.com/tutorials/09-Mac_FTDI_Driver_Fix) before using it with neuromore Studio.
 
 neuromore Studio will automatically detect the OpenBCI and show it in the interface.
 
@@ -48,21 +48,21 @@ We do not support the consumer Bluetooth LE version of the Versus. neuromore Stu
 
 Supported Platforms: Windows only
 
-##Advanced Brain Monitoring X24
+##Advanced Brain Monitoring X4, X10 and X24
 
 ![B-Alert X24](../neuromoreStudio/Images/Biosensors/BAlertX24.png)
 
 Currently in development.
 
-Supported Platforms: in development
+Supported Platforms: Windows only
 
-##Mitsar EEG 201
+##Mitsar EEG 201-21, 202-24 and 202-31
 
 ![Mitsar](../neuromoreStudio/Images/Biosensors/MitsarEEG202-31.png)
 
 Currently in development.
 
-Supported Platforms: in development
+Supported Platforms: Windows only
 
 ##Bluetooth Smart Heart Rate Sensors
 
