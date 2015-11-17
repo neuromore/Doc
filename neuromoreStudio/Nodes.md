@@ -1,7 +1,7 @@
 # Nodes
 
 # Sensors Nodes 
-# This category contains all Input device nodes.
+This category contains all Input device nodes.
 ## Test System
 ![Test System Node Icon](../neuromoreStudio/Images/Nodes/Icons/f6708456-bb6c-11e4-8dfc-aa07a5b093db.png)
 
@@ -83,7 +83,7 @@
 
 
 # Input Nodes 
-# This category contains all Other input nodes.
+This category contains all Other input nodes.
 ## Parameter
 ![Parameter Node Icon](../neuromoreStudio/Images/Nodes/Icons/0a2f1004-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -105,7 +105,7 @@
 | Amplitude | Amplitude of the waveform (half of peak-to-peak). Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
 | DC-Offset | DC-Offset of the signal. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
 
-![Signal Generator Node](../neuromoreStudio/Images/Nodes/Signal Generator Node.png)
+
 
 ## OSC Input
 ![OSC Input Node Icon](../neuromoreStudio/Images/Nodes/Icons/15fd9b62-bb6b-11e4-8dfc-aa07a5b093db.png)
@@ -151,7 +151,7 @@
 
 
 # Output Nodes 
-# This category contains all Output Nodes.
+This category contains all Output Nodes.
 ## Custom Feedback
 ![Custom Feedback Node Icon](../neuromoreStudio/Images/Nodes/Icons/27679c9e-bb6c-11e4-8dfc-aa07a5b093db.png)
 
@@ -222,7 +222,7 @@
 
 
 # Math Nodes 
-# This category contains all Simple mathematical node.
+This category contains all Simple mathematical node.
 ## Function
 ![Function Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdc17a98-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -311,7 +311,7 @@ This node has no attributes.
 
 
 # DSP Nodes 
-# This category contains all Advanced digital signal processing nodes.
+This category contains all Advanced digital signal processing nodes.
 ## FFT
 ![FFT Node Icon](../neuromoreStudio/Images/Nodes/Icons/316ff94a-bb6a-11e4-8dfc-aa07a5b093db.png)
 
@@ -384,7 +384,7 @@ This node has no attributes.
 
 
 # Bio Nodes 
-# This category contains all Nodes for bio feedback and bio signal analysis.
+This category contains all Nodes for bio feedback and bio signal analysis.
 ## HRV Analysis
 ![HRV Analysis Node Icon](../neuromoreStudio/Images/Nodes/Icons/b56e59fc-65d9-11e5-9d70-feff819cdc9f.png)
 
@@ -396,7 +396,7 @@ This node has no attributes.
 
 
 # Utils Nodes 
-# This category contains all Utilitys and nodes for channel management.
+This category contains all Utilitys and nodes for channel management.
 ## Smoothing
 ![Smoothing Node Icon](../neuromoreStudio/Images/Nodes/Icons/18994938-bb6c-11e4-8dfc-aa07a5b093db.png)
 
