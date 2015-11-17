@@ -15,8 +15,10 @@ Input nodes are nodes that generate data or transport it from other sources into
 ###Attributes
 
 [//]: # (BeginAttributes:Function)
+
 * Signal Type
-|  |  |
+
+|             |        |
 |-------------|--------|
 | Description | [//]: # (Begin:Attributes:Function:Signal Type:Description)The type of waveform to generate. |
 | Type | List |
