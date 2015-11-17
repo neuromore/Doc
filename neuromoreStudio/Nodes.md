@@ -36,9 +36,14 @@ Nodes in the **Output** category are used to transport result data from the clas
 #Math Nodes
 The **Math** category contains common mathematical functions, operations and simple algorithms like time domain statistic methods. 
 
-[//]: # (Comment Test)
+
 
 ##Function
+[//]: # (BeginNodeAttributes:Function)
+| Attribute | Type | Description | 
+| FooBar | String | BooFar.|
+[//]: # (EndNodeAttributes:Function)
+
 ##Operation
 ##Compare
 ##Logic
