@@ -12,20 +12,25 @@ Input nodes are nodes that generate data or transport it from other sources into
 ##Parameter
 ##Signal Generator
 
+[//]: # (Signal Generator:Ports)
+###Ports
+
+This node has x inputs and y output ports.
+
+[//]: # (Signal Generator:Ports:Begin)
+|#| Name | Port Type | Value Type |
+|-|=-----|:---------:|:----:|
+|1| In | Input | Number | 
+[//]: # (Signal Generator:Ports:End)
+
+[//]: # (Signal Generator:Attributes)
+
 ###Attributes
-
-
-[//]: # (Attributes:Function)
-
-[//]: # (Begin:Node:Function:Attributes)
-####Signal Type
- [//]: # (Begin:Node:Function:Signal Type:Description)
-* Description: The type of waveform to generate.
- [//]: # (End)
- [//]: # (Begin:Node:Function:Signal Type:Values)
-* Values: Sine, Square, Noise, Ramp, Sawtooth, Triangle, Brainwaves |
- [//]: # (End)
-[//]: # (End)
+[//]: # (Signal Generator:Attributes:Begin)
+| Name | Description|
+|------------|-|
+| Signal Type | The type of waveform to generate. Valid values are: Sine, Square, Noise, Ramp, Sawtooth, Triangle, Brainwaves |
+[//]: # (Signal Generator:Attributes:End)
 
 
 ##OSC Input
