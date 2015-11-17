@@ -9,7 +9,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![Test System Node](../neuromoreStudio/Images/Nodes/Test System Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 ## Muse
 ![Muse Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdbd7ec4-bb6c-11e4-8dfc-aa07a5b093db.png)
 
@@ -17,7 +17,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![Muse Node](../neuromoreStudio/Images/Nodes/Muse Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 ## NeuroSky
 ![NeuroSky Node Icon](../neuromoreStudio/Images/Nodes/Icons/d676273c-bb6c-11e4-8dfc-aa07a5b093db.png)
 
@@ -25,7 +25,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![NeuroSky Node](../neuromoreStudio/Images/Nodes/NeuroSky Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 ## EPOC
 ![EPOC Node Icon](../neuromoreStudio/Images/Nodes/Icons/ab23060c-02d6-11e5-a322-1697f925ec7b.png)
 
@@ -33,7 +33,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![EPOC Node](../neuromoreStudio/Images/Nodes/EPOC Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 ## OpenBCI
 ![OpenBCI Node Icon](../neuromoreStudio/Images/Nodes/Icons/283fc2da-fe1b-11e4-a322-1697f925ec7b.png)
 
@@ -41,15 +41,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![OpenBCI Node](../neuromoreStudio/Images/Nodes/OpenBCI Node.png)
-## Mitsar 201-21
-![Mitsar 201-21 Node Icon](../neuromoreStudio/Images/Nodes/Icons/472ea640-50b2-11e5-885d-feff819cdc9f.png)
-
-| Attribute | Description |
-|-----------|-------------|
-| Upload | Upload the data stream to neuromore Cloud after a successful session. |
-| Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![Mitsar 201-21 Node](../neuromoreStudio/Images/Nodes/Mitsar 201-21 Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 ## Heartrate
 ![Heartrate Node Icon](../neuromoreStudio/Images/Nodes/Icons/db98a1d4-5d71-11e5-885d-feff819cdc9f.png)
 
@@ -57,7 +49,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![Heartrate Node](../neuromoreStudio/Images/Nodes/Heartrate Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 ## Accelerometer
 ![Accelerometer Node Icon](../neuromoreStudio/Images/Nodes/Icons/db98ef86-5d71-11e5-885d-feff819cdc9f.png)
 
@@ -65,7 +57,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![Accelerometer Node](../neuromoreStudio/Images/Nodes/Accelerometer Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 ## Gyroscope
 ![Gyroscope Node Icon](../neuromoreStudio/Images/Nodes/Icons/db98aad0-5d71-11e5-885d-feff819cdc9f.png)
 
@@ -73,7 +65,7 @@ Input device nodes.
 |-----------|-------------|
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![Gyroscope Node](../neuromoreStudio/Images/Nodes/Gyroscope Node.png)
+In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range *1* .. *1*.The default value is *1*.
 # This category contains all Input Nodes 
 Other input nodes.
 ## Parameter
@@ -83,7 +75,7 @@ Other input nodes.
 |-----------|-------------|
 | Value | The default static value to output. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
 | Sample Rate | Sample rate of the output channel. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*. |
-#![Parameter Node](../neuromoreStudio/Images/Nodes/Parameter Node.png)
+Sample rate of the output channel. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*.
 ## Signal Generator
 ![Signal Generator Node Icon](../neuromoreStudio/Images/Nodes/Icons/4107b810-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -94,7 +86,10 @@ Other input nodes.
 | Frequency | Frequency of the periodic waveforms. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
 | Amplitude | Amplitude of the waveform (half of peak-to-peak). Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
 | DC-Offset | DC-Offset of the signal. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
-#![Signal Generator Node](../neuromoreStudio/Images/Nodes/Signal Generator Node.png)
+DC-Offset of the signal. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*.
+
+![Signal Generator Node](../neuromoreStudio/Images/Nodes/Signal Generator Node.png)
+
 ## OSC Input
 ![OSC Input Node Icon](../neuromoreStudio/Images/Nodes/Icons/15fd9b62-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -102,7 +97,7 @@ Other input nodes.
 |-----------|-------------|
 | OSC address | The OSC address that is listened to. The node will always output the last received float value. |
 | Sample rate | Sample rate of the incoming data. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*. |
-#![OSC Input Node](../neuromoreStudio/Images/Nodes/OSC Input Node.png)
+Sample rate of the incoming data. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*.
 ## Session Time
 ![Session Time Node Icon](../neuromoreStudio/Images/Nodes/Icons/36de4c1e-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -110,7 +105,7 @@ Other input nodes.
 |-----------|-------------|
 | Time Unit | The time unit to convert the session time to. Possible values are: *Milliseconds*,*Seconds*,*Minutes*,*Hours*. The default value is *Seconds*. |
 | Sample Rate | Sample rate of the generated signal. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*. |
-#![Session Time Node](../neuromoreStudio/Images/Nodes/Session Time Node.png)
+Sample rate of the generated signal. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*.
 ## Cloud Input
 ![Cloud Input Node Icon](../neuromoreStudio/Images/Nodes/Icons/b8f5f7b8-7cb0-11e5-8bcf-feff819cdc9f.png)
 
@@ -120,7 +115,7 @@ Other input nodes.
 | Sample Rate | Sample rate of the output channel. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*. |
 | Type | Parameter type. Possible values are: *User Parameter*,*Classifier Parameter*. The default value is *User Parameter*. |
 | Request Mode | The type of request sent to the server. Possible values are: *Current Value*,*Previous Values*,*All Values*,*Time Range*. The default value is *Current Value*. |
-#![Cloud Input Node](../neuromoreStudio/Images/Nodes/Cloud Input Node.png)
+The type of request sent to the server. Possible values are: *Current Value*,*Previous Values*,*All Values*,*Time Range*. The default value is *Current Value*.
 ## File Reader
 ![File Reader Node Icon](../neuromoreStudio/Images/Nodes/Icons/93d9c13a-629d-11e5-9d70-feff819cdc9f.png)
 
@@ -129,7 +124,7 @@ Other input nodes.
 | File | The local filename of the data file. |
 | Format | The data format of the input file. Possible values are: *Simple CSV 	(*.csv)*,*Timestamped CSV 	(*.csv)*. The default value is *Simple CSV 	(*.csv)*. |
 | Sample Rate | Override the sample rate of the output channels. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
-#![File Reader Node](../neuromoreStudio/Images/Nodes/File Reader Node.png)
+Override the sample rate of the output channels. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*.
 # This category contains all Output Nodes 
 Output Nodes.
 ## Custom Feedback
@@ -145,7 +140,7 @@ Output Nodes.
 | Is Ranged | Set to true in case the value range of the feedback is known upfront. Input value can be any value in case of false. |
 | Range Min | Minimum possible feedback value. Values smaller than this will be clamped Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
 | Range Max | Maximum possible feedback value. Values bigger than this will be clamped Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
-#![Custom Feedback Node](../neuromoreStudio/Images/Nodes/Custom Feedback Node.png)
+Maximum possible feedback value. Values bigger than this will be clamped Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*.
 ## Body Feedback
 ![Body Feedback Node Icon](../neuromoreStudio/Images/Nodes/Icons/8efd1d32-e8e1-11e4-b02c-1681e6b88ec1.png)
 
@@ -155,7 +150,7 @@ Output Nodes.
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | Send OSC Msgs | Send the values via OSC to all connected network clients. |
 | User ID | In case multiple people are connected simultaneously, use this ID to identify the user. Possible values are in the range *0* .. *0*.The default value is *0*. |
-#![Body Feedback Node](../neuromoreStudio/Images/Nodes/Body Feedback Node.png)
+In case multiple people are connected simultaneously, use this ID to identify the user. Possible values are in the range *0* .. *0*.The default value is *0*.
 ## OSC Output
 ![OSC Output Node Icon](../neuromoreStudio/Images/Nodes/Icons/15fee7ea-2a35-11e5-b345-feff819cdc9f.png)
 
@@ -164,14 +159,14 @@ Output Nodes.
 | Resolution | Select the signal resolution. This affects the size of the stored or uploaded data and the feedback latency. Possible values are: *Original*,*High*,*Mid*,*Low*. The default value is *High*. |
 | Upload | Upload the data stream to neuromore Cloud after a successful session. |
 | OSC Address | e.g. /out/1. |
-#![OSC Output Node](../neuromoreStudio/Images/Nodes/OSC Output Node.png)
+e.g. /out/1.
 ## Points
 ![Points Node Icon](../neuromoreStudio/Images/Nodes/Icons/30589b50-bb6c-11e4-8dfc-aa07a5b093db.png)
 
 | Attribute | Description |
 |-----------|-------------|
 | Points Multiplier | . Possible values are in the range *10* .. *10*.The default value is *10*. |
-#![Points Node](../neuromoreStudio/Images/Nodes/Points Node.png)
+. Possible values are in the range *10* .. *10*.The default value is *10*.
 ## Cloud Output
 ![Cloud Output Node Icon](../neuromoreStudio/Images/Nodes/Icons/b8f5fc04-7cb0-11e5-8bcf-feff819cdc9f.png)
 
@@ -179,7 +174,7 @@ Output Nodes.
 |-----------|-------------|
 | Type | Parameter type. Possible values are: *User Parameter*,*Classifier Parameter*. The default value is *User Parameter*. |
 | Save Mode | Keep parmeter history or overwrite the parameter. Possible values are: *Overwrite Value*,*Save History*. The default value is *Overwrite Value*. |
-#![Cloud Output Node](../neuromoreStudio/Images/Nodes/Cloud Output Node.png)
+Keep parmeter history or overwrite the parameter. Possible values are: *Overwrite Value*,*Save History*. The default value is *Overwrite Value*.
 ## File Writer
 ![File Writer Node Icon](../neuromoreStudio/Images/Nodes/Icons/edca7a3e-7519-11e5-8bcf-feff819cdc9f.png)
 
@@ -188,14 +183,14 @@ Output Nodes.
 | File | The local filename of the output file. |
 | Format | The file format of the output file. Possible values are: *Simple CSV 	(*.csv)*,*Timestamped CSV 	(*.csv)*. The default value is *Simple CSV 	(*.csv)*. |
 | Write Mode | Changes the write behaviour. Possible values are: *Never Overwrite*,*Always Overwrite*,*Overwrite during Session*,*Append*. The default value is *Never Overwrite*. |
-#![File Writer Node](../neuromoreStudio/Images/Nodes/File Writer Node.png)
+Changes the write behaviour. Possible values are: *Never Overwrite*,*Always Overwrite*,*Overwrite during Session*,*Append*. The default value is *Never Overwrite*.
 # This category contains all Math Nodes 
 Simple mathematical node.
 ## Function
 ![Function Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdc17a98-bb6b-11e4-8dfc-aa07a5b093db.png)
 
 This node has no attributes.
-#![Function Node](../neuromoreStudio/Images/Nodes/Function Node.png)
+![Function Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdc17a98-bb6b-11e4-8dfc-aa07a5b093db.png)
 ## Operation
 ![Operation Node Icon](../neuromoreStudio/Images/Nodes/Icons/db5e2da4-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -203,7 +198,7 @@ This node has no attributes.
 |-----------|-------------|
 | Math Function | The math function to use. Possible values are: *Add*,*Subtract*,*Multiply*,*Divide*,*Average*,*Random Float*,*Mod*,*Minimum*,*Maximum*,*Power*. The default value is *Add*. |
 | Static Value | Value used for x or y when the input port has no connection. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
-#![Operation Node](../neuromoreStudio/Images/Nodes/Operation Node.png)
+Value used for x or y when the input port has no connection. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*.
 ## Compare
 ![Compare Node Icon](../neuromoreStudio/Images/Nodes/Icons/a7cd7d14-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -215,7 +210,7 @@ This node has no attributes.
 | Result when True | The value returned when the expression is true. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
 | False Return Mode | What to return when the result is false. Possible values are: *Return False Value*,*Return X*,*Return Y*. The default value is *Return False Value*. |
 | Result when False | The value returned when the expression is false. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
-#![Compare Node](../neuromoreStudio/Images/Nodes/Compare Node.png)
+The value returned when the expression is false. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*.
 ## Logic
 ![Logic Node Icon](../neuromoreStudio/Images/Nodes/Icons/73b7ecb2-bb6b-11e4-8dfc-aa07a5b093db.png)
 
@@ -225,7 +220,7 @@ This node has no attributes.
 | Static Value | Value used for x or y when the input port has no connection. Possible values are: *False*,*True*. The default value is *False*. |
 | Float Result when True | The float value returned when the expression is true. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
 | Float Result when False | The float value returned when the expression is false. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
-#![Logic Node](../neuromoreStudio/Images/Nodes/Logic Node.png)
+The float value returned when the expression is false. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*.
 ## Remap
 ![Remap Node Icon](../neuromoreStudio/Images/Nodes/Icons/01b36c94-bb6c-11e4-8dfc-aa07a5b093db.png)
 
@@ -235,14 +230,14 @@ This node has no attributes.
 | Input Max | The maximum incoming value. Values bigger than this will be clipped. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
 | Output Min | The minimum outcoming value. The minimum incoming value will be mapped to the minimum outcoming value. The output port can't hold a smaller value than this. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
 | Output Max | The maximum outcoming value. The maximum incoming value will be mapped to the maximum outcoming value. The output port can't hold a bigger value than this. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
-#![Remap Node](../neuromoreStudio/Images/Nodes/Remap Node.png)
+The maximum outcoming value. The maximum incoming value will be mapped to the maximum outcoming value. The output port can't hold a bigger value than this. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*.
 ## Channel Math
 ![Channel Math Node Icon](../neuromoreStudio/Images/Nodes/Icons/deadc8ee-cd6c-11e4-afdc-1681e6b88ec1.png)
 
 | Attribute | Description |
 |-----------|-------------|
 | Math Function | The math function to use. Possible values are: *Sum*,*Product*,*Average*,*Minimum*,*Maximum*,*Harmonic Mean*,*Geometric Mean*,*Root Mean Square*,*Sum of Squares*. The default value is *Sum*. |
-#![Channel Math Node](../neuromoreStudio/Images/Nodes/Channel Math Node.png)
+The math function to use. Possible values are: *Sum*,*Product*,*Average*,*Minimum*,*Maximum*,*Harmonic Mean*,*Geometric Mean*,*Root Mean Square*,*Sum of Squares*. The default value is *Sum*.
 ## Statistics
 ![Statistics Node Icon](../neuromoreStudio/Images/Nodes/Icons/ad13b064-bb6a-11e4-8dfc-aa07a5b093db.png)
 
@@ -251,7 +246,7 @@ This node has no attributes.
 | Interval Length | The length of the interval used for calculating the statistics, in seconds. Possible values are in the range *1.00* .. *1.00*.The default value is *1.00*. |
 | Statistic | The statistic over the interval. Possible values are: *Minimum*,*Maximum*,*Range*,*Mean*,*Median*,*Variance*,*Standard Deviation*,*RMS*,*Percentile*,*Sum of Elements*,*Product of Elements*,*Harmonic Mean*,*Geometric Mean*. The default value is *Mean*. |
 | Epoching | If epoching is on, the statistic are taken of consecutive epochs instead of every sample. Disable this if you want fast feedback. Possible values are: *On*,*Off*. The default value is *Off*. |
-#![Statistics Node](../neuromoreStudio/Images/Nodes/Statistics Node.png)
+If epoching is on, the statistic are taken of consecutive epochs instead of every sample. Disable this if you want fast feedback. Possible values are: *On*,*Off*. The default value is *Off*.
 ## Threshold
 ![Threshold Node Icon](../neuromoreStudio/Images/Nodes/Icons/93eb63fc-5962-11e5-885d-feff819cdc9f.png)
 
@@ -261,7 +256,7 @@ This node has no attributes.
 | Use Range | If enabled a threshold range will be used instead of a single threshold value. |
 | Low Threshold | The threshold value and lower value of the threshold range that is used if the input port is not connected. Possible values are in the range *0.50* .. *0.50*.The default value is *0.50*. |
 | Compare Function | The comparator function to use. Possible values are: *Equal to 	(x == T)*,*Greater than 	(x > T)*,*Less than 	(x < T)*,*Grt. or Equal 	(x >= T)*,*Less or Equal 	(x <= T)*,*Inequal to 	(x != T)*. The default value is *Greater than 	(x > T)*. |
-#![Threshold Node](../neuromoreStudio/Images/Nodes/Threshold Node.png)
+The comparator function to use. Possible values are: *Equal to 	(x == T)*,*Greater than 	(x > T)*,*Less than 	(x < T)*,*Grt. or Equal 	(x >= T)*,*Less or Equal 	(x <= T)*,*Inequal to 	(x != T)*. The default value is *Greater than 	(x > T)*.
 # This category contains all DSP Nodes 
 Advanced digital signal processing nodes.
 ## FFT
@@ -272,7 +267,7 @@ Advanced digital signal processing nodes.
 | FFT Order | Order of the FFT. Possible values are in the range *7* .. *7*.The default value is *7*. |
 | Window Function | The Time-Domain Window Function that is applied to the input of the FFT. Possible values are: *Rectangular*,*Triangular*,*Welch*,*Hann*,*Hamming*,*Blackman*,*Nuttall*,*Blackman-Nuttall*,*Blackman-Harris*,*Flat top*,*Cosine*,*Gaussian*,*Bartlett-Hann*,*Hann-Poisson*,*Lanczos*. The default value is *Hann*. |
 | Window Shift | The number of samples the FFT input window advances in each iteration. Possible values are in the range *1* .. *1*.The default value is *1*. |
-#![FFT Node](../neuromoreStudio/Images/Nodes/FFT Node.png)
+The number of samples the FFT input window advances in each iteration. Possible values are in the range *1* .. *1*.The default value is *1*.
 ## IIR/FIR Filter
 ![IIR/FIR Filter Node Icon](../neuromoreStudio/Images/Nodes/Icons/70144f84-bb6a-11e4-8dfc-aa07a5b093db.png)
 
@@ -282,7 +277,7 @@ Advanced digital signal processing nodes.
 | Filter Method | The Method that should be used to construct the filter. Possible values are: *Bessel*,*Butterworth*,*Chebyshev I*,*Chebyshev II*,*Elliptic*,*Hann*,*Hamming*,*Blackman*,*Sinc*. The default value is *Butterworth*. |
 | Filter Order | The Order of the Filter. Possible values are in the range *3* .. *3*.The default value is *3*. |
 | Low Cut Frequency | The corner frequency of the lowpass / lower cut frequency of bandpass/bandstop Possible values are in the range *7.00* .. *7.00*.The default value is *7.00*. |
-#![IIR/FIR Filter Node](../neuromoreStudio/Images/Nodes/IIR/FIR Filter Node.png)
+The corner frequency of the lowpass / lower cut frequency of bandpass/bandstop Possible values are in the range *7.00* .. *7.00*.The default value is *7.00*.
 ## Frequency Band
 ![Frequency Band Node Icon](../neuromoreStudio/Images/Nodes/Icons/5f6d9a32-bb6a-11e4-8dfc-aa07a5b093db.png)
 
@@ -291,7 +286,7 @@ Advanced digital signal processing nodes.
 | Preset | Brainwave Frequencyband presets. Possible values are: *Delta*,*Theta*,*Alpha*,*SMR*,*Beta*,*Gamma*,*Custom*. The default value is *Delta*. |
 | Lower Frequency | The lower bound of the frequency range. Possible values are in the range *0.50* .. *0.50*.The default value is *0.50*. |
 | Upper Frequency | The upper bound of the frequency range. Possible values are in the range *3.90* .. *3.90*.The default value is *3.90*. |
-#![Frequency Band Node](../neuromoreStudio/Images/Nodes/Frequency Band Node.png)
+The upper bound of the frequency range. Possible values are in the range *3.90* .. *3.90*.The default value is *3.90*.
 ## Dominant Frequency
 ![Dominant Frequency Node Icon](../neuromoreStudio/Images/Nodes/Icons/1c9c0568-bb6a-11e4-8dfc-aa07a5b093db.png)
 
@@ -300,7 +295,7 @@ Advanced digital signal processing nodes.
 | Preset | Brainwave Frequencyband presets. Possible values are: *Delta*,*Theta*,*Alpha*,*SMR*,*Beta*,*Gamma*,*Custom*. The default value is *Delta*. |
 | Lower Frequency | The lower bound of the frequency range. Possible values are in the range *0.50* .. *0.50*.The default value is *0.50*. |
 | Upper Frequency | The upper bound of the frequency range. Possible values are in the range *3.90* .. *3.90*.The default value is *3.90*. |
-#![Dominant Frequency Node](../neuromoreStudio/Images/Nodes/Dominant Frequency Node.png)
+The upper bound of the frequency range. Possible values are in the range *3.90* .. *3.90*.The default value is *3.90*.
 ## Biquad Filter
 ![Biquad Filter Node Icon](../neuromoreStudio/Images/Nodes/Icons/e50bc5c6-c333-11e4-8dfc-aa07a5b093db.png)
 
@@ -312,7 +307,7 @@ Advanced digital signal processing nodes.
 | A1 | Biquad Coefficient A 1 |
 | A2 | Biquad Coefficient A 2 |
 | Gain | Biquad Filter Gain |
-#![Biquad Filter Node](../neuromoreStudio/Images/Nodes/Biquad Filter Node.png)
+Biquad Filter Gain
 ## Select Bins
 ![Select Bins Node Icon](../neuromoreStudio/Images/Nodes/Icons/44dec436-66c6-11e5-9d70-feff819cdc9f.png)
 
@@ -322,7 +317,7 @@ Advanced digital signal processing nodes.
 | Lower Frequency | The lower bound of the frequency range. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
 | Upper Frequency | The upper bound of the frequency range. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*. |
 | Lock Ports |  |
-#![Select Bins Node](../neuromoreStudio/Images/Nodes/Select Bins Node.png)
+
 # This category contains all Bio Nodes 
 Nodes for bio feedback and bio signal analysis.
 ## HRV Analysis
@@ -332,7 +327,7 @@ Nodes for bio feedback and bio signal analysis.
 |-----------|-------------|
 | Method | The calculated HRV metric. Possible values are: *RMSSD*,*SDSD*,*EBC*,*pRR50*,*pRR20*. The default value is *RMSSD*. |
 | Number of RR Intervals | How many RR intervals are used in the analysis. Possible values are in the range *10* .. *10*.The default value is *10*. |
-#![HRV Analysis Node](../neuromoreStudio/Images/Nodes/HRV Analysis Node.png)
+How many RR intervals are used in the analysis. Possible values are in the range *10* .. *10*.The default value is *10*.
 # This category contains all Utils Nodes 
 Utilitys and nodes for channel management.
 ## Smoothing
@@ -342,7 +337,7 @@ Utilitys and nodes for channel management.
 |-----------|-------------|
 | Interpolation Speed | The interpolation speed where 0.0 means the value won't change at all and 1.0 means the input value will directly be mapped to the output value. Possible values are in the range *0.75* .. *0.75*.The default value is *0.75*. |
 | Start Value | Start value for interpolation. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
-#![Smoothing Node](../neuromoreStudio/Images/Nodes/Smoothing Node.png)
+Start value for interpolation. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*.
 ## Delay
 ![Delay Node Icon](../neuromoreStudio/Images/Nodes/Icons/f903a81e-e39a-11e4-8a00-1681e6b88ec1.png)
 
@@ -351,7 +346,7 @@ Utilitys and nodes for channel management.
 | Set by Time | If true the delay stays the same if the sample rate changes. |
 | Delay in Samples | The number of samples the signal is delayed. Possible values are in the range *0* .. *0*.The default value is *0*. |
 | Delay in Seconds | The time the signal should be delayed. Note: The resolution is limited by the sample rate of the signal. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
-#![Delay Node](../neuromoreStudio/Images/Nodes/Delay Node.png)
+The time the signal should be delayed. Note: The resolution is limited by the sample rate of the signal. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*.
 ## Resample
 ![Resample Node Icon](../neuromoreStudio/Images/Nodes/Icons/1b964922-ed96-11e4-90ec-1681e6b88ec1.png)
 
@@ -359,7 +354,7 @@ Utilitys and nodes for channel management.
 |-----------|-------------|
 | Sample Rate | The target sample rate. Possible values are in the range *128.00* .. *128.00*.The default value is *128.00*. |
 | Mode | Select Realtime for applications where a zero delay is most important. Use 'Best Quality' if the signal's frequency spectrum is more important. Possible values are: *Realtime*,*Good Quality*. The default value is *Realtime*. |
-#![Resample Node](../neuromoreStudio/Images/Nodes/Resample Node.png)
+Select Realtime for applications where a zero delay is most important. Use 'Best Quality' if the signal's frequency spectrum is more important. Possible values are: *Realtime*,*Good Quality*. The default value is *Realtime*.
 ## Freeze
 ![Freeze Node Icon](../neuromoreStudio/Images/Nodes/Icons/c7d68110-f7d8-11e4-a322-1697f925ec7b.png)
 
@@ -367,19 +362,19 @@ Utilitys and nodes for channel management.
 |-----------|-------------|
 | Time in Seconds | Freeze (Hold) the input value after this many seconds. Possible values are in the range *0.00* .. *0.00*.The default value is *0.00*. |
 | Pass Through | If enabled, the input is forwarded until the freeze is triggered. |
-#![Freeze Node](../neuromoreStudio/Images/Nodes/Freeze Node.png)
+If enabled, the input is forwarded until the freeze is triggered.
 ## Merge Channels
 ![Merge Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd1692e8-047b-11e5-8418-1697f925ec7b.png)
 
 This node has no attributes.
-#![Merge Channels Node](../neuromoreStudio/Images/Nodes/Merge Channels Node.png)
+![Merge Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd1692e8-047b-11e5-8418-1697f925ec7b.png)
 ## Select Channels
 ![Select Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd168f5a-047b-11e5-8418-1697f925ec7b.png)
 
 | Attribute | Description |
 |-----------|-------------|
 | Lock Ports |  |
-#![Select Channels Node](../neuromoreStudio/Images/Nodes/Select Channels Node.png)
+
 ## View
 ![View Node Icon](../neuromoreStudio/Images/Nodes/Icons/8b55d922-3200-11e5-a151-feff819cdc9f.png)
 
@@ -387,10 +382,10 @@ This node has no attributes.
 |-----------|-------------|
 | Scaling | How the waveform should be scaled in the view. Possible values are: *Auto (Peak)*,*Auto (Peak RMS)*,*Custom Range*. The default value is *Auto (Peak)*. |
 | Custom Color | Use a user defined color for signal display. |
-#![View Node](../neuromoreStudio/Images/Nodes/View Node.png)
+Use a user defined color for signal display.
 ## Rename
 ![Rename Node Icon](../neuromoreStudio/Images/Nodes/Icons/81d10cd4-3d48-11e5-a151-feff819cdc9f.png)
 
 This node has no attributes.
-#![Rename Node](../neuromoreStudio/Images/Nodes/Rename Node.png)
+![Rename Node Icon](../neuromoreStudio/Images/Nodes/Icons/81d10cd4-3d48-11e5-a151-feff819cdc9f.png)
 
