@@ -14,16 +14,18 @@ Input nodes are nodes that generate data or transport it from other sources into
 
 ###Attributes
 
-[//]: # (BeginAttributes:Function)
 
-* Signal Type
+[//]: # (Attributes:Function)
 
-|             |        |
-|-------------|--------|
-| Description | [//]: # (Begin:Attributes:Function:Signal Type:Description)The type of waveform to generate. |
-| Type | List |
-| Values | Sine, Square, Noise, Ramp, Sawtooth, Triangle, Brainwaves |
-[//]: # (EndNodeAttributes:Function)
+[//]: # (Begin:Node:Function:Attributes)
+####Signal Type
+ [//]: # (Begin:Node:Function:Signal Type:Description)
+* Description: The type of waveform to generate.
+ [//]: # (End)
+ [//]: # (Begin:Node:Function:Signal Type:Values)
+* Values: Sine, Square, Noise, Ramp, Sawtooth, Triangle, Brainwaves |
+ [//]: # (End)
+[//]: # (End)
 
 
 ##OSC Input
