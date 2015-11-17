@@ -11,6 +11,13 @@ Input nodes are nodes that generate data or transport it from other sources into
 
 ##Parameter
 ##Signal Generator
+
+###Attributes
+
+####Signal Type
+ The type of signal to generate.  	Sine, Square, Noise, Ramp, Sawtooth, Triangle, Brainwaves,
+
+
 ##OSC Input
 ##Session Time
 ##Cloud Input
@@ -28,6 +35,8 @@ Nodes in the **Output** category are used to transport result data from the clas
 
 #Math Nodes
 The **Math** category contains common mathematical functions, operations and simple algorithms like time domain statistic methods. 
+
+<---- fooo -->
 
 ##Function
 ##Operation
