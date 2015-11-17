@@ -40,8 +40,11 @@ The **Math** category contains common mathematical functions, operations and sim
 
 ##Function
 [//]: # (BeginNodeAttributes:Function)
-| Attribute | Type | Description | 
-| FooBar | String | BooFar.|
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
 [//]: # (EndNodeAttributes:Function)
 
 ##Operation
