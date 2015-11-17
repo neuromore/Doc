@@ -14,8 +14,11 @@ Input nodes are nodes that generate data or transport it from other sources into
 
 ###Attributes
 
-####Signal Type
- The type of signal to generate.  	Sine, Square, Noise, Ramp, Sawtooth, Triangle, Brainwaves,
+[//]: # (BeginNodeAttributes:Function)
+| Attribute | Description | Type | Allowed Values | 
+|-----------|-------------|:----:|:--------------:|
+| Signal Type | The type of the waveform to generate. | List | Sine, Square, Noise, Ramp, Sawtooth, Triangle, Brainwaves |
+[//]: # (EndNodeAttributes:Function)
 
 
 ##OSC Input
@@ -39,14 +42,6 @@ The **Math** category contains common mathematical functions, operations and sim
 
 
 ##Function
-[//]: # (BeginNodeAttributes:Function)
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
-[//]: # (EndNodeAttributes:Function)
-
 ##Operation
 ##Compare
 ##Logic
