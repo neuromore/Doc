@@ -137,7 +137,7 @@ This category contains all Other input nodes.
 | Amplitude | Amplitude of the waveform (half of peak-to-peak). Possible values are in the range [0.00 .. &infin;]. The default value is 1.00. |
 | DC-Offset | DC-Offset of the signal. Possible values are in the range [-&infin; .. &infin;]. The default value is 0.00. |
 
-![Signal Generator Node](../neuromoreStudio/Images/Nodes/Signal Generator Node.png)
+![Signal Generator Node](../neuromoreStudio/Images/Nodes/Signal%20Generator%20Node.png)
 
 
 
