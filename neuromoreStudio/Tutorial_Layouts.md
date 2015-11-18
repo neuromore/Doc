@@ -14,10 +14,10 @@ There are three different ways to switch between layouts:
 
 1. The fastest way is using the function keys (F1 to F0 depending on how many layouts you have created) on your keyboard. Remember that you additionally have to press the 'fn' key on OSX in order to make actually use the function actions.
 
-![Layout ComboBox](../neuromoreStudio/Images/Layouts/LayoutComboBox.png)
+	![Layout ComboBox](../neuromoreStudio/Images/Layouts/LayoutComboBox.png)
 
 2. Use the combo box on the top right to switch between layouts. Predefined layouts are at the top, your custom layouts are at the bottom.
 
-![Layout Menu](../neuromoreStudio/Images/Layouts/LayoutsMenu.png)
+	![Layout Menu](../neuromoreStudio/Images/Layouts/LayoutsMenu.png)
 
 3. Use the 'Layouts' menu entry to switch between layouts.
