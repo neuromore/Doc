@@ -18,9 +18,9 @@ Always have an empty line before and after lists, like with the chapter names. J
 
 This is a new text block where we want to embed an image. The image has to have a new line before and afterwards.
 
-![Extract](../neuromoreStudio/Images/Installation/01.png)
+![Extract](neuromoreStudio/Images/Installation/01.png)
 
-The image is located next to this text. So always put images before the text where it refers to.
+The image is located next to this text. So always put images before the text where it refers to. Use relative paths starting at the GitHub/Doc repository as root folder. For some of the markdown files this might mean first going up "../../" to the GitHub/Doc root folder before browsing down the hierarchy again. Here is an example of that: "../neuromoreStudio/Images/Installation/01.png". The file is located inside the "neuromoreStudio" folder, so we could skip this part "../neuromoreStudio/". It still needs to be done so that we can preview the files on the GitHub website while also our online documentation is able to locate the images.
 
 ###This is another Subsubchapter
 
