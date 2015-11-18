@@ -158,9 +158,9 @@ The parameter node outputs a constant value that can be set by the user.
 
 ## Signal Generator
 
-This node can generate different kinds of periodic waveforms, noise and simulated brain waves.
-
 ![Signal Generator Node Icon](../neuromoreStudio/Images/Nodes/Icons/4107b810-bb6b-11e4-8dfc-aa07a5b093db.png)
+
+This node can generate different kinds of periodic waveforms, noise and simulated brain waves.
 
 ![Signal Generator Node](../neuromoreStudio/Images/Nodes/Signal%20Generator%20Node.png)
 
@@ -178,9 +178,9 @@ This node can generate different kinds of periodic waveforms, noise and simulate
 
 ## OSC Input
 
-Receives float values from network clients or local clients via OSC. By default the Studio listens to UDP port 4545 but this can be changed in the settings.
-
 ![OSC Input Node Icon](../neuromoreStudio/Images/Nodes/Icons/15fd9b62-bb6b-11e4-8dfc-aa07a5b093db.png)
+
+Receives float values from network clients or local clients via OSC. By default the Studio listens to UDP port 4545 but this can be changed in the settings.
 
 ![OSC Input Node](../neuromoreStudio/Images/Nodes/OSC%20Input%20Node.png)
 
@@ -195,9 +195,9 @@ Receives float values from network clients or local clients via OSC. By default 
 
 ## Session Time
 
-Outputs the elapsed session time (time since the last reset of the classifier). The time can be output in different formats.
-
 ![Session Time Node Icon](../neuromoreStudio/Images/Nodes/Icons/36de4c1e-bb6b-11e4-8dfc-aa07a5b093db.png)
+
+Outputs the elapsed session time (time since the last reset of the classifier). The time can be output in different formats.
 
 ![Session Time Node](../neuromoreStudio/Images/Nodes/Session%20Time%20Node.png)
 
@@ -212,9 +212,9 @@ Outputs the elapsed session time (time since the last reset of the classifier). 
 
 ## Cloud Input
 
-The Cloud Input node can be used to retreive parameters that are stored in the neuromore Cloud. The value will be requested during a session start and doesn't change while it is running. To store parameters in the Cloud, use the Cloud Output node.
-
 ![Cloud Input Node Icon](../neuromoreStudio/Images/Nodes/Icons/b8f5f7b8-7cb0-11e5-8bcf-feff819cdc9f.png)
+
+The Cloud Input node can be used to retreive parameters that are stored in the neuromore Cloud. The value will be requested during a session start and doesn't change while it is running. To store parameters in the Cloud, use the Cloud Output node.
 
 ![Cloud Input Node](../neuromoreStudio/Images/Nodes/Cloud%20Input%20Node.png)
 
@@ -231,9 +231,9 @@ The Cloud Input node can be used to retreive parameters that are stored in the n
 
 ## File Reader
 
-Reads simple multi channel CSV files from the filesystem and outputs the values in a loop.
-
 ![File Reader Node Icon](../neuromoreStudio/Images/Nodes/Icons/93d9c13a-629d-11e5-9d70-feff819cdc9f.png)
+
+Reads simple multi channel CSV files from the filesystem and outputs the values in a loop.
 
 ![File Reader Node](../neuromoreStudio/Images/Nodes/File%20Reader%20Node.png)
 
@@ -253,10 +253,10 @@ This category contains all node that transport data out of the classifier, for e
 
 ## Custom Feedback
 
+![Custom Feedback Node Icon](../neuromoreStudio/Images/Nodes/Icons/27679c9e-bb6c-11e4-8dfc-aa07a5b093db.png)
+
 The default node to output classifier results. This node is used to stream a single data channel to neuromore Visualizations and to the Cloud report generation.
 Feedback values are also by default continously displayed in the Feedback History Plugin. It is recommended to use this node for the main classifier outputs like the calculated metrics or the user feedback path.
-
-![Custom Feedback Node Icon](../neuromoreStudio/Images/Nodes/Icons/27679c9e-bb6c-11e4-8dfc-aa07a5b093db.png)
 
 ![Custom Feedback Node](../neuromoreStudio/Images/Nodes/Custom%20Feedback%20Node.png)
 
@@ -277,9 +277,9 @@ Feedback values are also by default continously displayed in the Feedback Histor
 
 ## Body Feedback
 
-A special node used to stream heartrate and breathing rate to neuromore Visualizations. Behaves like the Custom Feedback node but has ports with a dedicated use.
-
 ![Body Feedback Node Icon](../neuromoreStudio/Images/Nodes/Icons/8efd1d32-e8e1-11e4-b02c-1681e6b88ec1.png)
+
+A special node used to stream heartrate and breathing rate to neuromore Visualizations. Behaves like the Custom Feedback node but has ports with a dedicated use.
 
 ![Body Feedback Node](../neuromoreStudio/Images/Nodes/Body%20Feedback%20Node.png)
 
@@ -296,9 +296,9 @@ A special node used to stream heartrate and breathing rate to neuromore Visualiz
 
 ## OSC Output
 
-This node is used to send OSC packets back into the network. It regularly outputs a single value to a specified address. The default port is UDP 45554 and can be chagned in the settings.
-
 ![OSC Output Node Icon](../neuromoreStudio/Images/Nodes/Icons/15fee7ea-2a35-11e5-b345-feff819cdc9f.png)
+
+This node is used to send OSC packets back into the network. It regularly outputs a single value to a specified address. The default port is UDP 45554 and can be chagned in the settings.
 
 ![OSC Output Node](../neuromoreStudio/Images/Nodes/OSC%20Output%20Node.png)
 
@@ -314,8 +314,9 @@ This node is used to send OSC packets back into the network. It regularly output
 
 ## Points
 
-The Points node can be used calculate an overall session score by integrating the (scaled) input over time. The value is also sent to neuromore Visualizations.
 ![Points Node Icon](../neuromoreStudio/Images/Nodes/Icons/30589b50-bb6c-11e4-8dfc-aa07a5b093db.png)
+
+The Points node can be used calculate an overall session score by integrating the (scaled) input over time. The value is also sent to neuromore Visualizations.
 
 ![Points Node](../neuromoreStudio/Images/Nodes/Points%20Node.png)
 
@@ -329,9 +330,9 @@ The Points node can be used calculate an overall session score by integrating th
 
 ## Cloud Output
 
-This node stores a single value in the neuromore Cloud and can be read back with the Cloud Input node. The value is only written after a session was completed successfully.
-
 ![Cloud Output Node Icon](../neuromoreStudio/Images/Nodes/Icons/b8f5fc04-7cb0-11e5-8bcf-feff819cdc9f.png)
+
+This node stores a single value in the neuromore Cloud and can be read back with the Cloud Input node. The value is only written after a session was completed successfully.
 
 ![Cloud Output Node](../neuromoreStudio/Images/Nodes/Cloud%20Output%20Node.png)
 
@@ -346,9 +347,9 @@ This node stores a single value in the neuromore Cloud and can be read back with
 
 ## File Writer
 
-The File Writer node can write simple CSV files to the filesystem. The files can be read back with the File Reader node.
-
 ![File Writer Node Icon](../neuromoreStudio/Images/Nodes/Icons/edca7a3e-7519-11e5-8bcf-feff819cdc9f.png)
+
+The File Writer node can write simple CSV files to the filesystem. The files can be read back with the File Reader node.
 
 ![File Writer Node](../neuromoreStudio/Images/Nodes/File%20Writer%20Node.png)
 
@@ -370,17 +371,19 @@ This category contains common mathematical functions and methods.
 
 ![Function Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdc17a98-bb6b-11e4-8dfc-aa07a5b093db.png)
 
+Mathematical operations like sine and abs.
+
 ![Function Node](../neuromoreStudio/Images/Nodes/Function%20Node.png)
 
-This node has no attributes.
+[//]: # (Function:Attributes)
 
 
 
 ## Operation
 
-Mathematical operations like addition and multiplication.
-
 ![Operation Node Icon](../neuromoreStudio/Images/Nodes/Icons/db5e2da4-bb6b-11e4-8dfc-aa07a5b093db.png)
+
+Mathematical operations like addition and multiplication.
 
 ![Operation Node](../neuromoreStudio/Images/Nodes/Operation%20Node.png)
 
@@ -395,9 +398,9 @@ Mathematical operations like addition and multiplication.
 
 ## Compare
 
-This node compares two values, either from to channels or a single channel against a static value.
-
 ![Compare Node Icon](../neuromoreStudio/Images/Nodes/Icons/a7cd7d14-bb6b-11e4-8dfc-aa07a5b093db.png)
+
+This node compares two values, either from to channels or a single channel against a static value.
 
 ![Compare Node](../neuromoreStudio/Images/Nodes/Compare%20Node.png)
 
@@ -416,9 +419,9 @@ This node compares two values, either from to channels or a single channel again
 
 ## Logic
 
-The Logic node provides boolean operations. A value of 0.0 is interpreted as `false`, every other value as `true`.
-
 ![Logic Node Icon](../neuromoreStudio/Images/Nodes/Icons/73b7ecb2-bb6b-11e4-8dfc-aa07a5b093db.png)
+
+The Logic node provides boolean operations. A value of 0.0 is interpreted as `false`, every other value as `true`.
 
 ![Logic Node](../neuromoreStudio/Images/Nodes/Logic%20Node.png)
 
@@ -435,9 +438,9 @@ The Logic node provides boolean operations. A value of 0.0 is interpreted as `fa
 
 ## Remap
 
-Map a value from one value range into another with a linear transform.
-
 ![Remap Node Icon](../neuromoreStudio/Images/Nodes/Icons/01b36c94-bb6c-11e4-8dfc-aa07a5b093db.png)
+
+Map a value from one value range into another with a linear transform.
 
 ![Remap Node](../neuromoreStudio/Images/Nodes/Remap%20Node.png)
 
@@ -454,9 +457,9 @@ Map a value from one value range into another with a linear transform.
 
 ## Channel Math
 
-Use this node to apply mathematical operations accross multiple channels, for example to calculate the average of a list of signals. This node has dynamic input ports, meaning that ports are automatically added as you connect signals.
-
 ![Channel Math Node Icon](../neuromoreStudio/Images/Nodes/Icons/deadc8ee-cd6c-11e4-afdc-1681e6b88ec1.png)
+
+Use this node to apply mathematical operations accross multiple channels, for example to calculate the average of a list of signals. This node has dynamic input ports, meaning that ports are automatically added as you connect signals.
 
 ![Channel Math Node](../neuromoreStudio/Images/Nodes/Channel%20Math%20Node.png)
 
@@ -470,9 +473,9 @@ Use this node to apply mathematical operations accross multiple channels, for ex
 
 ## Statistics
 
-Common univariate statistic methods in the time domain.
-
 ![Statistics Node Icon](../neuromoreStudio/Images/Nodes/Icons/ad13b064-bb6a-11e4-8dfc-aa07a5b093db.png)
+
+Common univariate statistic methods in the time domain.
 
 ![Statistics Node](../neuromoreStudio/Images/Nodes/Statistics%20Node.png)
 
@@ -488,9 +491,9 @@ Common univariate statistic methods in the time domain.
 
 ## Threshold
 
-The Threshold node counts the number of samples within an epoch that meet a certain condition and calculates the ratio to the number of samples that did not.
-
 ![Threshold Node Icon](../neuromoreStudio/Images/Nodes/Icons/93eb63fc-5962-11e5-885d-feff819cdc9f.png)
+
+The Threshold node counts the number of samples within an epoch that meet a certain condition and calculates the ratio to the number of samples that did not.
 
 ![Threshold Node](../neuromoreStudio/Images/Nodes/Threshold%20Node.png)
 
@@ -511,9 +514,9 @@ This category contains all advanced digital signal processing nodes.
 
 ## FFT
 
-The FFT node calculates the frequency spectrum (PSD) of an epoch using the fast fourier transform algorithm. Supports windowing.
-
 ![FFT Node Icon](../neuromoreStudio/Images/Nodes/Icons/316ff94a-bb6a-11e4-8dfc-aa07a5b093db.png)
+
+The FFT node calculates the frequency spectrum (PSD) of an epoch using the fast fourier transform algorithm. Supports windowing.
 
 ![FFT Node](../neuromoreStudio/Images/Nodes/FFT%20Node.png)
 
@@ -529,9 +532,9 @@ The FFT node calculates the frequency spectrum (PSD) of an epoch using the fast 
 
 ## IIR/FIR Filter
 
-This node provides common types of lowpass/highpass/bandpass and notch filters. The user can specify the filter configuration and it will be generated accordingly. Note: We currently only support the Butterworth filter.
-
 ![IIR/FIR Filter Node Icon](../neuromoreStudio/Images/Nodes/Icons/70144f84-bb6a-11e4-8dfc-aa07a5b093db.png)
+
+This node provides common types of lowpass/highpass/bandpass and notch filters. The user can specify the filter configuration and it will be generated accordingly. Note: We currently only support the Butterworth filter.
 
 ![IIR/FIR Filter Node](../neuromoreStudio/Images/Nodes/IIR/FIR%20Filter%20Node.png)
 
@@ -548,9 +551,9 @@ This node provides common types of lowpass/highpass/bandpass and notch filters. 
 
 ## Frequency Band
 
-Calculates the average magnitude of the spectrum bins within a given frequency range. Attach this node behind an FFT node to calculate things like the Alpha magnitude.
-
 ![Frequency Band Node Icon](../neuromoreStudio/Images/Nodes/Icons/5f6d9a32-bb6a-11e4-8dfc-aa07a5b093db.png)
+
+Calculates the average magnitude of the spectrum bins within a given frequency range. Attach this node behind an FFT node to calculate things like the Alpha magnitude.
 
 ![Frequency Band Node](../neuromoreStudio/Images/Nodes/Frequency%20Band%20Node.png)
 
@@ -566,9 +569,9 @@ Calculates the average magnitude of the spectrum bins within a given frequency r
 
 ## Dominant Frequency
 
-Outputs the dominant frequency of a signal (the frequency of the bin from the spectrum that has the highest magnitude).
-
 ![Dominant Frequency Node Icon](../neuromoreStudio/Images/Nodes/Icons/1c9c0568-bb6a-11e4-8dfc-aa07a5b093db.png)
+
+Outputs the dominant frequency of a signal (the frequency of the bin from the spectrum that has the highest magnitude).
 
 ![Dominant Frequency Node](../neuromoreStudio/Images/Nodes/Dominant%20Frequency%20Node.png)
 
@@ -584,9 +587,9 @@ Outputs the dominant frequency of a signal (the frequency of the bin from the sp
 
 ## Biquad Filter
 
-A simple node for implementing biquad filters directly from the filter parameters.
-
 ![Biquad Filter Node Icon](../neuromoreStudio/Images/Nodes/Icons/e50bc5c6-c333-11e4-8dfc-aa07a5b093db.png)
+
+A simple node for implementing biquad filters directly from the filter parameters.
 
 ![Biquad Filter Node](../neuromoreStudio/Images/Nodes/Biquad%20Filter%20Node.png)
 
@@ -605,9 +608,9 @@ A simple node for implementing biquad filters directly from the filter parameter
 
 ## Select Bins
 
-This node transforms a spectrum channel into a list of single channels, one for each bin inside the spectrum. Use this node to access individual bins of a spectrum, or to apply operations accross all bins with a Channel Math node.
-
 ![Select Bins Node Icon](../neuromoreStudio/Images/Nodes/Icons/44dec436-66c6-11e5-9d70-feff819cdc9f.png)
+
+This node transforms a spectrum channel into a list of single channels, one for each bin inside the spectrum. Use this node to access individual bins of a spectrum, or to apply operations accross all bins with a Channel Math node.
 
 ![Select Bins Node](../neuromoreStudio/Images/Nodes/Select%20Bins%20Node.png)
 
@@ -628,9 +631,9 @@ This category contains all Nodes for bio feedback and bio signal analysis.
 
 ## HRV Analysis
 
-The HRV Analysis node supports common heart rate variability metrics. It requires a channel with raw RR intervals from a heart rate sensor. Note that this node is currently only available in the OSX version.
-
 ![HRV Analysis Node Icon](../neuromoreStudio/Images/Nodes/Icons/b56e59fc-65d9-11e5-9d70-feff819cdc9f.png)
+
+The HRV Analysis node supports common heart rate variability metrics. It requires a channel with raw RR intervals from a heart rate sensor. Note that this node is currently only available in the OSX version.
 
 ![HRV Analysis Node](../neuromoreStudio/Images/Nodes/HRV%20Analysis%20Node.png)
 
@@ -649,9 +652,9 @@ This category contains all utility nodes and nodes for channel management.
 
 ## Smoothing
 
-The Smoothing node removes noise and steps from an input signal by interpolating between the last outputted value and the currently received value. Note that you shouldn't use this as a lowpass filter, use the IIR Filter instead.
-
 ![Smoothing Node Icon](../neuromoreStudio/Images/Nodes/Icons/18994938-bb6c-11e4-8dfc-aa07a5b093db.png)
+
+The Smoothing node removes noise and steps from an input signal by interpolating between the last outputted value and the currently received value. Note that you shouldn't use this as a lowpass filter, use the IIR Filter instead.
 
 ![Smoothing Node](../neuromoreStudio/Images/Nodes/Smoothing%20Node.png)
 
@@ -666,9 +669,9 @@ The Smoothing node removes noise and steps from an input signal by interpolating
 
 ## Delay
 
-Delays the input signal by a certain amount of time or number of samples. The node will output *0.00* until the delay time is reached.
-
 ![Delay Node Icon](../neuromoreStudio/Images/Nodes/Icons/f903a81e-e39a-11e4-8a00-1681e6b88ec1.png)
+
+Delays the input signal by a certain amount of time or number of samples. The node will output *0.00* until the delay time is reached.
 
 ![Delay Node](../neuromoreStudio/Images/Nodes/Delay%20Node.png)
 
@@ -684,9 +687,9 @@ Delays the input signal by a certain amount of time or number of samples. The no
 
 ## Resample
 
-Changes the sample rate of a signal.
-
 ![Resample Node Icon](../neuromoreStudio/Images/Nodes/Icons/1b964922-ed96-11e4-90ec-1681e6b88ec1.png)
+
+Changes the sample rate of a signal.
 
 ![Resample Node](../neuromoreStudio/Images/Nodes/Resample%20Node.png)
 
@@ -701,10 +704,9 @@ Changes the sample rate of a signal.
 
 ## Freeze
 
-Forwards all samples until a certain amount of time is reached and then outputs the last value continou.sly
-
-
 ![Freeze Node Icon](../neuromoreStudio/Images/Nodes/Icons/c7d68110-f7d8-11e4-a322-1697f925ec7b.png)
+
+Forwards all samples until a certain amount of time is reached and then outputs the last value continously.
 
 ![Freeze Node](../neuromoreStudio/Images/Nodes/Freeze%20Node.png)
 
@@ -719,9 +721,9 @@ Forwards all samples until a certain amount of time is reached and then outputs 
 
 ## Merge Channels
 
-Combine several single or multi channels into one multi channel.
-
 ![Merge Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd1692e8-047b-11e5-8418-1697f925ec7b.png)
+
+Combine several single or multi channels into one multi channel.
 
 ![Merge Channels Node](../neuromoreStudio/Images/Nodes/Merge%20Channels%20Node.png)
 
@@ -731,9 +733,9 @@ This node has no attributes.
 
 ## Select Channels
 
-Gives access to all the single channels inside a multi channel.
-
 ![Select Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd168f5a-047b-11e5-8418-1697f925ec7b.png)
+
+Gives access to all the single channels inside a multi channel.
 
 ![Select Channels Node](../neuromoreStudio/Images/Nodes/Select%20Channels%20Node.png)
 
@@ -747,9 +749,9 @@ Gives access to all the single channels inside a multi channel.
 
 ## View
 
-Displays the input signals inside the View Plugin.
-
 ![View Node Icon](../neuromoreStudio/Images/Nodes/Icons/8b55d922-3200-11e5-a151-feff819cdc9f.png)
+
+Displays the input signals inside the View Plugin.
 
 ![View Node](../neuromoreStudio/Images/Nodes/View%20Node.png)
 
@@ -764,9 +766,9 @@ Displays the input signals inside the View Plugin.
 
 ## Rename
 
-Rename a channel.
-
 ![Rename Node Icon](../neuromoreStudio/Images/Nodes/Icons/81d10cd4-3d48-11e5-a151-feff819cdc9f.png)
+
+Rename a channel.
 
 ![Rename Node](../neuromoreStudio/Images/Nodes/Rename%20Node.png)
 
