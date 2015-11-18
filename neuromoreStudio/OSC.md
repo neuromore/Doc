@@ -1,7 +1,8 @@
-#OSC Tutorial
+#Introduction
+
 neuromore Studio comes with OSC input and output capabilities for communicating with it, controlling external software and machinery, and feeding in data from custom sources.
 
-##Feeding custom data to neuromore Studio
+#Feeding custom data to neuromore Studio
 
 We for sure don’t support every data source that you can imagine. That is why we provide a way to send custom values from your sources (like biosensors, accelerometers, joysticks, other software) via UDP network messages using the Open Sound Protocol (http://opensoundcontrol.org). OSC helper libraries are available for nearly every programming language.
 
@@ -21,7 +22,7 @@ Now you can open up neuromore Studio, create a new or load your already existing
 
 Note that incoming OSC values get resampled to a constant sample rate to comply with our signal processing principles. This means that you don’t need to make sure that OSC messages come in with a fixed timing, we’ll take care of that. In case you work with a different sample rate inside your classifier, please adjust the node’s sample rate.
 
-##Reading data from classifiers
+#Reading data from classifiers
 
 Next to feeding in custom values, you can also send given values of your classifier inside neuromore Studio via OSC network messages to an external place. This can be e.g. used to drive your visualizations, generate sounds, set the color of your Wifi connected lights or anything else that can read OSC network messages.
 
@@ -33,7 +34,7 @@ To send custom OSC network messages from neuromore Studio, our classifier needs 
 
 As described in the feeding section of this tutorial, the values sent by the OSC output nodes can be checked using the OSC Data Monitor (see screenshot below). Please make sure that you connected an input to the OSC output node. It only sends network messages with a valid input. Note that the default port for outgoing OSC network messages in neuromore Studio is 32767.
 
-##OSC settings in neuromore Studio
+#OSC settings in neuromore Studio
 
 ![Network settings](../neuromoreStudio/Images/OSC/05.png)
 

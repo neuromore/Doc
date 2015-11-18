@@ -30,11 +30,11 @@
 
   <!-- neuromore style -->
   <link href='css/style.css' rel='stylesheet'>
-
 </head>
 
 
-<body role='flatdoc' class="big-h3">
+<body role='flatdoc'>
+
   <nav class="headline">
     <div class="subnav" id="main_menu"></div>
   </nav>
@@ -45,8 +45,8 @@
   <div class='content-root pushContent'>
     <div role='flatdoc-content' class='content'></div>
   </div>
-</body>
-</html>
+
+
 
 
 <script>
@@ -103,4 +103,7 @@
     var link = data.rootUrl+data.chapters[parameters.cat].subchapters[parameters.page].relative;
     Flatdoc.run({fetcher: Flatdoc.file(link)});
   });
+
 </script>
+</body>
+</html>

@@ -1,6 +1,4 @@
-#Biosensors
-
-##OpenBCI
+#OpenBCI
 
 ![OpenBCI](../neuromoreStudio/Images/Biosensors/OpenBCI.png)
 
@@ -12,7 +10,7 @@ neuromore Studio will automatically detect the OpenBCI and show it in the interf
 
 Supported Platforms: Windows, OSX
 
-##InteraXon Muse
+#InteraXon Muse
 
 ![InteraXon Muse](../neuromoreStudio/Images/Biosensors/InteraXonMuse.png)
 
@@ -24,7 +22,7 @@ Please note that a special Muse IO version is required to run it with OSX. There
 
 Supported Platforms: Windows, OSX
 
-##Emotiv EPOC
+#Emotiv EPOC
 
 ![Emotiv EPOC](../neuromoreStudio/Images/Biosensors/EmotivEPOC.png)
 
@@ -32,7 +30,7 @@ Plug in your dongle and turn on the EPOC either before you start or while neurom
 
 Supported Platforms: Windows only
 
-##Emotiv Insight
+#Emotiv Insight
 
 ![Emotiv Insight](../neuromoreStudio/Images/Biosensors/EmotivInsight.png)
 
@@ -40,7 +38,7 @@ Plug in your dongle and turn on your Insight. Feel free to open neuromore Studio
 
 Supported Platforms: Windows only
 
-##SenseLabs Versus
+#SenseLabs Versus
 
 ![Versus](../neuromoreStudio/Images/Biosensors/Versus.png)
 
@@ -48,7 +46,7 @@ We do not support the consumer Bluetooth LE version of the Versus. neuromore Stu
 
 Supported Platforms: Windows only
 
-##Advanced Brain Monitoring X4, X10 and X24
+#Advanced Brain Monitoring X4, X10 and X24
 
 ![B-Alert X24](../neuromoreStudio/Images/Biosensors/BAlertX24.png)
 
@@ -56,7 +54,7 @@ Currently in development.
 
 Supported Platforms: Windows only
 
-##Mitsar EEG 201-21, 202-24 and 202-31
+#Mitsar EEG 201-21, 202-24 and 202-31
 
 ![Mitsar](../neuromoreStudio/Images/Biosensors/MitsarEEG202-31.png)
 
@@ -64,7 +62,7 @@ Currently in development.
 
 Supported Platforms: Windows only
 
-##Bluetooth Smart Heart Rate Sensors
+#Bluetooth Smart Heart Rate Sensors
 
 ![BTLE Heart Rate Sensor](../neuromoreStudio/Images/Biosensors/BluetoothSmartDevice.png)
 

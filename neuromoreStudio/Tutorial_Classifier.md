@@ -1,6 +1,6 @@
 #Under Construction
 
-#Classifier
+#Introduction
 
 Classifiers are the essence of our tool. They define how the signal processing pipeline looks like and can be e.g. used to translate raw biosensor data into meaningful values. After starting the application, no classifier is loaded. In order to load a classifier from the neuromore Cloud, simply click on the desired classifier item  in the back-end file system window.
 
