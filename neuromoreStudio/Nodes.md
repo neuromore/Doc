@@ -1,13 +1,12 @@
 # Nodes
 
 
-# Sensor Nodes 
+# Sensors Nodes 
 This category contains all Input device nodes.
 
 ## Test System
 
 ![Test System Node Icon](../neuromoreStudio/Images/Nodes/Icons/f6708456-bb6c-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Test System Node](../neuromoreStudio/Images/Nodes/Test%20System%20Node.png)
 
@@ -21,7 +20,6 @@ This category contains all Input device nodes.
 
 ![Muse Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdbd7ec4-bb6c-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Muse Node](../neuromoreStudio/Images/Nodes/Muse%20Node.png)
 
 | Attribute | Description |
@@ -33,7 +31,6 @@ This category contains all Input device nodes.
 ## NeuroSky
 
 ![NeuroSky Node Icon](../neuromoreStudio/Images/Nodes/Icons/d676273c-bb6c-11e4-8dfc-aa07a5b093db.png)
-
 
 ![NeuroSky Node](../neuromoreStudio/Images/Nodes/NeuroSky%20Node.png)
 
@@ -47,8 +44,19 @@ This category contains all Input device nodes.
 
 ![EPOC Node Icon](../neuromoreStudio/Images/Nodes/Icons/ab23060c-02d6-11e5-a322-1697f925ec7b.png)
 
-
 ![EPOC Node](../neuromoreStudio/Images/Nodes/EPOC%20Node.png)
+
+| Attribute | Description |
+|-----------|-------------|
+| Upload | Upload the data stream to neuromore Cloud after a successful session. This is a boolean value (on/off). |
+| Device ID | In case you have connected multiple devices of the same Type, use this ID to specify which one this node uses Possible values are in the range [1 .. &infin;]. The default value is 1. |
+
+
+## Insight
+
+![Insight Node Icon](../neuromoreStudio/Images/Nodes/Icons/d1b7f0d4-2eaf-11e5-9184-feff819cdc9f.png)
+
+![Insight Node](../neuromoreStudio/Images/Nodes/Insight%20Node.png)
 
 | Attribute | Description |
 |-----------|-------------|
@@ -59,7 +67,6 @@ This category contains all Input device nodes.
 ## OpenBCI
 
 ![OpenBCI Node Icon](../neuromoreStudio/Images/Nodes/Icons/283fc2da-fe1b-11e4-a322-1697f925ec7b.png)
-
 
 ![OpenBCI Node](../neuromoreStudio/Images/Nodes/OpenBCI%20Node.png)
 
@@ -73,7 +80,6 @@ This category contains all Input device nodes.
 
 ![Heartrate Node Icon](../neuromoreStudio/Images/Nodes/Icons/db98a1d4-5d71-11e5-885d-feff819cdc9f.png)
 
-
 ![Heartrate Node](../neuromoreStudio/Images/Nodes/Heartrate%20Node.png)
 
 | Attribute | Description |
@@ -86,7 +92,6 @@ This category contains all Input device nodes.
 
 ![Accelerometer Node Icon](../neuromoreStudio/Images/Nodes/Icons/db98ef86-5d71-11e5-885d-feff819cdc9f.png)
 
-
 ![Accelerometer Node](../neuromoreStudio/Images/Nodes/Accelerometer%20Node.png)
 
 | Attribute | Description |
@@ -98,7 +103,6 @@ This category contains all Input device nodes.
 ## Gyroscope
 
 ![Gyroscope Node Icon](../neuromoreStudio/Images/Nodes/Icons/db98aad0-5d71-11e5-885d-feff819cdc9f.png)
-
 
 ![Gyroscope Node](../neuromoreStudio/Images/Nodes/Gyroscope%20Node.png)
 
@@ -115,7 +119,6 @@ This category contains all Other input nodes.
 
 ![Parameter Node Icon](../neuromoreStudio/Images/Nodes/Icons/0a2f1004-bb6b-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Parameter Node](../neuromoreStudio/Images/Nodes/Parameter%20Node.png)
 
 | Attribute | Description |
@@ -127,7 +130,6 @@ This category contains all Other input nodes.
 ## Signal Generator
 
 ![Signal Generator Node Icon](../neuromoreStudio/Images/Nodes/Icons/4107b810-bb6b-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Signal Generator Node](../neuromoreStudio/Images/Nodes/Signal%20Generator%20Node.png)
 
@@ -144,7 +146,6 @@ This category contains all Other input nodes.
 
 ![OSC Input Node Icon](../neuromoreStudio/Images/Nodes/Icons/15fd9b62-bb6b-11e4-8dfc-aa07a5b093db.png)
 
-
 ![OSC Input Node](../neuromoreStudio/Images/Nodes/OSC%20Input%20Node.png)
 
 | Attribute | Description |
@@ -157,7 +158,6 @@ This category contains all Other input nodes.
 
 ![Session Time Node Icon](../neuromoreStudio/Images/Nodes/Icons/36de4c1e-bb6b-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Session Time Node](../neuromoreStudio/Images/Nodes/Session%20Time%20Node.png)
 
 | Attribute | Description |
@@ -169,7 +169,6 @@ This category contains all Other input nodes.
 ## Cloud Input
 
 ![Cloud Input Node Icon](../neuromoreStudio/Images/Nodes/Icons/b8f5f7b8-7cb0-11e5-8bcf-feff819cdc9f.png)
-
 
 ![Cloud Input Node](../neuromoreStudio/Images/Nodes/Cloud%20Input%20Node.png)
 
@@ -184,7 +183,6 @@ This category contains all Other input nodes.
 ## File Reader
 
 ![File Reader Node Icon](../neuromoreStudio/Images/Nodes/Icons/93d9c13a-629d-11e5-9d70-feff819cdc9f.png)
-
 
 ![File Reader Node](../neuromoreStudio/Images/Nodes/File%20Reader%20Node.png)
 
@@ -201,7 +199,6 @@ This category contains all Output Nodes.
 ## Custom Feedback
 
 ![Custom Feedback Node Icon](../neuromoreStudio/Images/Nodes/Icons/27679c9e-bb6c-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Custom Feedback Node](../neuromoreStudio/Images/Nodes/Custom%20Feedback%20Node.png)
 
@@ -221,7 +218,6 @@ This category contains all Output Nodes.
 
 ![Body Feedback Node Icon](../neuromoreStudio/Images/Nodes/Icons/8efd1d32-e8e1-11e4-b02c-1681e6b88ec1.png)
 
-
 ![Body Feedback Node](../neuromoreStudio/Images/Nodes/Body%20Feedback%20Node.png)
 
 | Attribute | Description |
@@ -236,7 +232,6 @@ This category contains all Output Nodes.
 
 ![OSC Output Node Icon](../neuromoreStudio/Images/Nodes/Icons/15fee7ea-2a35-11e5-b345-feff819cdc9f.png)
 
-
 ![OSC Output Node](../neuromoreStudio/Images/Nodes/OSC%20Output%20Node.png)
 
 | Attribute | Description |
@@ -250,7 +245,6 @@ This category contains all Output Nodes.
 
 ![Points Node Icon](../neuromoreStudio/Images/Nodes/Icons/30589b50-bb6c-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Points Node](../neuromoreStudio/Images/Nodes/Points%20Node.png)
 
 | Attribute | Description |
@@ -261,7 +255,6 @@ This category contains all Output Nodes.
 ## Cloud Output
 
 ![Cloud Output Node Icon](../neuromoreStudio/Images/Nodes/Icons/b8f5fc04-7cb0-11e5-8bcf-feff819cdc9f.png)
-
 
 ![Cloud Output Node](../neuromoreStudio/Images/Nodes/Cloud%20Output%20Node.png)
 
@@ -274,7 +267,6 @@ This category contains all Output Nodes.
 ## File Writer
 
 ![File Writer Node Icon](../neuromoreStudio/Images/Nodes/Icons/edca7a3e-7519-11e5-8bcf-feff819cdc9f.png)
-
 
 ![File Writer Node](../neuromoreStudio/Images/Nodes/File%20Writer%20Node.png)
 
@@ -292,7 +284,6 @@ This category contains all Simple mathematical node.
 
 ![Function Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdc17a98-bb6b-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Function Node](../neuromoreStudio/Images/Nodes/Function%20Node.png)
 
 This node has no attributes.
@@ -301,7 +292,6 @@ This node has no attributes.
 ## Operation
 
 ![Operation Node Icon](../neuromoreStudio/Images/Nodes/Icons/db5e2da4-bb6b-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Operation Node](../neuromoreStudio/Images/Nodes/Operation%20Node.png)
 
@@ -314,7 +304,6 @@ This node has no attributes.
 ## Compare
 
 ![Compare Node Icon](../neuromoreStudio/Images/Nodes/Icons/a7cd7d14-bb6b-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Compare Node](../neuromoreStudio/Images/Nodes/Compare%20Node.png)
 
@@ -332,7 +321,6 @@ This node has no attributes.
 
 ![Logic Node Icon](../neuromoreStudio/Images/Nodes/Icons/73b7ecb2-bb6b-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Logic Node](../neuromoreStudio/Images/Nodes/Logic%20Node.png)
 
 | Attribute | Description |
@@ -346,7 +334,6 @@ This node has no attributes.
 ## Remap
 
 ![Remap Node Icon](../neuromoreStudio/Images/Nodes/Icons/01b36c94-bb6c-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Remap Node](../neuromoreStudio/Images/Nodes/Remap%20Node.png)
 
@@ -362,7 +349,6 @@ This node has no attributes.
 
 ![Channel Math Node Icon](../neuromoreStudio/Images/Nodes/Icons/deadc8ee-cd6c-11e4-afdc-1681e6b88ec1.png)
 
-
 ![Channel Math Node](../neuromoreStudio/Images/Nodes/Channel%20Math%20Node.png)
 
 | Attribute | Description |
@@ -373,7 +359,6 @@ This node has no attributes.
 ## Statistics
 
 ![Statistics Node Icon](../neuromoreStudio/Images/Nodes/Icons/ad13b064-bb6a-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Statistics Node](../neuromoreStudio/Images/Nodes/Statistics%20Node.png)
 
@@ -387,7 +372,6 @@ This node has no attributes.
 ## Threshold
 
 ![Threshold Node Icon](../neuromoreStudio/Images/Nodes/Icons/93eb63fc-5962-11e5-885d-feff819cdc9f.png)
-
 
 ![Threshold Node](../neuromoreStudio/Images/Nodes/Threshold%20Node.png)
 
@@ -406,7 +390,6 @@ This category contains all Advanced digital signal processing nodes.
 
 ![FFT Node Icon](../neuromoreStudio/Images/Nodes/Icons/316ff94a-bb6a-11e4-8dfc-aa07a5b093db.png)
 
-
 ![FFT Node](../neuromoreStudio/Images/Nodes/FFT%20Node.png)
 
 | Attribute | Description |
@@ -419,7 +402,6 @@ This category contains all Advanced digital signal processing nodes.
 ## IIR/FIR Filter
 
 ![IIR/FIR Filter Node Icon](../neuromoreStudio/Images/Nodes/Icons/70144f84-bb6a-11e4-8dfc-aa07a5b093db.png)
-
 
 ![IIR/FIR Filter Node](../neuromoreStudio/Images/Nodes/IIR/FIR%20Filter%20Node.png)
 
@@ -435,7 +417,6 @@ This category contains all Advanced digital signal processing nodes.
 
 ![Frequency Band Node Icon](../neuromoreStudio/Images/Nodes/Icons/5f6d9a32-bb6a-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Frequency Band Node](../neuromoreStudio/Images/Nodes/Frequency%20Band%20Node.png)
 
 | Attribute | Description |
@@ -449,7 +430,6 @@ This category contains all Advanced digital signal processing nodes.
 
 ![Dominant Frequency Node Icon](../neuromoreStudio/Images/Nodes/Icons/1c9c0568-bb6a-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Dominant Frequency Node](../neuromoreStudio/Images/Nodes/Dominant%20Frequency%20Node.png)
 
 | Attribute | Description |
@@ -462,7 +442,6 @@ This category contains all Advanced digital signal processing nodes.
 ## Biquad Filter
 
 ![Biquad Filter Node Icon](../neuromoreStudio/Images/Nodes/Icons/e50bc5c6-c333-11e4-8dfc-aa07a5b093db.png)
-
 
 ![Biquad Filter Node](../neuromoreStudio/Images/Nodes/Biquad%20Filter%20Node.png)
 
@@ -479,7 +458,6 @@ This category contains all Advanced digital signal processing nodes.
 ## Select Bins
 
 ![Select Bins Node Icon](../neuromoreStudio/Images/Nodes/Icons/44dec436-66c6-11e5-9d70-feff819cdc9f.png)
-
 
 ![Select Bins Node](../neuromoreStudio/Images/Nodes/Select%20Bins%20Node.png)
 
@@ -498,7 +476,6 @@ This category contains all Nodes for bio feedback and bio signal analysis.
 
 ![HRV Analysis Node Icon](../neuromoreStudio/Images/Nodes/Icons/b56e59fc-65d9-11e5-9d70-feff819cdc9f.png)
 
-
 ![HRV Analysis Node](../neuromoreStudio/Images/Nodes/HRV%20Analysis%20Node.png)
 
 | Attribute | Description |
@@ -514,7 +491,6 @@ This category contains all Utilitys and nodes for channel management.
 
 ![Smoothing Node Icon](../neuromoreStudio/Images/Nodes/Icons/18994938-bb6c-11e4-8dfc-aa07a5b093db.png)
 
-
 ![Smoothing Node](../neuromoreStudio/Images/Nodes/Smoothing%20Node.png)
 
 | Attribute | Description |
@@ -526,7 +502,6 @@ This category contains all Utilitys and nodes for channel management.
 ## Delay
 
 ![Delay Node Icon](../neuromoreStudio/Images/Nodes/Icons/f903a81e-e39a-11e4-8a00-1681e6b88ec1.png)
-
 
 ![Delay Node](../neuromoreStudio/Images/Nodes/Delay%20Node.png)
 
@@ -541,7 +516,6 @@ This category contains all Utilitys and nodes for channel management.
 
 ![Resample Node Icon](../neuromoreStudio/Images/Nodes/Icons/1b964922-ed96-11e4-90ec-1681e6b88ec1.png)
 
-
 ![Resample Node](../neuromoreStudio/Images/Nodes/Resample%20Node.png)
 
 | Attribute | Description |
@@ -553,7 +527,6 @@ This category contains all Utilitys and nodes for channel management.
 ## Freeze
 
 ![Freeze Node Icon](../neuromoreStudio/Images/Nodes/Icons/c7d68110-f7d8-11e4-a322-1697f925ec7b.png)
-
 
 ![Freeze Node](../neuromoreStudio/Images/Nodes/Freeze%20Node.png)
 
@@ -567,7 +540,6 @@ This category contains all Utilitys and nodes for channel management.
 
 ![Merge Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd1692e8-047b-11e5-8418-1697f925ec7b.png)
 
-
 ![Merge Channels Node](../neuromoreStudio/Images/Nodes/Merge%20Channels%20Node.png)
 
 This node has no attributes.
@@ -576,7 +548,6 @@ This node has no attributes.
 ## Select Channels
 
 ![Select Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd168f5a-047b-11e5-8418-1697f925ec7b.png)
-
 
 ![Select Channels Node](../neuromoreStudio/Images/Nodes/Select%20Channels%20Node.png)
 
@@ -589,7 +560,6 @@ This node has no attributes.
 
 ![View Node Icon](../neuromoreStudio/Images/Nodes/Icons/8b55d922-3200-11e5-a151-feff819cdc9f.png)
 
-
 ![View Node](../neuromoreStudio/Images/Nodes/View%20Node.png)
 
 | Attribute | Description |
@@ -601,7 +571,6 @@ This node has no attributes.
 ## Rename
 
 ![Rename Node Icon](../neuromoreStudio/Images/Nodes/Icons/81d10cd4-3d48-11e5-a151-feff819cdc9f.png)
-
 
 ![Rename Node](../neuromoreStudio/Images/Nodes/Rename%20Node.png)
 
