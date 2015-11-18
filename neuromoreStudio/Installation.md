@@ -25,7 +25,7 @@ neuromore Studio will be automatically started after the installation process fi
 
 #OSX
 
-###1. Download
+##1. Download
 
 Please download the latest neuromore Studio .dmg file from the 'Downloads' section inside the user portal (https://account.neuromore.com).
 
