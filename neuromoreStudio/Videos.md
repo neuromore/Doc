@@ -1,5 +1,3 @@
-#Tutorial Videos
-
 #Basics
 
 [Working with Windows and Layouts](https://www.youtube.com/watch?list=PL1yAHNCAht_p8-lOxhpkcQ2grg4fp-elH&time_continue=1&v=hN6JL0T58c0)

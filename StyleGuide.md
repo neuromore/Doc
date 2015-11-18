@@ -1,14 +1,34 @@
-#Chapter
+#Introduction
 
-Only use one main chapter at the very top. Do a brief introduction about what this markdown file is about before using subchapters. Always put one new line between a chapter and the text and afterwards again.
+Explain what this chapter is about. This chapter is about how to extend the documentation. We will first walk through how to create a new markdown file and how to embed it into the documentation structure and then move on to a style guide for the markdowns.
 
-##Subchapter on Signal Processing
+#Creating a chapter
 
-Begin words in chapter headlines with capital letters like in scientific papers. Don't do for connecting workds like "on", "and" etc.
+Create a new markdown file and name it after your indended documentation chapter. For example "GettingStarted.md" or "HowToCreateClassifiers.md". If the documentation chapter belongs to neuromore Studio, put it into the "neuromoreStudio" subfolder. Don't put a documentation markdown file into the GitHub root directory (other than this one).
 
-###Subsubchapter and Text Blocks
+After creating the markdown file, we need to embed it to the "Files.json" so that the online documentation knows there is a new file. Each time we access the documentation, this json file is parsed and the markdown files are added as chapters. Add a new json object to the "Files.json". The "name" is the visual name in the online documentation and "relative" is the relative filename starting at the GitHub root folder. After saving the "Files.json" it might take some minutes until your new chapter is actually visible in the documentation.
 
-Only go to this hierarchy level. If you need further splitting up use lists like this:
+#Writing your chapter
+
+Let us assume we want to write a "Getting Started" chapter for our neuromore Studio documentation section. In this case we create a markdown file called "GettingStarted.md" in the "neuromoreStudio" subfolder and adjust the "Files.json" accordingly. As the name of the chapter is already embedded into the "Files.json" as well as the filename, we don't put that into the markdown file as main headline anymore. Else we will see the same headline three times in the documentation.
+
+#Introduction
+
+You can do a brief introduction section (#) about what this markdown file is. Always put one new line between a section and the text and afterwards again.
+
+#Documentation continued
+
+This is another section (#).
+
+##Subsection on how to do headlines
+
+Begin the very first word in headlines with a capital letter.
+
+This is a subsection (##).
+
+###Subsubsection and text blocks
+
+This is a subsubsection (###). Only go to this hierarchy level. If you need further splitting up use lists like this:
 
 - This is about group A
 - This is about group B
@@ -20,9 +40,11 @@ This is a new text block where we want to embed an image. The image has to have 
 
 ![Extract](neuromoreStudio/Images/Installation/01.png)
 
-The image is located next to this text. So always put images before the text where it refers to. Use relative paths starting at the GitHub/Doc repository as root folder. For some of the markdown files this might mean first going up "../../" to the GitHub/Doc root folder before browsing down the hierarchy again. Here is an example of that: "../neuromoreStudio/Images/Installation/01.png". The file is located inside the "neuromoreStudio" folder, so we could skip this part "../neuromoreStudio/". It still needs to be done so that we can preview the files on the GitHub website while also our online documentation is able to locate the images.
+The image is located right to this text. So always put images before the text where it refers to. Use relative paths starting at the GitHub/Doc repository as root folder. For some of the markdown files this might mean first going up "../../" to the GitHub/Doc root folder before browsing down the hierarchy again. Here is an example of that: "../neuromoreStudio/Images/Installation/01.png". The file is located inside the "neuromoreStudio" folder, so we could skip this part "../neuromoreStudio/". It still needs to be done so that we can preview the files on the GitHub website while also our online documentation is able to locate the images.
 
-###This is another Subsubchapter
+Put all images into an "Images/XX/" subfolder. You can either name the subfolder after your documentation chapter (if the images are very specific for the chapter) or use a more generic subfolder name (in case the images could be reused for other chapters).
+
+###This is another subsubchapter
 
 And here comes some text blocks with some more words. This might be an introductary sentence for the following text blocks.
 

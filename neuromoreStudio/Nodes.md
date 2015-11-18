@@ -1,5 +1,3 @@
-# Nodes
-
 # Sensors Nodes 
 This category contains all Input device nodes.
 ## Test System

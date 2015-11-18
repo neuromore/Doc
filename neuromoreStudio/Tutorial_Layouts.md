@@ -1,4 +1,4 @@
-#Layouts
+#Introduction
 
 The layout of the windows in our tool is completely customizable. Windows can be moved around, resized and are either docked into the main window or floating over it.
 
