@@ -371,11 +371,16 @@ This category contains common mathematical functions and methods.
 
 ![Function Node Icon](../neuromoreStudio/Images/Nodes/Icons/cdc17a98-bb6b-11e4-8dfc-aa07a5b093db.png)
 
-Mathematical operations like sine and abs.
+Mathematical operations like `sine()` and `abs()`.
 
 ![Function Node](../neuromoreStudio/Images/Nodes/Function%20Node.png)
 
-[//]: # (Function:Attributes)
+[//]: # (Function:Attributes:Begin)
+| Attribute | Description |
+|-----------|-------------|
+| Math Function | The math function to use. Possible values are: *Sine*, *Cosine*, *Tan*, *Square*, *Square Root*, *Absolute*, *Floor*, *Ceil*, *One Over X*, *Inverse Square Root*, *Natural Log*, *Log Base 10*, *Exponent*, *Fraction*, *Sign*, *Is Positive*, *Is Negative*, *Is Near Zero*, *Random Float*, *Radians to Degrees*, *Degrees to Radians*, *Smooth Step [0..1]*, *Arc Cosine*, *Arc Sine*, *Arc Tan*. The default value is *Sine*. |
+[//]: # (Function:Attributes:End)
+
 
 
 
@@ -731,6 +736,7 @@ This node has no attributes.
 
 
 
+
 ## Select Channels
 
 ![Select Channels Node Icon](../neuromoreStudio/Images/Nodes/Icons/fd168f5a-047b-11e5-8418-1697f925ec7b.png)
@@ -772,7 +778,12 @@ Rename a channel.
 
 ![Rename Node](../neuromoreStudio/Images/Nodes/Rename%20Node.png)
 
-This node has no attributes.
+[//]: # (Rename:Attributes:Begin)
+| Attribute | Description |
+|-----------|-------------|
+| Channel Names | The name of the channels. Separate with ',' to rename multichannels. |
+[//]: # (Rename:Attributes:End)
+
 
 
 
