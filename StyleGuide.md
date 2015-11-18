@@ -12,7 +12,7 @@ After creating the markdown file, we need to embed it to the "Files.json" so tha
 
 Let us assume we want to write a "Getting Started" chapter for our neuromore Studio documentation section. In this case we create a markdown file called "GettingStarted.md" in the "neuromoreStudio" subfolder and adjust the "Files.json" accordingly. As the name of the chapter is already embedded into the "Files.json" as well as the filename, we don't put that into the markdown file as main headline anymore. Else we will see the same headline three times in the documentation.
 
-#Introduction
+#Writing your introduction
 
 You can do a brief introduction section (#) about what this markdown file is. Always put one new line between a section and the text and afterwards again.
 
