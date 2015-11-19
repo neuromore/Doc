@@ -18,9 +18,13 @@ First, please pair your Muse to your PC or Mac.
 
 Press 'Tools'->'Start Muse IO' in neuromore Studio before connecting a Muse. This will open up a little data acquisition tool that forwards data from a Muse to neuromore Studio.
 
-Please note that a special Muse IO version is required to run it with OSX. There is a bug in the latest official Muse IO with the Muse number OSC prefixes. Please contact us in case you want to use a Muse on your Mac.
-
 Supported Platforms: Windows, OSX
+
+##OSX
+
+Please note that a special Muse IO version is required to run it with OSX. There was a bug in Muse-IO when connecting multiple Muses that InteraXon fixed for us (thanks so much for that Tom! :)). Please download the fix version from: [Click Here](https://neuromore-update-studio.s3.amazonaws.com/MuseIO_OSCFix_3_7_0_OSX.zip">)
+
+Make sure to first install the official Muse SDK for OSX as the fixed Muse IO application will only work with that installed. Extract the zip file to a new folder. Now, when going to Press 'Tools'->'Start Muse IO', choose the Muse IO application from the new folder where you extracted the fix.
 
 #Emotiv EPOC
 
