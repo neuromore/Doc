@@ -18,13 +18,15 @@ Note: Support for the Daisy module and the new Ganglion board will be added soon
 
 ##Using a Muse on Windows
 
+![InteraXon Muse](../neuromoreStudio/Images/Biosensors/MuseIOWindow.png)
+
 Connecting a muse to the Studio is easy:
 
  1. Make sure your Muse is paired to your PC, is turned on and in reach of the receiver
  2. Press 'Tools'->'Start Muse IO' in neuromore Studio menu to start the data aquisition program
  3. The Muse will automatically appear in neuromore Studio once the connection is established
 
-Please note that neuromore Studio doesn't work with the official Muse IO software because it outputs the data to the wrong OSC addresses. Instead we ship it with a fixed version that was provided to us by InteraXon (thanks Tom!). You can find the executable in the folder *Muse* inside the installation directory. This folder also contains the batch script that starts the muse-io with the correct parameters to stream to the studio, in case you are interested how it works.
+Please note that neuromore Studio doesn't work with the official Muse IO software because it outputs the data to the wrong OSC addresses. Instead we ship it with a fixed version that was provided to us by InteraXon (thanks Tom!). You can find the executable in the folder *Muse* inside the installation directory.	
 
 ##Using a Muse on OSX
 
@@ -94,6 +96,7 @@ Currently in development.
 
 * Platforms: Windows
 * Devices: Mitsar EEG 201-21, EEG 202-24 and EEG 202-31 
+
 ![Mitsar](../neuromoreStudio/Images/Biosensors/MitsarEEG202-31.png)
 
 Currently in development.
