@@ -20,9 +20,9 @@ Press 'Tools'->'Start Muse IO' in neuromore Studio before connecting a Muse. Thi
 
 Supported Platforms: Windows, OSX
 
-##OSX
+##Using a Muse on OSX
 
-Please note that a special Muse IO version is required to run it with OSX. There was a bug in Muse-IO when connecting multiple Muses that InteraXon fixed for us (thanks so much for that Tom! :)). Please download the fix version from: [Click Here](https://neuromore-update-studio.s3.amazonaws.com/MuseIO_OSCFix_3_7_0_OSX.zip">)
+Please note that a special Muse IO version is required to run it with OSX. There was a bug in Muse-IO when connecting multiple Muses that InteraXon fixed for us (thanks so much for that Tom! :)). Please download the fix version from: [Click Here](https://neuromore-update-studio.s3.amazonaws.com/MuseIO_OSCFix_3_7_0_OSX.zip)
 
 Make sure to first install the official Muse SDK for OSX as the fixed Muse IO application will only work with that installed. Extract the zip file to a new folder. Now, when going to Press 'Tools'->'Start Muse IO', choose the Muse IO application from the new folder where you extracted the fix.
 
