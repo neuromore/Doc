@@ -8,6 +8,11 @@ a {
 img{
   margin-left: 10px;
 }
+.table-float {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 /* Header Bar */
 .headline {
 	position: fixed;
@@ -190,14 +195,14 @@ a.mainMenuItem{
      padding: 10px;
    }
    .img-js {
-     float: right !important;
-     clear: both !important;
+    float: right !important;
+    clear: both !important;
     margin-right: -570px;
+    margin-top: 12px;
   }
   .content-img img {
     border: 1px solid #dbdde2;
   }
-
 }
 
 /* MD Files*/
