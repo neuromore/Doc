@@ -14,13 +14,15 @@ Note: Support for the Daisy module and the new Ganglion board will be added soon
 ![InteraXon Muse](../neuromoreStudio/Images/Biosensors/InteraXonMuse.png)
 
  * Platforms: Windows, OSX
- * Devices: Muse MU-01 with the default preset
+ * Devices: Standard Muse (model MU-01) with the default preset
 
 ##Using a Muse on Windows
 
- - Make sure your Muse is paired to your PC, is turned on and in reach of the receiver
- - Press 'Tools'->'Start Muse IO' in neuromore Studio menu to start the data aquisition program
- - The Muse will automatically appear in neuromore Studio once the connection is established
+Connecting a muse to the Studio is easy:
+
+ 1. Make sure your Muse is paired to your PC, is turned on and in reach of the receiver
+ 2. Press 'Tools'->'Start Muse IO' in neuromore Studio menu to start the data aquisition program
+ 3. The Muse will automatically appear in neuromore Studio once the connection is established
 
 Please note that neuromore Studio doesn't work with the official Muse IO software because it outputs the data to the wrong OSC addresses. Instead we ship it with a fixed version that was provided to us by InteraXon (thanks Tom!). You can find the executable in the folder *Muse* inside the installation directory. This folder also contains the batch script that starts the muse-io with the correct parameters to stream to the studio, in case you are interested how it works.
 
@@ -28,14 +30,28 @@ Please note that neuromore Studio doesn't work with the official Muse IO softwar
 
 A few steps are necessary to get the Muse to work on OSX:
 
-- Make sure to first install the official Muse Research Tools for OSX [from here](http://developer.choosemuse.com/research-tools)
-- Download the fixed Muse IO application [from here](https://neuromore-update-studio.s3.amazonaws.com/MuseIO_OSCFix_3_7_0_OSX.zip)
-- Extract the application to a folder (for example your home folder)
-- Make sure your Muse is paired to your Mac, switched on and in reach of the receiver
-- Press 'Tools'->'Start Muse IO' in the neuromore Studio menu and choose the Muse IO application from the folder where you extracted it
-- The data aquisition window will pop up. Keep it running while you stream data and check it for any connection errors that might appear
-- The Muse will automatically appear in neuromore Studio once the connection is established
+ 1. Make sure to first install the official Muse Research Tools for OSX [from here](http://developer.choosemuse.com/research-tools)
+ 2. Download the fixed Muse IO application [from here](https://neuromore-update-studio.s3.amazonaws.com/MuseIO_OSCFix_3_7_0_OSX.zip)
+ 3. Extract the application to a folder (for example your home folder)
+ 4. Make sure your Muse is paired to your Mac, switched on and in reach of the receiver
+ 5. Press 'Tools'->'Start Muse IO' in the neuromore Studio menu and choose the Muse IO application from the folder where you extracted it
+ 6. The data aquisition window will pop up. Keep it running while you stream data and check it for any connection errors that might appear
+ 7. The Muse will automatically appear in neuromore Studio once the connection is established
 
+#NeuroSky
+
+![NeuroSky MindWave](../neuromoreStudio/Images/Biosensors/NeuroSkyMindWave.png)
+
+* Platforms: Windows
+* Devices: MindWave (model MW003)
+
+Connecting a MindWave to neuromore Studio is easy:
+
+![Enable NeuroSky devices in the settings](../neuromoreStudio/Images/Biosensors/EnableNeuroSkySettings.png)
+
+ 1. If you have never connected a MindWave before you must first enable the driver in the settings once (see image).
+ 2. Make sure your device is paired to your PC, is turned on and in reach of the receiver
+ 3. The MindWave will automatically appear in neuromore Studio once the connection is established
 
 #Emotiv EPOC / EPOC+
 
