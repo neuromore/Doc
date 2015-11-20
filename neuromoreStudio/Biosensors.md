@@ -83,7 +83,7 @@ Plug in your dongle and turn on your Insight. Feel free to open neuromore Studio
 
 Important: We do not support the consumer Bluetooth LE version of the Versus that is sold on their website right now. neuromore Studio only supports the version that comes with a standard Bluetooth interface. Please contact [SenseLabs](https://senselabs.com) for further information on how to buy this research edition of the Versus.
 
-#Setting up the Versus
+##Setting up the Versus
 
  It is very important that you follow this setup procedure the first time you connect your Versus to a Windows PC. If you don't do this it will brick your device and you will have to reset it (described below).
 
