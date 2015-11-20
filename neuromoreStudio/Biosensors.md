@@ -83,6 +83,25 @@ Plug in your dongle and turn on your Insight. Feel free to open neuromore Studio
 
 Important: We do not support the consumer Bluetooth LE version of the Versus that is sold on their website right now. neuromore Studio only supports the version that comes with a standard Bluetooth interface. Please contact [SenseLabs](https://senselabs.com) for further information on how to buy this research edition of the Versus.
 
+#Setting up the Versus
+
+ It is very important that you follow this setup procedure the first time you connect your Versus to a Windows PC. If you don't do this it will brick your device and you will have to reset it (described below).
+
+![Versus](../neuromoreStudio/Images/Biosensors/VersusSetup1.png)
+![Versus](../neuromoreStudio/Images/Biosensors/VersusSetup2.png)
+
+ 1. Pair the Versus with your Windows PC
+ 2. Make sure neuromore Studio (or any other software that could access the device) is **not running**
+ 3. Open the *Devices and Printers* Windows Control Panel
+ 4. Right click on your Versus device and select *Properties*. A window will pop up.
+ 5. Disable the *Wireless iAP* service under the tab *Services*.
+
+**Resetting the Versus**
+  If you started an application that accessed the Versus *before* you disabled the iAP bluetooth service you will have to reset device:
+ 1. Turn off the Versus
+ 2. Turn it on again but don't release the button
+ 3. Kepp the button pressed until the LED blinks red. The device is now reset.
+
 #Advanced Brain Monitoring B-Alert X-Series
 
 * Platforms: Windows
