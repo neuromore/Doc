@@ -100,7 +100,7 @@ Important: We do not support the consumer Bluetooth LE version of the Versus tha
   If you started an application that accessed the Versus *before* you disabled the iAP bluetooth service you will have to reset device:
  1. Turn off the Versus
  2. Turn it on again but don't release the button
- 3. Kepp the button pressed until the LED blinks red. The device is now reset.
+ 3. Keep the button pressed until the LED blinks red. The device is now reset.
 
 #Advanced Brain Monitoring B-Alert X-Series
 
