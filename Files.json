@@ -39,6 +39,10 @@
 					"relative":				"neuromoreStudio/OSC.md"
 				},
 				{
+					"name":					"Q&A",
+					"relative":				"neuromoreStudio/FAQ.md"
+				},
+				{
 					"name":					"Tutorial Videos",
 					"relative":				"neuromoreStudio/Videos.md"
 				}
