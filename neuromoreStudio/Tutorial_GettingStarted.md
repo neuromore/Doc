@@ -2,10 +2,10 @@
 
 **In short, neuromore is a bio-data acquisition, processing and visualization software, all in one.** 
 
-In general, neuromore allows users to connect to sensors such as EEG, Heart rate monitors, etc and read their incoming data in real time. Neuromore then parses this information through a data processing system designed by the user. Finally, the output of this system is connected to outputs such as  vizualization windows, external tiggers, etc. 
+In general, neuromore allows users to connect to sensors such as EEG, Heart rate monitors, etc and read their incoming data in real time. Neuromore then parses this information through a data processing system designed by the user. Finally, the output of this system is connected to outputs such as  visualization windows, external triggers, etc. 
 
 #Vocabulary
-Some definitions that might come in handy for the remainder fo ths document and forum discussions about neuromore.
+Some definitions that might come in handy for the remainder of this document and forum discussions about neuromore.
 
 #####Classifier
 We call classifiers the complete system from data acquisition to outputs. The name classifier comes from the machine learning lingo where classifiers are algorithms that take in data and assign that date a most probable label or class. While neuromore can be used to create many systems that are not classifiers, conceptually, they are one of the most useful systems that neuromore aims to create.
@@ -18,7 +18,7 @@ Graphs are made up of interconnected nodes. These nodes act like engineering 'bl
 
 ****
 #Getting Started
-The following guide will take you from knowing next to nothing about neuromore to undestanding both its capabilities and how to implement those capabilites for your own purposes. 
+The following guide will take you from knowing next to nothing about neuromore and EEG signal processing to understanding both its capabilities and how to implement those capabilities for your own purposes. 
 
 ##Logging in
 
@@ -50,7 +50,7 @@ Use the tool icon in the classifier window to start editing the classifier. New 
  
 ##Basic Classifier Structure
 
-This example shows a minimal classifier that shows the main structural components of a graph:
+Minimal classifier example that shows the main structural components of a graph and explains basic signal processing concepts and terms:
 
 ![basicClassifierStructure](../neuromoreStudio/Images/Classifier/basicStructure.png)
 
@@ -76,17 +76,47 @@ This example is of a basic frequency threshold classifier. The input is the Test
 
 From this input node we are interested in the Pz electrode (see [10-20 system](https://www.trans-cranial.com/local/manuals/10_20_pos_man_v1_0_pdf.pdf)). 
 
-We can see that this node is connected directly to three other nodes. The first is an FFT node that computes the [fast fourier transform](http://mathworld.wolfram.com/FastFourierTransform.html) on the signal which essentially maps the signal to the frequency domain. If we conenct the output of this node to a Spectrum input of the View node we can then see the power of the individual frequencies present in the raw signal.
+We can see that this node is connected directly to three other nodes. 
+
+######View Signal Spectrum
+
+The first is an FFT node that computes the [Fast Fourier Transform](http://mathworld.wolfram.com/FastFourierTransform.html) on the signal which essentially maps the signal to the frequency domain. If we connect the output of this node to a Spectrum input of the View node we can then see the power of the individual frequencies present in the raw signal.
 
 ![image](../neuromoreStudio/Images/Visualizations/spectrumView1.png)
 
-The second copy of the EEG data stream goes to an IIR/FIR Fitler node. In particular this node is set to act as a [low pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) with a cut off frequency of 5 Hz.
+######Frequency Filters
 
-As we can see in the figure below, when we then input this filtered data stream into an FFT + Spectrum View sub-graph the resulting signal contains much lower powers for frequency bands beyond 5 Hz.
+The second copy of the EEG data stream goes to an IIR/FIR Filter node. In particular this node is set to act as a [low pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) with a cut off frequency of 5 Hz.
+
+As we can see in the figure below, when we then input this filtered data stream into an FFT + Spectrum View sub-graph the resulting signal contains much lower powers for frequency bands beyond 5 Hz. 
 
 ![image](../neuromoreStudio/Images/Visualizations/spectrumView2.png)
 
-<!--TODO: Exlain Threshold-->
+*Note:* As expected with a non-ideal filter, signals with frequencies close to 5Hz are also affected by the filter, resulting in the decrease in amplitude observed in signals with frequencies below 5 Hz. 
+
+######Thresholding
+
+The third copy of the data-stream is passed to a Threshold node. This node compares the average value of the signal over the given time interval (internal parameter) to the given 'Threshold' parameter. The 'ON/OFF' output then returns 1 if the average was higher and 0 otherwise. 
+
+As expected, a plot of the raw signal shows that it passes the threshold much more than one of the filtered signal when using the same threshold. 
+
+<!--Insert graph-->
+
+######Overall picture
+
+As a graph, this example merely aims to report when the 0-5 Hz signal from the Pz electrode exceeds a given threshold. 
+
+As a system, however, this classifier exhibits the main elements of most EEG classifiers. In this design, we see concepts like cleaning your data (filtering), simplifying your data (threshold) and displaying your data (spectrum view) that are essential elements to any classifier.
+
+<!--IN PROGRESS
+
+#Alpha detector
+
+One of the simplest, but also most effective classifiers for EEG data is an alpha frequency detector. 
+
+
+-->
+
 
 
 
