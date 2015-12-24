@@ -19,6 +19,10 @@
 					"relative":				"neuromoreStudio/Biosensors.md"
 				},
 				{
+					"name":					"Classifiers",
+					"relative":				"neuromoreStudio/Tutorial_Classifier.md"
+				},
+				{
 					"name":					"Layouts",
 					"relative":				"neuromoreStudio/Tutorial_Layouts.md"
 				},
