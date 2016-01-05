@@ -2,7 +2,7 @@
 
 #Introduction
 
-Classifiers are the essence of our tool. They define how the signal processing pipeline looks like and can be e.g. used to translate raw biosensor data into meaningful values. After starting the application, no classifier is loaded. In order to load a classifier from the neuromore Cloud, simply click on the desired classifier item  in the back-end file system window.
+Classifiers are the essence of our tool. They define how the signal processing pipeline looks and can be used to translate raw biosensor data into meaningful values. After starting the application, no classifier is loaded. In order to load a classifier from the neuromore Cloud, simply click on the desired classifier item  in the back-end file system window.
 
 #Loading examples
 
@@ -24,10 +24,10 @@ The neuromore Cloud has a built-in revision system and allows collaborative clas
 Some definitions that might come in handy for the remainder fo ths document and forum discussions about neuromore.
 
 #####Classifier
-We call classifiers the complete system from data acquisition to outputs. The name classifier comes from the machine learning lingo where classifiers are algorithms that take in data and assign that date a most probable label or class. While neuromore can be used to create many systems that are not classifiers, conceptually, they are one of the most useful systems that neuromore aims to create.
+We call classifiers the complete system from data acquisition to outputs. The name classifier comes from the machine learning lingo where classifiers are algorithms that take in data and assign that data a most probable label or class. While neuromore can be used to create many systems that are not classifiers, conceptually, they are one of the most useful systems that neuromore aims to create.
 
 #####Graphs
-Neuromore uses [visual programing](https://en.wikipedia.org/wiki/Visual_programming_language) to facilitate the creation of classifiers. In particular, neuromore uses connected graphs that allow user to 'code' data processing routines more intuitively.
+neuromore uses [visual programing](https://en.wikipedia.org/wiki/Visual_programming_language) to facilitate the creation of classifiers. In particular, neuromore uses connected graphs that allow user to 'code' data processing routines more intuitively.
 
 #####Nodes
 Graphs are made up of interconnected nodes. These nodes act like engineering 'black boxes' that allows user to create functioning graphs just by knowing what individual nodes do without need to understand how they do it. A comprehensive list of all nodes with their inputs, outputs and function can be found in the Nodes section of the documentation.
@@ -41,7 +41,7 @@ This example shows a minimal classifier that shows the main structural component
 
 **Input:** Signal Generator producing a sine wave with default parameters. (Frequency = 1 Hz, Amplitude = 1)
 
-Parameter, the multiplying factor for my amplifier system. In particular, the integer 3.
+Parameter, the multiplying factor for my amplifier system. For example, the integer 3.
 
 **Processing:** The processing logic. In this case, computing both an amplified (3x) version of the input and the RMS value of the signal.
 
@@ -53,19 +53,19 @@ In particular, this feedback is displaying both the raw input signal and the amp
 
 ##Basic EEG Classifier
 
-Now that we know the basics a classifier, we are ready to see an EEG classifier.
+Now that we know the basics of a classifier, we are ready to see an EEG classifier.
 
 ![basicEEGClassifier](../neuromoreStudio/Images/Classifier/basicEEGClassifier.png)
 
-This example is of a basic frequency threshold classifier. The input is the Test System node that gives us a pre recorded signal that while is not EEG, has similar signal properties. 
+This example is of a basic frequency threshold classifier. The input is the Test System node that gives us a pre recorded signal that while is not an EEG, has similar signal properties. 
 
 From this input node we are interested in the Pz electrode (see [10-20 system](https://www.trans-cranial.com/local/manuals/10_20_pos_man_v1_0_pdf.pdf)). 
 
-We can see that this node is connected directly to three other nodes. The first is an FFT node that computes the [fast fourier transform](http://mathworld.wolfram.com/FastFourierTransform.html) on the signal which essentially maps the signal to the frequency domain. If we conenct the output of this node to a Spectrum input of the View node we can then see the power of the individual frequencies present in the raw signal.
+We can see that this node is connected directly to three other nodes. The first is an FFT node that computes the [fast fourier transform](http://mathworld.wolfram.com/FastFourierTransform.html) on the signal which essentially maps the signal to the frequency domain. If we connect the output of this node to a Spectrum input of the View node we can then see the power of the individual frequencies present in the raw signal.
 
 ![image](../neuromoreStudio/Images/Visualizations/spectrumView1.png)
 
-The second copy of the EEG data stream goes to an IIR/FIR Fitler node. In particular this node is set to act as a [low pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) with a cut off frequency of 5 Hz.
+The second copy of the EEG data stream goes to an IIR/FIR Filter node. In particular this node is set to act as a [low pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) with a cut off frequency of 5 Hz.
 
 As we can see in the figure below, when we then input this filtered data stream into an FFT + Spectrum View sub-graph the resulting signal contains much lower powers for frequency bands beyond 5 Hz.
 
