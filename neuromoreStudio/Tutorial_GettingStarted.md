@@ -2,7 +2,7 @@
 
 **In short, neuromore is a bio-data acquisition, processing and visualization software, all in one.** 
 
-In general, neuromore allows users to connect to sensors such as EEG, Heart rate monitors, etc and read their incoming data in real time. Neuromore then parses this information through a data processing system designed by the user. Finally, the output of this system is connected to outputs such as  vizualization windows, external tiggers, etc. 
+In general, neuromore allows users to connect to sensors such as EEG, heart rate monitors, etc and read their incoming data in real time. neuromore then parses this information through a data processing system designed by the user. Finally, the output of this system is connected to outputs such as  vizualization windows, external tiggers, etc. 
 
 ****
 #Getting Started
