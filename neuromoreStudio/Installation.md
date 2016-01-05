@@ -20,7 +20,7 @@ Double-click the "wyUpdate.exe" the auto updater will check for the latest versi
 
 ##4. Run
 
-neuromore Studio will be automatically started after the installation process finished. Please make sure to allow network access at the windows firewall. You will find a shortcut on your desktop that you can use to start the application.
+neuromore Studio will be automatically started after the installation process finished. Please make sure to allow network access at the Windows firewall. You will find a shortcut on your desktop that you can use to start the application.
 
 
 #OSX
