@@ -85,7 +85,7 @@ Important: We do not support the consumer Bluetooth LE version of the Versus tha
 
 ##Setting up the Versus
 
- It is very important that you follow this setup procedure the first time you connect your Versus to a Windows PC. If you don't do this it will brick your device and you will have to reset it (described below).
+ It is very important that you follow this setup procedure the first time you connect your Versus to a Windows PC. If you don't do this it will break your device and you will have to reset it (described below).
 
 ![Versus](../neuromoreStudio/Images/Biosensors/VersusSetup1.png)
 ![Versus](../neuromoreStudio/Images/Biosensors/VersusSetup2.png)
@@ -98,8 +98,8 @@ Important: We do not support the consumer Bluetooth LE version of the Versus tha
 
 **Resetting the Versus**
   If you started an application that accessed the Versus *before* you disabled the iAP bluetooth service you will have to reset device:
- 1. Turn off the Versus
- 2. Turn it on again but don't release the button
+ 1. Turn off the Versus.
+ 2. Turn it on again but don't release the button.
  3. Keep the button pressed until the LED blinks red. The device is now reset.
 
 #Advanced Brain Monitoring B-Alert X-Series
