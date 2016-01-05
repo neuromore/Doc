@@ -4,9 +4,9 @@ neuromore Studio comes with OSC input and output capabilities for communicating 
 
 #Feeding custom data to neuromore Studio
 
-We for sure don’t support every data source that you can imagine. That is why we provide a way to send custom values from your sources (like biosensors, accelerometers, joysticks, other software) via UDP network messages using the Open Sound Protocol (http://opensoundcontrol.org). OSC helper libraries are available for nearly every programming language.
+We cannot support every imaginable data source. That is why we provide a way to send custom values from your sources (like biosensors, accelerometers, joysticks, other software) via UDP network messages using the Open Sound Protocol (http://opensoundcontrol.org). OSC helper libraries are available for nearly every programming language.
 
-Send single floating point values with a given OSC address. Using an "OSC Input" node inside the "Inputs" category of the “Classifier Window”, you can feed your custom values to the classifier. OSC addresses need to be unique and need only to contain a single float value (No bundling or grouping, one OSC address for each float).
+Send single floating point values with a given OSC address. Using an "OSC Input" node inside the "Inputs" category of the “Classifier Window”, you can feed your custom values to the classifier. OSC addresses need to be unique and need only to contain a single float value (no bundling or grouping, one OSC address for each float).
 
 You can use the “OSC Data Monitor” to verify the sent messages: https://code.google.com/p/osc-tools/
 
