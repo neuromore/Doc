@@ -131,4 +131,4 @@ The OSX version of neuromore Studio supports all kinds of Bluetooth LE heart rat
 - [Polar H7](http://www.polar.com/en/products/accessories/H7_heart_rate_sensor)
 - [Zephyr HxM Smart](http://www.zephyranywhere.com/products/hxm-smart-heart-rate-monitor)
 
-Note that we currently can only confirm that the Polar H7 works. Other devices should work too if they adhere to the BTLE profiles and send BPM as well as RR interval data. Please let us know if you found another devices that works or doesn't work.
+Note that we currently can only confirm that the Polar H7 works. Other devices should work too if they adhere to the BTLE profiles and send BPM as well as RR interval data. Please let us know if you found other devices that work or do not work.
