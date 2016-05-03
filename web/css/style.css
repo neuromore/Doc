@@ -1,5 +1,12 @@
+@font-face{
+  font-family:"SourceSansPro-Light";
+  src: url("../fonts/SourceSansPro-Light.otf") format("opentype");
+}
+
 body {
   background-color: #FFFFFF;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
+  font-size: 16px;
 }
 a {
   color: rgb(0,159,227);
@@ -17,7 +24,7 @@ img{
 .headline {
 	position: fixed;
 	width: 100%;
-	background: rgb(60,60,59);
+	background: #706f6f;
 	z-index: 100
 }
 /* Header */
@@ -26,8 +33,7 @@ img{
 }
 .subnav a {
   font-size: 1.1em;
-  text-transform: uppercase;
-  font-family: montserrat, sans-serif;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   /* color: rgb(218,218,218); */
   width: 200px;
   display: block;
@@ -38,8 +44,8 @@ img{
 	color: rgb(0,159,227);
 }
 .subnavSelected {
-	color: rgb(0,159,227) !important;
-	background: rgb(112,111,111);
+	color: rgb(255,255,255) !important;
+	background: rgb(0,159,227);
 }
 
 
@@ -58,8 +64,7 @@ img{
 	color: rgb(0,159,227) !important;
 }
 a.mainMenuItem{
-  font-family: montserrat, sans-serif;
-  text-transform: uppercase;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   color: rgb(112,112,111);
   line-height: 1.2 !important;
   padding-top: 7px;
@@ -221,23 +226,22 @@ a.mainMenuItem{
   max-height: 250px;
 }
 .level-1{
-	font-family: montserrat, sans-serif;
+	font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
 	color: rgb(112,112,111) !important;
-	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 18px;
   padding: 2px;
 }
 .level-2 {
-	font-family: montserrat, sans-serif;
+	font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
 	color: rgb(112,112,111) !important;
-	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 16px;
   padding: 2px;
 }
 .level-3 {
-	font-family: montserrat, sans-serif;
+	font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   color: rgb(112,112,111) !important;
 	text-transform: none !important;
 	width: 180px !important;
   padding: 2px;
+  	font-size: 14px;
 }

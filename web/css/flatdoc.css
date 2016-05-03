@@ -7,7 +7,10 @@ Instead, edit the stylus (.styl) files and compile it to CSS on your machine.
 /* ----------------------------------------------------------------------------
  * Fonts
  */
-@import url("//fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300");
+@font-face{
+  font-family:"SourceSansPro-Light";
+  src: url("../fonts/SourceSansPro-Light.otf") format("opentype");
+}
 /* ----------------------------------------------------------------------------
  * Base
  */
@@ -113,9 +116,9 @@ body,
 td,
 textarea,
 input {
-  font-family: Helvetica Neue, Open Sans, sans-serif;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   line-height: 1.6;
-  font-size: 13px;
+  font-size: 14px;
   color: #505050;
 }
 @media (max-width: 480px) {
@@ -158,7 +161,6 @@ a:hover {
 .content h4,
 .content h5,
 .content h6 {
-  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -200,7 +202,7 @@ a:hover {
 }
 .content strong,
 .content b {
-  font-weight: bold;
+  font-weight: normal;
 }
 .content i,
 .content em {
@@ -243,7 +245,7 @@ a:hover {
 }
 .content table tr th {
   text-align: auto;
-  font-weight: bold;
+  font-weight: normal;
   border: 1px solid #ccc;
   margin: 0;
   padding: 6px 13px;
@@ -294,7 +296,7 @@ a:hover {
 .content h3 {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: montserrat;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   padding-bottom: 0;
 }
 .content h1 + p,
@@ -310,7 +312,6 @@ a:hover {
 }
 .content h1,
 .content h2 {
-  text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.5em;
 }
@@ -466,9 +467,9 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
 .button {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: montserrat, sans-serif;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   letter-spacing: -1px;
-  font-weight: bold;
+  font-weight: normal;
   display: inline-block;
   padding: 3px 25px;
   border: solid 2px #2badad;
@@ -627,8 +628,8 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
 .header h1 {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-weight: bold;
-  font-family: montserrat, sans-serif;
+  font-weight: normal;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   font-size: 13px;
 }
 .header h1,
@@ -704,13 +705,13 @@ a.big.button {
   width: 100%;
   padding: 10px 20px;
   text-align: center;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 1.1em;
   background: transparent;
   border: solid 3px #2badad;
   -webkit-border-radius: 30px;
   border-radius: 30px;
-  font-family: montserrat, sans-serif;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
 }
 a.big.button,
 a.big.button:visited {
@@ -803,10 +804,9 @@ a.big.button:hover:visited {
   color: #228a8a;
 }
 .menu a.level-1 {
-  font-family: montserrat, sans-serif;
-  text-transform: uppercase;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: normal;
 }
 .menu a.level-1,
 .menu a.level-1:visited {
@@ -824,7 +824,7 @@ a.big.button:hover:visited {
   padding-left: 10px;
 }
 .menu a.active {
-  font-weight: bold !important;
+  font-weight: normal !important;
 }
 .menu a.active,
 .menu a.active:visited,
@@ -854,7 +854,7 @@ code .init {
   color: #383;
 }
 code .keyword {
-  font-weight: bold;
+  font-weight: normal;
 }
 code .comment {
   color: #adadcc;
@@ -862,7 +862,7 @@ code .comment {
 .large-brief .content > h1:first-child + p,
 .content > p.brief {
   font-size: 1.3em;
-  font-family: Open Sans, sans-serif;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   font-weight: 300;
 }
 .title-area {
