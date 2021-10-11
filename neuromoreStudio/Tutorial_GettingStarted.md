@@ -1,27 +1,98 @@
-#What is neuromore?
+# Creating a simple focus trainer using an OpenBCI headset
 
-**In short, neuromore is a bio-data acquisition, processing and visualization software, all in one.** 
+## What will we build?
 
-In general, neuromore allows users to connect to sensors such as EEG, heart rate monitors, etc and read their incoming data in real time. neuromore then parses this information through a data processing system designed by the user. Finally, the output of this system is connected to outputs such as  vizualization windows, external tiggers, etc. 
+In this tutorial we will build a basic focus trainer using an OpenBCI headset from end to end. The application will first ask the user for how long they want to train before showing a video whose sharpness depends on the user's alpha channel activity which we will use as a proxy for the user's focus.
 
-****
-#Getting Started
-The following guide will take you from knowing next to nothing about neuromore to undestanding both its capabilities and how to implement those capabilites for your own purposes. 
+## A neuromore application in a nutshell
 
-##Logging in
+A neuro-/ bio-feedback application created in neuromore Studio consists of 3 parts:
 
-When starting neuromore Studio the first time, it will ask you for your user account and your password. Please enter either your e-mail address or your user account name and your password into the given fields and press 'Sign In'.
+1. a **classifier** in which we define the [graph](#Vocabulary) of the **signal processing pipeline**. Here we can define all sorts of common signal processing operations like FFTs or filters on the biosensor data and either stream it into custom variables, visualise it, or store it in a log file.
+   In our example we want to **dynamically measure the user's focus** for which we will use their neural Alpha band activity as a simple proxy - the higher the average Alpha amplitude (compared to the amplitude of the other bands) the higher the user's focus.
+2. a **state machine** in which you define the **application logic**. In our example the state machine will handle the flow from starting the experience over selecting the training duration to adapting the video image based on the current average amplitute on the alpha band.
+3. the **actual experience** that your users will interact with. This can be an **application using simple widgets available in neuromore Studio** as in this example, a **game built in Unity**, or an **app running on a mobile phone**.
 
-![Login Window](../neuromoreStudio/Images/Basics/Login.png)
+## Creating a blank project
 
-In case you want neuromore Studio to remember your login information for the next time, enable the 'Remember Me' checkbox before signing in. Your login information will be stored using AES256 encryption on your local disk.
+Projects are stored in the **neuromore back-end file system**. When you first open neuromore Studio you will find a window in the top-right corner where you can see example projects.
+To create our new project, let's create a folder with the name of your choice.
+![Creating a folder](../neuromoreStudio/Images/FirstApplication/01_Folder.png)
 
-You can sign out via the 'Help' menu entry 'Sign Out'. This will also destroy the encrypted login information on your local disk. Next time you start neuromore Studio you will be prompted to enter your login information again.
+![Naming your project](../neuromoreStudio/Images/FirstApplication/02_Folder_Name.png)
 
+## Creating a new classifier
 
-##Browsing examples
+Classifiers and state machines are stored in separate files. Let's select our new project folder and create a new classifier file.
 
-If you are new to neuromore, a good place to start is to visit our example [classifiers](#Vocabulary) in the 'Back-End File System' window located on the right side. 
+![Creating a classifer](../neuromoreStudio/Images/FirstApplication/03_Clf_Name.png)
+
+## Adding a biosensor
+
+In the _Input_ category you have a variety of devices to choose from. For this example we will use the OpenBCI v3 sensor.
+To use it, first connect your OpenBCI board to your computer. Make sure to take the following steps:
+
+Windows: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read our OpenBCI on Windows tutorial.
+
+OS X: Make sure your board is connected and visible as a device. To check you can type ls /dev/tty.\* on your terminal. An example connected OBCI board should look like this:
+
+Drag the OpenBCI device into your classifier to start designing the signal processing pipeline.
+![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/04_OpenBCI.png)
+![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/05_OpenBCI_1.png)
+
+## Getting the frequency band
+
+To get the average alpha band activity we first need to map the signal onto the frequency domain. For that we drag a _[Fast Fourier Transformation (FFT)](https://en.wikipedia.org/wiki/Fast_Fourier_transform)_ node into the graph and connect itto the EEG output pin of the OpenBCI device.
+
+![Adding the FFT](../neuromoreStudio/Images/FirstApplication/06_FFT.png)
+![Adding the FFT](../neuromoreStudio/Images/FirstApplication/07_FFT.png)
+
+## Visualising the frequency spectrum
+
+The FFT node gives us a frequency spectrum. To get an idea how that spectrum looks like let's drag in a _View_ node from the _Output_ tab and connect the output from the _FFT_ to the "Spectrum" input of the _View_ node.
+
+![Adding a view](../neuromoreStudio/Images/FirstApplication/08_View.png)
+A frequency spectrum is rendered within a _Spectrum View_ which we don't have in the current layout yet. Luckily, customising the layout of neuromore Studio is very straight forward: go to _Windows > Add > Spectrum View_ in the menu at the top and the view will show up in the middle of the screen.
+
+![Adding the spectrum view](../neuromoreStudio/Images/FirstApplication/09_Spectrum_View.png)
+
+Great! There we have the first visualisation of the frequency spectrum coming from the sensor. As we can see the amplitude for the bands between 3 and 12 Hz are quite high at the moment of the screenshot, indicating a stronger Delta, Theta, and Alpha activity.
+
+Before continuing to get the average Alpha amplitude let's get the spectrum view out of the way to clean up the view. You can do that by moving the window around which makes it snap into the layout.
+
+![Snapping the spectrum view to the layout](../neuromoreStudio/Images/FirstApplication/10_Spectrum_View.png)
+
+## Getting the Alpha band amplitude
+
+Back to our classifier: we can now filter the frequency spectrum for the Alpha band by adding a _Frequency Band_ node to the graph. We can see that the default _Value_ of the frequency band node is already set to "Average Amplitude" which is exactly what we want.
+
+![Adding a frequency band node](../neuromoreStudio/Images/FirstApplication/11_Frequency_Band.png)
+
+We now want to stream the average Alpha amplitude into a variable so that we can control the video volume based on its value.
+In neuromore Studio we can expose custom variables of the classifier using _Custom Feedback_ nodes available under the _Output_ tab.
+
+As we drag the node in and connect it to the output of the frequency band node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the custom feedback node. Let's set it to a range of 0 to 100 where maximal focus is reached when the Alpha amplitude is at 100. This is of course not a real focus trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore.
+![Adding a custom feedback node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png)
+![Adding a custom feedback node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
+
+To control the volume of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 100 and its output range to 0 - 1 while enabling output clamping.
+Then place it in between the frequency band and the custom feedback node and remove the link between those two nodes by right-clicking it.
+
+![Adding a remap node](../neuromoreStudio/Images/FirstApplication/14_Remap.png)
+![Remove the connection](../neuromoreStudio/Images/FirstApplication/15_Remove.png)
+![Reconnect the nodes](../neuromoreStudio/Images/FirstApplication/16_Reconnect.png)
+
+We could now access this feedback variable called Average Alpha Amplitude from the state machine.
+As we want to control the volume of our video though which is a very common feedback operation in neurofeedback applications we can also directly call it "Volume" - the neuromore Engine running the state machine will then automatically map the value of this node to the volume control of the running experience.
+![Renaming the feedback node](../neuromoreStudio/Images/FirstApplication/16_a_Rename.png)
+
+_Note: besides "Volume" you can also name Custom Feedback nodes ... and ... which neuromore Studio will also automatically map to the functionalities._
+
+## Creating the state machine
+
+# Browsing examples
+
+If you are new to neuromore Studio, a good place to start is to visit our example [classifiers](#Vocabulary) in the 'Back-End File System' window located on the right side.
 
 This is a hierarchical view with folders and files (like in Windows Explorer or OSX Finder). Just click an item and it will open the classifier and show its [graph](#Vocabulary).
 
@@ -34,5 +105,3 @@ The example classifiers are read-only files and you won't be able to change its 
 Use the tool icon in the classifier window to start editing the classifier. New nodes can be created via drag & drop from the 'Available Nodes'. Selecting a node will show up its attributes.
 
 <!--TODO: Include getting started folder in examples folder-->
-*Recommended:* Follow along with the examples in this getting started guide.
- 
