@@ -1,4 +1,4 @@
-# Creating a simple focus trainer using an OpenBCI headset
+# Creating a focus trainer using an OpenBCI v3
 
 ## What will we build?
 
@@ -83,12 +83,106 @@ Then place it in between the frequency band and the custom feedback node and rem
 ![Reconnect the nodes](../neuromoreStudio/Images/FirstApplication/16_Reconnect.png)
 
 We could now access this feedback variable called Average Alpha Amplitude from the state machine.
-As we want to control the volume of our video though which is a very common feedback operation in neurofeedback applications we can also directly call it "Volume" - the neuromore Engine running the state machine will then automatically map the value of this node to the volume control of the running experience.
+As we want to control the volume of our video though, a very common feedback operation in neurofeedback applications, we can also directly call it "Volume" - the neuromore Engine running the state machine will then automatically map the value of this node to the volume control of the running experience.
+Let's also drag in an additional statistics node to smoothen the volume signal by averaging it over the last 3 seconds.
 ![Renaming the feedback node](../neuromoreStudio/Images/FirstApplication/16_a_Rename.png)
+![Adding a statistics node](../neuromoreStudio/Images/FirstApplication/16_b_Statistics.png)
 
 _Note: besides "Volume" you can also name Custom Feedback nodes ... and ... which neuromore Studio will also automatically map to the functionalities._
 
 ## Creating the state machine
+
+Let's now add our application logic. Our user flow will consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose volume depends on their focus (the average Alpha amplitude). This video will
+For that flow we now need to create a _state machine_.
+
+![Creating the state machine](../neuromoreStudio/Images/FirstApplication/17_SM.png)
+
+![Naming the state machine](../neuromoreStudio/Images/FirstApplication/18_SM_Name.png)
+
+## Adding the first states to the state machine
+
+A state machine always consists of at least two states, a _start_ and an _end_ state which mark the beginning and the end of a neurofeedback session.
+In between those are _action_ states to which the state machine transitions when the transision condition is met.
+In the _action_ states we can then fire events like showing text or starting a video on enter or on exit.
+
+Let's look at an example: right-click into the state machine window and add a _start_ state and an _action_ state to the new state machine.
+
+![Adding the start state](../neuromoreStudio/Images/FirstApplication/19_SM_Start.png)
+![Adding an action state](../neuromoreStudio/Images/FirstApplication/20_SM_Action.png)
+![Setting up the action state](../neuromoreStudio/Images/FirstApplication/21_Action.png)
+
+## Setting up the training duration prompt
+
+At the first _action_ state we want to prompt the user to select the duration of the training. For that let's rename the node and add an on-enter action to show the text 'How long do you want to train?' on the screen.
+
+![Adding an on-enter action](../neuromoreStudio/Images/FirstApplication/22_Action_Show_Text.png)
+![Setting the text on the show text action](../neuromoreStudio/Images/FirstApplication/23_Action_Text.png)
+
+## Adding the experience window
+
+To see our experience in action we need an _Experience_ and a _Session Control_ window which we can add via the _Windows_ pane on the top bar. We can also switch the layout through the dropdown in the top-right corner: let's select the _Experience Designer_ layout and add the _Session Control_ there.
+If we do that and then click on _Start Session_ in the _Session Control_ we now see our UI.
+
+![Adding the experience window](../neuromoreStudio/Images/FirstApplication/23_a_Experience_Designer.png)
+![Adding the session control](../neuromoreStudio/Images/FirstApplication/23_b_Session_Control.png)
+![Starting the session](../neuromoreStudio/Images/FirstApplication/23_c_Session.png)
+
+## Adding buttons to select the training duration
+
+We want to give the user 3 options: training for 1, 3 or 5 minutes. One way to do that is to add 3 action states with a _button condition_ each on the transition.
+For all button conditions of outgoing transitions of a state the experience window will display a button on the bottom of the screen, in this case below the duration prompt. Let's add 3 more actions for each training option with button conditions reading '1 minute', '3 minutes' and '5 minutes'.
+
+![Adding more actions](../neuromoreStudio/Images/FirstApplication/24_More_Actions.png)
+![Setting the button conditions](../neuromoreStudio/Images/FirstApplication/25_Button_Condition.png)
+![Setting the button text](../neuromoreStudio/Images/FirstApplication/26_1_min.png)
+![Renaming the actions](../neuromoreStudio/Images/FirstApplication/28_All_Labeled.png)
+
+The result will then look as follows in the experience window.
+
+![The interface with buttons](../neuromoreStudio/Images/FirstApplication/29_Button_Conditions.png)
+
+## Sending data from state machine to classifier
+
+To check if the training duration is over we need to write the duration value into a parameter.
+We can then use that parameter in the classifier to compare it against the session time.
+Let's create a parameter action for each of the 3 options actions and set the "Duration" parameter to either 60, 180, or 300.
+
+![Setting parameter actions](../neuromoreStudio/Images/FirstApplication/28_a_Parameter.png)
+![Setting parameter actions](../neuromoreStudio/Images/FirstApplication/28_b_Parameter.png)
+
+## Checking if the duration is over
+
+We now need to add a check in the classifier if the session time is over.
+For that we drag in a _Session Info_ node and a _Parameter_ node which we call "Duration". This parameter will be set from the state machine.
+We connect both outputs to the inputs of a _Comparator_ node and define the output to be 1 when the session time is greater than the duration.
+To expose this variable to the state machine again we now need to stream the output into a _Custom Feedback_ node which we call "TimerEnded".
+
+![Adding a session info node](../neuromoreStudio/Images/FirstApplication/28_c.png)
+![Adding a parameter node](../neuromoreStudio/Images/FirstApplication/28_d.png)
+![Adding the comparator](../neuromoreStudio/Images/FirstApplication/28_e.png)
+![Streaming the output into a custom feedback node](../neuromoreStudio/Images/FirstApplication/28_f.png)
+
+## Playing the video
+
+After the user selected the duration we now want to play a video (& audio) whose volume is controlled by neuro-feedback.
+Add another state and add 3 actions: one to play a video of your choice, one to play an audio (in case your video doesn't have audio), and one to hide the text.
+
+![Adding the video actions](../neuromoreStudio/Images/FirstApplication/30_Video_Actions.png)
+
+## Ending the neurofeedback session
+
+We're almost there. The last thing to add is the _end_ state.
+We want to end the training if one of 3 conditions is met: either the video is finished, the audio is finished, or the elapsed session time equals the "Duration" parameter.
+While the audio and video conditions are straight forward, for the parameter condition we need to define the name of the feedback node ("TimerEnded") and that we only want to transition when its value is 1.
+
+![Adding the end state](../neuromoreStudio/Images/FirstApplication/31_End.png)
+
+## Running the session
+
+Congratulations, you've just built your first neuro-feedback application!
+Start the session and enjoy your focus training!
+
+![Running a session](../neuromoreStudio/Images/FirstApplication/32_Session_Final.png)
 
 # Browsing examples
 

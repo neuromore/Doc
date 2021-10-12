@@ -7,11 +7,17 @@ neuromore Studio is a platform that allows you to easily build interactive end-t
 Using the visual node-based interface you can connect a wide variety of biosensors such as EEG headsets (e.g. OpenBCI, Interaxon Muse 2, Emotiv Epoc, etc.) or heart rate monitors to your application and build complex signal processing pipelines on their incoming data.
 Finally, the output of this system is connected to outputs such as vizualization windows, external tiggers, etc.
 
-# What can I do with neuromore Studio?
+# What kind of applications can I create with neuromore Studio?
 
 <TODO:>
 
-With neuromore Studio you can build neurofeedback applications like focus trainers,
+With neuromore Studio you can build neurofeedback applications like focus or relaxation trainers for people with high stress levels, ADHD, or other PTSD
+
+is being used to help people to get off drugs, help people with ADHD, depression, PTSD, burnout prevention, neuromarketing
+
+to improve test scores by training their focus.
+
+brething pacers using HRV to help people
 
 # Who is neuromore Studio built for?
 
