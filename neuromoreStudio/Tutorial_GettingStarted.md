@@ -1,17 +1,19 @@
-# Creating a focus trainer using an OpenBCI v3
+# Your first neuro-feedback app
 
 ## What will we build?
 
-In this tutorial we will build a basic focus trainer using an OpenBCI headset from end to end. The application will first ask the user for how long they want to train before showing a video whose sharpness depends on the user's alpha channel activity which we will use as a proxy for the user's focus.
+In this tutorial we will build a basic focus trainer using an OpenBCI headset from end to end.
+If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with the core concepts and capabilities and to get confident with the user interface.
+The application we'll build will first ask the user for how long they want to train before playing a video with audio whose volume depends on the user's Alpha channel activity which we will use as a proxy for the user's focus.
 
 ## A neuromore application in a nutshell
 
 A neuro-/ bio-feedback application created in neuromore Studio consists of 3 parts:
 
-1. a **classifier** in which we define the [graph](#Vocabulary) of the **signal processing pipeline**. Here we can define all sorts of common signal processing operations like FFTs or filters on the biosensor data and either stream it into custom variables, visualise it, or store it in a log file.
+1. a _classifier_ in which we define the graph of the **signal processing pipeline**. Here we can define all sorts of common signal processing operations like FFTs or filters on the biosensor data and either stream it into custom variables, visualise it, or store it in a log file.
    In our example we want to **dynamically measure the user's focus** for which we will use their neural Alpha band activity as a simple proxy - the higher the average Alpha amplitude (compared to the amplitude of the other bands) the higher the user's focus.
-2. a **state machine** in which you define the **application logic**. In our example the state machine will handle the flow from starting the experience over selecting the training duration to adapting the video image based on the current average amplitute on the alpha band.
-3. the **actual experience** that your users will interact with. This can be an **application using simple widgets available in neuromore Studio** as in this example, a **game built in Unity**, or an **app running on a mobile phone**.
+2. a _state machine_ in which you define the **application logic**. In our example the state machine will handle the flow from starting the experience over selecting the training duration to adapting the volume based on the current average amplitute on the alpha band.
+3. the _actual experience_ that your users will interact with. This can be an **application using simple widgets available in neuromore Studio** as in this example, a **game built in Unity**, or an **app running on a mobile phone**.
 
 ## Creating a blank project
 
@@ -49,34 +51,35 @@ To get the average alpha band activity we first need to map the signal onto the 
 
 ## Visualising the frequency spectrum
 
-The FFT node gives us a frequency spectrum. To get an idea how that spectrum looks like let's drag in a _View_ node from the _Output_ tab and connect the output from the _FFT_ to the "Spectrum" input of the _View_ node.
+The _FFT_ node gives us a frequency spectrum. To get an idea how that spectrum looks like let's drag in a _View_ node from the _Output_ tab and connect the output from the _FFT_ to the "Spectrum" input of the _View_ node.
 
 ![Adding a view](../neuromoreStudio/Images/FirstApplication/08_View.png)
-A frequency spectrum is rendered within a _Spectrum View_ which we don't have in the current layout yet. Luckily, customising the layout of neuromore Studio is very straight forward: go to _Windows > Add > Spectrum View_ in the menu at the top and the view will show up in the middle of the screen.
+
+A frequency spectrum is rendered within a _Spectrum View_ which we don't have in the current layout yet. Luckily, customising the layout of neuromore Studio is very straight forward: go to Windows -> Add -> Spectrum View in the menu at the top and the view will show up in the middle of the screen.
 
 ![Adding the spectrum view](../neuromoreStudio/Images/FirstApplication/09_Spectrum_View.png)
 
 Great! There we have the first visualisation of the frequency spectrum coming from the sensor. As we can see the amplitude for the bands between 3 and 12 Hz are quite high at the moment of the screenshot, indicating a stronger Delta, Theta, and Alpha activity.
 
-Before continuing to get the average Alpha amplitude let's get the spectrum view out of the way to clean up the view. You can do that by moving the window around which makes it snap into the layout.
+Before continuing to get the average Alpha amplitude let's get the _Spectrum View_ out of the way to clean up the view. You can do that by moving the window around which makes it snap into the layout.
 
 ![Snapping the spectrum view to the layout](../neuromoreStudio/Images/FirstApplication/10_Spectrum_View.png)
 
 ## Getting the Alpha band amplitude
 
-Back to our classifier: we can now filter the frequency spectrum for the Alpha band by adding a _Frequency Band_ node to the graph. We can see that the default _Value_ of the frequency band node is already set to "Average Amplitude" which is exactly what we want.
+Back to our classifier: we can now filter the frequency spectrum for the Alpha band by adding a _Frequency Band_ node to the graph. We can see that the default _Value_ of the _Frequency Band_ node is already set to "Average Amplitude" which is exactly what we want.
 
 ![Adding a frequency band node](../neuromoreStudio/Images/FirstApplication/11_Frequency_Band.png)
 
 We now want to stream the average Alpha amplitude into a variable so that we can control the video volume based on its value.
 In neuromore Studio we can expose custom variables of the classifier using _Custom Feedback_ nodes available under the _Output_ tab.
 
-As we drag the node in and connect it to the output of the frequency band node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the custom feedback node. Let's set it to a range of 0 to 100 where maximal focus is reached when the Alpha amplitude is at 100. This is of course not a real focus trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore.
-![Adding a custom feedback node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png)
-![Adding a custom feedback node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
+As we drag the node in and connect it to the output of the _Frequency Band_ node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the _Custom Feedback_ node. Let's set it to a range of 0 to 100 where maximal focus is reached when the Alpha amplitude is at 100. This is of course not a real focus trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore.
+![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png)
+![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
 
 To control the volume of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 100 and its output range to 0 - 1 while enabling output clamping.
-Then place it in between the frequency band and the custom feedback node and remove the link between those two nodes by right-clicking it.
+Then place it in between the _Frequency Band_ and the _Custom Feedback_ node and remove the link between those two nodes by right-clicking it.
 
 ![Adding a remap node](../neuromoreStudio/Images/FirstApplication/14_Remap.png)
 ![Remove the connection](../neuromoreStudio/Images/FirstApplication/15_Remove.png)
@@ -92,7 +95,7 @@ _Note: besides "Volume" you can also name Custom Feedback nodes ... and ... whic
 
 ## Creating the state machine
 
-Let's now add our application logic. Our user flow will consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose volume depends on their focus (the average Alpha amplitude). This video will
+Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose volume depends on their focus (the average Alpha amplitude). This video will
 For that flow we now need to create a _state machine_.
 
 ![Creating the state machine](../neuromoreStudio/Images/FirstApplication/17_SM.png)
@@ -160,7 +163,7 @@ To expose this variable to the state machine again we now need to stream the out
 ![Adding a session info node](../neuromoreStudio/Images/FirstApplication/28_c.png)
 ![Adding a parameter node](../neuromoreStudio/Images/FirstApplication/28_d.png)
 ![Adding the comparator](../neuromoreStudio/Images/FirstApplication/28_e.png)
-![Streaming the output into a custom feedback node](../neuromoreStudio/Images/FirstApplication/28_f.png)
+![Streaming the output into a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/28_f.png)
 
 ## Playing the video
 
@@ -186,16 +189,12 @@ Start the session and enjoy your focus training!
 
 # Browsing examples
 
-If you are new to neuromore Studio, a good place to start is to visit our example [classifiers](#Vocabulary) in the 'Back-End File System' window located on the right side.
+If you want to explore more examples check out the example classifiers in the 'Back-End File System' window located on the right side.
 
-This is a hierarchical view with folders and files (like in Windows Explorer or OSX Finder). Just click an item and it will open the classifier and show its [graph](#Vocabulary).
+This is a hierarchical view with folders and files (like in Windows Explorer or OSX Finder). Just click an item and it will open the classifier and show its graph.
 
 ![Create Personal Copy](../neuromoreStudio/Images/Classifier/CreatePersonalCopy.png)
 
-The example classifiers are read-only files and you won't be able to change its graph. In case you want to modify an example and play around with it, right click the classifier item and select 'Create Copy In Personal Folder'. A new file will appear in your personal folder which is named the same way as your user id.
-
-![Classifier Tools](../neuromoreStudio/Images/UI/Tool.png)
-
-Use the tool icon in the classifier window to start editing the classifier. New nodes can be created via drag & drop from the 'Available Nodes'. Selecting a node will show up its attributes.
+The example classifiers are read-only files and you won't be able to change their graphs. In case you want to modify an example and play around with it, right click the classifier item and select 'Create Copy In Personal Folder'. A new file will appear in your personal folder which is named the same way as your user id.
 
 <!--TODO: Include getting started folder in examples folder-->
