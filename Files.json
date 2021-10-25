@@ -1,56 +1,50 @@
 {
-	"rootUrl":						"https://raw.githubusercontent.com/neuromore/Doc/master/",
-	"chapters":
-	[
-		{
-			"name":						"neuromore Studio",
-			"subchapters":
-			[
-				{
-					"name":					"Installation",
-					"relative":				"neuromoreStudio/Installation.md"
-				},
-				{
-					"name":					"Getting Started",
-					"relative":				"neuromoreStudio/Tutorial_GettingStarted.md"
-				},
-				{
-					"name":					"Biosensors",
-					"relative":				"neuromoreStudio/Biosensors.md"
-				},
-				{
-					"name":					"Classifiers",
-					"relative":				"neuromoreStudio/Tutorial_Classifier.md"
-				},
-				{
-					"name":					"Layouts",
-					"relative":				"neuromoreStudio/Tutorial_Layouts.md"
-				},
-				{
-					"name":					"Session",
-					"relative":				"neuromoreStudio/Tutorial_Session.md"
-				},
-				{
-					"name":					"Plugins",
-					"relative":				"neuromoreStudio/Plugins.md"
-				},
-				{
-					"name":					"Nodes",
-					"relative":				"neuromoreStudio/Nodes.md"
-				},
-				{
-					"name":					"OSC Tutorial",
-					"relative":				"neuromoreStudio/OSC.md"
-				},
-				{
-					"name":					"FAQ",
-					"relative":				"neuromoreStudio/FAQ.md"
-				},
-				{
-					"name":					"Tutorial Videos",
-					"relative":				"neuromoreStudio/Videos.md"
-				}
-			]
-		}
-	]
+  "rootUrl": "https://raw.githubusercontent.com/neuromore/Doc/master/",
+  "chapters": [
+    {
+      "name": "neuromore Studio",
+      "subchapters": [
+        {
+          "name": "Introduction",
+          "relative": "neuromoreStudio/Introduction.md"
+        },
+        {
+          "name": "Setup",
+          "relative": "neuromoreStudio/Setup.md"
+        },
+        {
+          "name": "Getting Started",
+          "relative": "neuromoreStudio/Tutorial_GettingStarted.md"
+        },
+        {
+          "name": "Biosensors",
+          "relative": "neuromoreStudio/Biosensors.md"
+        },
+        {
+          "name": "Classifiers",
+          "relative": "neuromoreStudio/Tutorial_Classifier.md"
+        },
+        {
+          "name": "Layouts",
+          "relative": "neuromoreStudio/Tutorial_Layouts.md"
+        },
+        {
+          "name": "Nodes",
+          "relative": "neuromoreStudio/Nodes.md"
+        },
+        {
+          "name": "OSC Tutorial",
+          "relative": "neuromoreStudio/OSC.md"
+        },
+        {
+          "name": "FAQ",
+          "relative": "neuromoreStudio/FAQ.md"
+        },
+        {
+          "name": "Tutorial Videos",
+          "relative": "neuromoreStudio/Videos.md"
+        }
+      ]
+    }
+  ]
 }
