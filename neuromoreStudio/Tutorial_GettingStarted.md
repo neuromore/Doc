@@ -3,8 +3,9 @@
 ## What will we build?
 
 In this tutorial we will build a basic focus trainer using an OpenBCI headset from end to end.
-If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with the core concepts and capabilities and to get confident with the user interface.
-The application we'll build will first ask the user for how long they want to train before playing a video with audio whose volume depends on the user's Alpha channel activity which we will use as a proxy for the user's focus.
+If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with the core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
+
+The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's focus. In this basic example we will use the user's average Alpha band activity as a proxy for focus.
 
 ## A neuromore application in a nutshell
 
@@ -12,7 +13,7 @@ A neuro-/ bio-feedback application created in neuromore Studio consists of 3 par
 
 1. a _classifier_ in which we define the graph of the **signal processing pipeline**. Here we can define all sorts of common signal processing operations like FFTs or filters on the biosensor data and either stream it into custom variables, visualise it, or store it in a log file.
    In our example we want to **dynamically measure the user's focus** for which we will use their neural Alpha band activity as a simple proxy - the higher the average Alpha amplitude (compared to the amplitude of the other bands) the higher the user's focus.
-2. a _state machine_ in which you define the **application logic**. In our example the state machine will handle the flow from starting the experience over selecting the training duration to adapting the volume based on the current average amplitute on the alpha band.
+2. a _state machine_ in which you define the **application logic**. In our example the state machine will handle the flow from starting the experience over selecting the training duration to adapting the screen brightness based on the current average amplitute on the alpha band.
 3. the _actual experience_ that your users will interact with. This can be an **application using simple widgets available in neuromore Studio** as in this example, a **game built in Unity**, or an **app running on a mobile phone**.
 
 ## Creating a blank project
@@ -71,14 +72,14 @@ Back to our classifier: we can now filter the frequency spectrum for the Alpha b
 
 ![Adding a frequency band node](../neuromoreStudio/Images/FirstApplication/11_Frequency_Band.png)
 
-We now want to stream the average Alpha amplitude into a variable so that we can control the video volume based on its value.
+We now want to stream the average Alpha amplitude into a variable so that we can control the video brightness based on its value.
 In neuromore Studio we can expose custom variables of the classifier using _Custom Feedback_ nodes available under the _Output_ tab.
 
 As we drag the node in and connect it to the output of the _Frequency Band_ node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the _Custom Feedback_ node. Let's set it to a range of 0 to 100 where maximal focus is reached when the Alpha amplitude is at 100. This is of course not a real focus trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore.
 ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png)
 ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
 
-To control the volume of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 100 and its output range to 0 - 1 while enabling output clamping.
+To control the brightness of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 100 and its output range to 0 - 1 while enabling output clamping.
 Then place it in between the _Frequency Band_ and the _Custom Feedback_ node and remove the link between those two nodes by right-clicking it.
 
 ![Adding a remap node](../neuromoreStudio/Images/FirstApplication/14_Remap.png)
@@ -86,16 +87,16 @@ Then place it in between the _Frequency Band_ and the _Custom Feedback_ node and
 ![Reconnect the nodes](../neuromoreStudio/Images/FirstApplication/16_Reconnect.png)
 
 We could now access this feedback variable called Average Alpha Amplitude from the state machine.
-As we want to control the volume of our video though, a very common feedback operation in neurofeedback applications, we can also directly call it "Volume" - the neuromore Engine running the state machine will then automatically map the value of this node to the volume control of the running experience.
-Let's also drag in an additional statistics node to smoothen the volume signal by averaging it over the last 3 seconds.
+As we want to control the brightness of our video though, a very common feedback operation in neurofeedback applications, we can also directly call it "ScreenBrightness" - the neuromore Engine running the state machine will then automatically map the value of this node to the screen brightness of the running experience.
+Let's also drag in an additional statistics node to smoothen the brightness signal by averaging it over the last 3 seconds.
 ![Renaming the feedback node](../neuromoreStudio/Images/FirstApplication/16_a_Rename.png)
 ![Adding a statistics node](../neuromoreStudio/Images/FirstApplication/16_b_Statistics.png)
 
-_Note: besides "Volume" you can also name Custom Feedback nodes ... and ... which neuromore Studio will also automatically map to the functionalities._
+_Note: besides "ScreenBrightness" you can also control the volume of the experience within neuromore Studio with the pre-defined feedback operation "Volume"._
 
 ## Creating the state machine
 
-Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose volume depends on their focus (the average Alpha amplitude). This video will
+Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose brightness depends on their focus (the average Alpha amplitude). This video will
 For that flow we now need to create a _state machine_.
 
 ![Creating the state machine](../neuromoreStudio/Images/FirstApplication/17_SM.png)
@@ -167,7 +168,7 @@ To expose this variable to the state machine again we now need to stream the out
 
 ## Playing the video
 
-After the user selected the duration we now want to play a video (& audio) whose volume is controlled by neuro-feedback.
+After the user selected the duration we now want to play a video (& audio) whose brightness is controlled by neuro-feedback.
 Add another state and add 3 actions: one to play a video of your choice, one to play an audio (in case your video doesn't have audio), and one to hide the text.
 
 ![Adding the video actions](../neuromoreStudio/Images/FirstApplication/30_Video_Actions.png)

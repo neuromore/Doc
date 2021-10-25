@@ -128,6 +128,6 @@ Currently in development.
 The OSX version of neuromore Studio supports all kinds of Bluetooth LE heart rate sensors. Just power on your Bluetooth LE heart rate sensor and neuromore Studio will automatically detect it. This can sometimes take up to a minute. In case it doesn't find heart rate sensor, try turning it off and on again.
 
 - [Polar H7](http://www.polar.com/en/products/accessories/H7_heart_rate_sensor)
-- [Zephyr HxM Smart](http://www.zephyranywhere.com/products/hxm-smart-heart-rate-monitor)
+- [Zephyr HxM Smart](https://www.zephyranywhere.com/system/hxm)
 
 Note that we currently can only confirm that the Polar H7 works. Other devices should work too if they adhere to the BTLE profiles and send BPM as well as RR interval data. Please let us know if you found other devices that work or do not work.
