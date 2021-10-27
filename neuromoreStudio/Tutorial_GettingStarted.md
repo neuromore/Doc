@@ -35,12 +35,15 @@ Classifiers and state machines are stored in separate files. Let's select our ne
 ## Adding a biosensor
 
 In the _Input_ category you have a variety of devices to choose from. For this example we will use the OpenBCI v3 sensor.
-To use it, first connect your OpenBCI board to your computer. Make sure to take the following steps:
+To use it, first connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
-Windows: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read our OpenBCI on Windows tutorial.
+_Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
 
-OS X: Make sure your board is connected and visible as a device. To check you can type ls /dev/tty.\* on your terminal. An example connected OBCI board should look like this:
+_Mac OS_: Make sure your board is connected and visible as a device. To check you can type `ls /dev/tty.*` on your terminal. An example connected OBCI board should look like this:
 
+`neuromore-MacBook:~ neuromore$ ls /dev/tty.* /dev/tty.OpenBCI-DN00959R`
+
+To troubleshoot, visit their [FTDI buffer fix for MacOS site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/).
 Drag the OpenBCI device into your classifier to start designing the signal processing pipeline.
 ![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/04_OpenBCI.png)
 ![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/05_OpenBCI_1.png)

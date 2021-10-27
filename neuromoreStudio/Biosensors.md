@@ -5,9 +5,15 @@
 - Platforms: Windows, OSX
 - Devices: OpenBCI 8/32-bit 8 channels (without Daisy module)
 
-Please follow the official [OpenBCI on Windows](http://docs.openbci.com/tutorials/10-OpenBCI_on_Windows) and [Fixing FTDI for OSX](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/) before using it with neuromore Studio. The device will be automatically detected and added to the interface after it was set up correctly.
+First, connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
-Note: Support for the Daisy module and the new Ganglion board will be added soon.
+_Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
+
+_Mac OS_: Make sure your board is connected and visible as a device. To check you can type `ls /dev/tty.*` on your terminal. An example connected OBCI board should look like this:
+
+`neuromore-MacBook:~ neuromore$ ls /dev/tty.* /dev/tty.OpenBCI-DN00959R`
+
+To troubleshoot, visit OpenBCI's [FTDI buffer fix for MacOS site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/).
 
 #InteraXon Muse
 
