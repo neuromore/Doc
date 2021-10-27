@@ -6,6 +6,7 @@ In this tutorial we will build a basic focus trainer using an OpenBCI headset fr
 If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with the core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
 
 The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's focus. In this basic example we will use the user's average Alpha band activity as a proxy for focus.
+You can also find the already built application in the backend file system in the top right corner in the "getting_started" folder.
 ![What we will build](../neuromoreStudio/Images/FirstApplication/00_Demo_Video.gif)
 
 ## A neuromore application in a nutshell
@@ -34,12 +35,15 @@ Classifiers and state machines are stored in separate files. Let's select our ne
 ## Adding a biosensor
 
 In the _Input_ category you have a variety of devices to choose from. For this example we will use the OpenBCI v3 sensor.
-To use it, first connect your OpenBCI board to your computer. Make sure to take the following steps:
+To use it, first connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
-Windows: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read our OpenBCI on Windows tutorial.
+_Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
 
-OS X: Make sure your board is connected and visible as a device. To check you can type ls /dev/tty.\* on your terminal. An example connected OBCI board should look like this:
+_Mac OS_: Make sure your board is connected and visible as a device. To check you can type `ls /dev/tty.*` on your terminal. An example connected OBCI board should look like this:
 
+`neuromore-MacBook:~ neuromore$ ls /dev/tty.* /dev/tty.OpenBCI-DN00959R`
+
+To troubleshoot, visit their [FTDI buffer fix for MacOS site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/).
 Drag the OpenBCI device into your classifier to start designing the signal processing pipeline.
 ![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/04_OpenBCI.png)
 ![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/05_OpenBCI_1.png)
