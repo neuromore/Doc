@@ -15,6 +15,10 @@ _Mac OS_: Make sure your board is connected and visible as a device. To check yo
 
 To troubleshoot, visit OpenBCI's [FTDI buffer fix for MacOS site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/).
 
+Important: To use OpenBCI devices within neuromore Studio you'll need to enable OpenBCI device support. For that go to the _Settings_ which are located in the top bar under the "Edit" tab on windows and under the "NMStudio" tab on MacOS. Then go to _Devices > Enable OpenBCI Devices_.
+
+![Enable OpenBCI Devices](../neuromoreStudio/Images/Biosensors/OpenBCI_Enable.png)
+
 #InteraXon Muse
 
 ![InteraXon Muse](../neuromoreStudio/Images/Biosensors/InteraXonMuse.png)
