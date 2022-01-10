@@ -85,7 +85,7 @@ As we drag the node in and connect it to the output of the _Frequency Band_ node
 ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png)
 ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
 
-To control the brightness of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 30 and its output range to 1 - 0 while enabling output clamping.
+To control the brightness of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 30 and its output range to 0 - 1 while enabling output clamping.
 Then place it in between the _Frequency Band_ and the _Custom Feedback_ node and remove the link between those two nodes by right-clicking it.
 
 _Tipp: This mapping will make the screen brighter when the user gets deeper into a meditative state of relaxation and higher awareness and darker if thoughts come up and the user's mind starts racing. To build a simplified focus trainer you could filter for Average Beta Amplitude instead of the Alpha band._
