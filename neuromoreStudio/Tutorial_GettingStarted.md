@@ -2,10 +2,10 @@
 
 ## What will we build?
 
-In this tutorial we will build a basic focus trainer using an OpenBCI headset from end to end.
-If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with the core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
+In this tutorial we will build a basic neuro-feedback meditation app from end to end using an OpenBCI board to bring the user's mind into a state of relaxation and open awareness.
+If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with its core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
 
-The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's focus. In this basic example we will use the user's average Alpha band activity as a proxy for focus.
+The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's awareness. In this basic example we will use the user's average Alpha band activity as a proxy for awareness or attention.
 You can also find the already built application in the backend file system in the top right corner in the "getting_started" folder.
 ![What we will build](../neuromoreStudio/Images/FirstApplication/00_Demo_Video.gif)
 
@@ -14,7 +14,7 @@ You can also find the already built application in the backend file system in th
 A neuro-/ bio-feedback application created in neuromore Studio consists of 3 parts:
 
 1. a _classifier_ in which we define the graph of the **signal processing pipeline**. Here we can define all sorts of common signal processing operations like FFTs or filters on the biosensor data and either stream it into custom variables, visualise it, or store it in a log file.
-   In our example we want to **dynamically measure the user's focus** for which we will use their neural Alpha band activity as a simple proxy - the higher the average Alpha amplitude (compared to the amplitude of the other bands) the higher the user's focus.
+   In our example we want to **dynamically measure the user's awareness** for which we will use their neural Alpha band activity as a simple proxy - the higher the average Alpha amplitude (compared to the amplitude of the other bands) the higher the user's awareness for their surroundings.
 2. a _state machine_ in which you define the **application logic**. In our example the state machine will handle the flow from starting the experience over selecting the training duration to adapting the screen brightness based on the current average amplitute on the alpha band.
 3. the _actual experience_ that your users will interact with. This can be an **application using simple widgets available in neuromore Studio** as in this example, a **game built in Unity**, or an **app running on a mobile phone**.
 
@@ -34,8 +34,9 @@ Classifiers and state machines are stored in separate files. Let's select our ne
 
 ## Adding a biosensor
 
-In the _Input_ category you have a variety of devices to choose from. For this example we will use the OpenBCI v3 sensor.
-To use it, first connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
+In the _Sensors_ category you have a variety of devices to choose from. For this example we will use an OpenBCI board. If you have a Cyton or Daisy board use the corresponding nodes instead of the OpenBCI node.
+Before connecting your board go to the Settings (on Windows: _Edit>Settings>Devices_, on MacOS: _NMStudio>Settings>Devices_) and make sure that _Enable OpenBCI Devices_ is selected.
+Then connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
 _Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
 
@@ -80,13 +81,14 @@ Back to our classifier: we can now filter the frequency spectrum for the Alpha b
 We now want to stream the average Alpha amplitude into a variable so that we can control the video brightness based on its value.
 In neuromore Studio we can expose custom variables of the classifier using _Custom Feedback_ nodes available under the _Output_ tab.
 
-As we drag the node in and connect it to the output of the _Frequency Band_ node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the _Custom Feedback_ node. Let's set it to a range of 0 to 100 where maximal focus is reached when the Alpha amplitude is at 100. This is of course not a real focus trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore.
+As we drag the node in and connect it to the output of the _Frequency Band_ node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the _Custom Feedback_ node. Let's set it to a range of 0 to 30 where maximal awareness is reached when the Alpha amplitude is at 30. This is of course not a real awareness/ attention trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore. Feel free to adjust the max value of the average Alpha amplitude later depending on your actual Alpha activity.
 ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png)
 ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
 
-To control the brightness of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 100 and its output range to 0 - 1 while enabling output clamping.
+To control the brightness of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 30 and its output range to 0 - 1 while enabling output clamping.
 Then place it in between the _Frequency Band_ and the _Custom Feedback_ node and remove the link between those two nodes by right-clicking it.
 
+_Tipp: This mapping will make the screen brighter when the user gets deeper into a meditative state of relaxation and higher awareness and darker if thoughts come up and the user's mind starts racing. To build a simplified focus trainer you could filter for Average Beta Amplitude instead of the Alpha band._
 ![Adding a remap node](../neuromoreStudio/Images/FirstApplication/14_Remap.png)
 ![Remove the connection](../neuromoreStudio/Images/FirstApplication/15_Remove.png)
 ![Reconnect the nodes](../neuromoreStudio/Images/FirstApplication/16_Reconnect.png)
@@ -97,13 +99,14 @@ Let's also drag in an additional statistics node to smoothen the brightness sign
 ![Renaming the feedback node](../neuromoreStudio/Images/FirstApplication/16_a_Rename.png)
 ![Adding a statistics node](../neuromoreStudio/Images/FirstApplication/16_b_Statistics.png)
 
-_Note: besides "ScreenBrightness" you can also control the volume of the experience within neuromore Studio with the pre-defined feedback operation "Volume"._
+_Note: besides "ScreenBrightness" you can also control the volume of the experience within neuromore Studio if you give your custom feedback node the name "Volume"._
 
 ## Creating the state machine
 
-Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose brightness depends on their focus (the average Alpha amplitude). This video will
-For that flow we now need to create a _state machine_.
+Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose brightness depends on their attention level (the average Alpha amplitude).
+For that flow we now need to first change the layout in the top right corner to the _State Machine Designer_ before creating a _state machine_.
 
+![Changing the layout](../neuromoreStudio/Images/FirstApplication/16_c_Layout.png)
 ![Creating the state machine](../neuromoreStudio/Images/FirstApplication/17_SM.png)
 
 ![Naming the state machine](../neuromoreStudio/Images/FirstApplication/18_SM_Name.png)
@@ -189,7 +192,7 @@ While the audio and video conditions are straight forward, for the parameter con
 ## Running the session
 
 Congratulations, you've just built your first neuro-feedback application!
-Start the session and enjoy your focus training!
+Start the session and enjoy your meditation!
 
 ![Running a session](../neuromoreStudio/Images/FirstApplication/32_Session_Final.png)
 
