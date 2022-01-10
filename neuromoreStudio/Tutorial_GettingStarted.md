@@ -2,7 +2,7 @@
 
 ## What will we build?
 
-In this tutorial we will build a basic focus trainer using an OpenBCI headset from end to end.
+In this tutorial we will build a basic focus trainer using an OpenBCI Cyton board from end to end.
 If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with the core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
 
 The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's focus. In this basic example we will use the user's average Alpha band activity as a proxy for focus.
@@ -34,8 +34,9 @@ Classifiers and state machines are stored in separate files. Let's select our ne
 
 ## Adding a biosensor
 
-In the _Input_ category you have a variety of devices to choose from. For this example we will use the OpenBCI v3 sensor.
-To use it, first connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
+In the _Sensors_ category you have a variety of devices to choose from. For this example we will use the OpenBCI Cyton board.
+Before connecting your board go to the Settings (on Windows: _Edit>Settings>Devices_, on MacOS: _NMStudio>Settings>Device_) and make sure that _Enable OpenBCI Devices_ is selected.
+Then connect your Cyton board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
 _Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
 
@@ -101,8 +102,8 @@ _Note: besides "ScreenBrightness" you can also control the volume of the experie
 
 ## Creating the state machine
 
-Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose brightness depends on their focus (the average Alpha amplitude). This video will
-For that flow we now need to create a _state machine_.
+Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose brightness depends on their focus (the average Alpha amplitude).
+For that flow we now need to first create a _state machine_ and second change the layout in the top right corner to the _State Machine Designer_.
 
 ![Creating the state machine](../neuromoreStudio/Images/FirstApplication/17_SM.png)
 

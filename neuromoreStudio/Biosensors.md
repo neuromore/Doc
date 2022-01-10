@@ -5,7 +5,8 @@
 - Platforms: Windows, OSX
 - Devices: OpenBCI 8/32-bit 8 channels (without Daisy module)
 
-First, connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
+Before connecting your board go to the Settings (on Windows: _Edit>Settings>Devices_, on MacOS: _NMStudio>Settings>Device_) and make sure that _Enable OpenBCI Devices_ is selected.
+Then connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
 _Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
 
@@ -14,8 +15,6 @@ _Mac OS_: Make sure your board is connected and visible as a device. To check yo
 `neuromore-MacBook:~ neuromore$ ls /dev/tty.* /dev/tty.OpenBCI-DN00959R`
 
 To troubleshoot, visit OpenBCI's [FTDI buffer fix for MacOS site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/).
-
-Important: To use OpenBCI devices within neuromore Studio you'll need to enable OpenBCI device support. For that go to the _Settings_ which are located in the top bar under the "Edit" tab on windows and under the "NMStudio" tab on MacOS. Then go to _Devices > Enable OpenBCI Devices_.
 
 ![Enable OpenBCI Devices](../neuromoreStudio/Images/Biosensors/OpenBCI_Enable.png)
 
