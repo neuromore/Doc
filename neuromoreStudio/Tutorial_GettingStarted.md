@@ -6,7 +6,7 @@ In this tutorial we will build a basic neuro-feedback meditation app from end to
 If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with its core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
 
 The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's awareness. In this basic example we will use the user's average Alpha band activity as a proxy for awareness or attention.
-You can also find the already built application in the backend file system in the top right corner in the "examples->˜GettingStarted->FocusTrainer" folder.
+You can also find the already built application in the backend file system in the top right corner in the "examples->GettingStarted->FocusTrainer" folder.
 ![What we will build](../neuromoreStudio/Images/FirstApplication/00_Demo_Video.gif)
 
 ## A neuromore application in a nutshell
