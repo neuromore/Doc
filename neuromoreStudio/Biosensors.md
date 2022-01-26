@@ -41,13 +41,12 @@ Please note that neuromore Studio doesn't work with the official Muse IO softwar
 
 A few steps are necessary to get the Muse to work on OSX:
 
-1.  Make sure to first install the official Muse Research Tools for OSX [from here](http://developer.choosemuse.com/research-tools)
-2.  Download the fixed Muse IO application [from here](https://neuromore-update-studio.s3.amazonaws.com/MuseIO_OSCFix_3_7_0_OSX.zip)
-3.  Extract the application to a folder (for example your home folder)
-4.  Make sure your Muse is paired to your Mac, switched on and in reach of the receiver
-5.  Press 'Tools'->'Start Muse IO' in the neuromore Studio menu and choose the Muse IO application from the folder where you extracted it
-6.  The data aquisition window will pop up. Keep it running while you stream data and check it for any connection errors that might appear
-7.  The Muse will automatically appear in neuromore Studio once the connection is established
+1.  Download the Muse IO application [from here](https://sites.google.com/a/interaxon.ca/muse-developer-site/museio)
+2.  Extract the application to a folder (for example your home folder)
+3.  Make sure your Muse is paired to your Mac, switched on and in reach of the receiver
+4.  Press 'Tools'->'Start Muse IO' in the neuromore Studio menu and choose the Muse IO application from the folder where you extracted it
+5.  The data aquisition window will pop up. Keep it running while you stream data and check it for any connection errors that might appear
+6.  The Muse will automatically appear in neuromore Studio once the connection is established
 
 #NeuroSky
 
