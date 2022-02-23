@@ -33,6 +33,10 @@
           "relative": "neuromoreStudio/Nodes.md"
         },
         {
+          "name": "Visualizations",
+          "relative": "neuromoreStudio/Visualizations.md"
+        },
+        {
           "name": "OSC Tutorial",
           "relative": "neuromoreStudio/OSC.md"
         },
