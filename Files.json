@@ -25,6 +25,10 @@
           "relative": "neuromoreStudio/Tutorial_Classifier.md"
         },
         {
+          "name": "State Machine",
+          "relative": "neuromoreStudio/State_Machine.md"
+        },
+        {
           "name": "Layouts",
           "relative": "neuromoreStudio/Tutorial_Layouts.md"
         },
