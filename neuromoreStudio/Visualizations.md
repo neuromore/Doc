@@ -1,24 +1,81 @@
 #Visualizations & Games
 
+We believe that neurofeedback applications can be more than just adapting the screen brightness or the volume of the audio.
+That's why we've added interactive experiences and games to neuromore Studio that you can access through the "Visualizations" pane in the top bar or through the eye icon in the _Session Control_ window.
+![Visualizations](../neuromoreStudio/Images/Visualizations/visualizations.png)
+![Visualizations](../neuromoreStudio/Images/Visualizations/session_control_vis.png)
+
+Every game has a set of controllable feedback parameters that can be controlled from your classifier using the _Custom Feedback_ node.
+You can see an example of controlling various parameters of your game
+For each existing visualization you can find the available feedback parameters below. Scroll down if you want to build your own experiences using Unity.
+
+![Visualizations](../neuromoreStudio/Images/Visualizations/custom_feedback_osc.png)
+
 ##Existing Visualizations
 
 ###Cartoon Town
-
-Controllable feedback parameters:
-
+Drive a little car through a cartoon style town. The feedback will control the speed of the car while it automatically moves through the city. Ideal for kids.
+![Cartoon Town](../neuromoreStudio/Images/Visualizations/cartoon_town.gif)
 ###Infinite Tunnel
-
-Controllable feedback parameters:
+Immmerse yourself into the infinite tunnel. Enable the space ship with smoke effects for more variation. Feedback changes color and camera speed.
+![Infinite Tunnel](../neuromoreStudio/Images/Visualizations/infinite_tunnel.gif)
 
 ###Forest Walk
+![Forest Walk](../neuromoreStudio/Images/Visualizations/forest_walk.gif)
 
-Controllable feedback parameters:
+Enjoy the peace and connect to nature while you're slowly walking through the forest.
 
 ###Tropical Island
+![Tropical Island](../neuromoreStudio/Images/Visualizations/tropical_island.gif)
+Master controlling the sky and sea. The tropical island visualization adapts the weather from a sunny beach to a tropical storm based on the feedback. Waves will push against the beach while palm trees fight against the wind.
 
-Controllable feedback parameters:
+##Controllable feedback parameters
 
-##Building Custom Visualizations in Unity
+In the available visualizations you can control a variety of different parameters. Just add a _Custom Feedback_ node to your classifier, enable _Send OSC Messages_ and set the _OSC address_ to any of the values below.
+
+###Movement
+/movement-speed (for Cartoon Town, Infinite Tunnel & Forest Walk)
+
+###Environment
+/weather-sun
+
+/weather-rain
+
+/weather-wind (Tropical Island only)
+
+/weather-fog (Forest Walk only)
+
+/weather-clouds (Forest Walk only)
+
+/pollution (Cartoon Town only)
+
+/crops (Cartoon Town only)
+
+###Audio
+/audio/volume
+
+###Camera
+/camera/blur
+
+/camera/vignetting
+
+/camera/sepia
+
+/camera/grayscale
+
+/camera/water/freeze
+
+/camera/water/amount
+
+/camera/fade-color-a
+
+/camera/fade-color-r
+
+/camera/fade-color-g
+
+/camera/fade-color-b
+
+##Building your own Games in Unity
 
 <add video>
 
@@ -40,7 +97,9 @@ Start a session in neuromore Studio using the _Session Control_ widget. You will
 Some pre-configured feedback parameters that you can use out of the box are
 
 - /weather-sun
+
 - /weather-rain
+
 - /weather-fog
 - /weather-clouds
 - /movement-speed
