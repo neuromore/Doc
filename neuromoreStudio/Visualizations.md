@@ -94,17 +94,25 @@ Now go to neuromore Studio and open a classifier with OSC output nodes. To get s
 Start a session in neuromore Studio using the _Session Control_ widget. You will now see the weather and the camera speed update in real time in the forest scene in Unity.
 
 ###Which feedback parameters can I use?
-Some pre-configured feedback parameters that you can use out of the box are
+Some pre-configured feedback parameters that you can use out of the box across all games are
 
 - /weather-sun
 
 - /weather-rain
 
 - /weather-fog
+
 - /weather-clouds
+
 - /movement-speed
+
 - /session/level
+
 - /session/points
+
 - /audio/volume
+
   You can find the full mapping of pre-defined OSC feedback parameters under _Assets->Resources->neuromore Prefab->Scripts->Network->OSCMapping.cs_.
   There you can also add custom mappings whose functionality you can then add to the WorldController.cs file (under \_Assets->Resources->neuromore Prefab->Scripts->WorldController.cs).
+
+Happy developing!
