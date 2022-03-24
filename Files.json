@@ -25,16 +25,16 @@
           "relative": "neuromoreStudio/Tutorial_Classifier.md"
         },
         {
+          "name": "Experiences for Neurofeedback",
+          "relative": "neuromoreStudio/Visualizations.md"
+        },
+        {
           "name": "Layouts",
           "relative": "neuromoreStudio/Tutorial_Layouts.md"
         },
         {
           "name": "Nodes",
           "relative": "neuromoreStudio/Nodes.md"
-        },
-        {
-          "name": "Visualizations",
-          "relative": "neuromoreStudio/Visualizations.md"
         },
         {
           "name": "OSC Tutorial",
