@@ -1,18 +1,18 @@
-@font-face{
-  font-family:"SourceSansPro-Light";
+@font-face {
+  font-family: "SourceSansPro-Light";
   src: url("../fonts/SourceSansPro-Light.otf") format("opentype");
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
   font-size: 16px;
 }
 a {
-  color: rgb(0,159,227);
+  color: rgb(0, 159, 227);
   text-decoration: none;
 }
-img{
+img {
   margin-left: 10px;
 }
 .table-float {
@@ -22,10 +22,10 @@ img{
 }
 /* Header Bar */
 .headline {
-	position: fixed;
-	width: 100%;
-	background: #706f6f;
-	z-index: 100
+  position: fixed;
+  width: 100%;
+  background: #706f6f;
+  z-index: 100;
 }
 /* Header */
 .subnav {
@@ -41,31 +41,27 @@ img{
   text-align: center;
 }
 .subnav a:hover {
-	color: rgb(0,159,227);
+  color: rgb(0, 159, 227);
 }
 .subnavSelected {
-	color: rgb(255,255,255) !important;
-	background: rgb(0,159,227);
+  color: rgb(255, 255, 255) !important;
+  background: rgb(0, 159, 227);
 }
 
-
-
-
-
 /* Doc */
-.pagemenu{
+.pagemenu {
   padding-top: 50px;
   padding-right: 0px;
   padding-left: 10px;
-	border-right: 1px solid #dbdde2;
+  border-right: 1px solid #dbdde2;
   overflow-y: auto;
 }
-.pageSelect{
-	color: rgb(0,159,227) !important;
+.pageSelect {
+  color: rgb(0, 159, 227) !important;
 }
-a.mainMenuItem{
+a.mainMenuItem {
   font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
-  color: rgb(112,112,111);
+  color: rgb(112, 112, 111);
   line-height: 1.2 !important;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -73,43 +69,42 @@ a.mainMenuItem{
   display: block;
 }
 
-
 .menubar {
   padding: 60px;
-	float: left;
+  float: left;
   border-right: solid 1px #dfe2e7;
   overflow-y: auto;
 }
 .pushContent {
-	float: left;
+  float: left;
   width: 100%;
 }
 
-@media (max-width:639px){
+@media (max-width: 639px) {
   .pagemenu {
     width: 100%;
     border-bottom: 1px solid#dbdde2;
   }
-  .menubar{
+  .menubar {
     padding: 30px;
     width: 100%;
-  	border-bottom: 1px solid#dbdde2;
+    border-bottom: 1px solid#dbdde2;
     visibility: visible;
     float: left;
   }
   .pushContent {
     left: 0px;
-  	top: 0px;
+    top: 0px;
     width: 100%;
   }
 }
-@media (min-width:640px) and (max-width:959px) {
+@media (min-width: 640px) and (max-width: 959px) {
   .pagemenu {
     width: 190px;
     float: left;
     padding-left: 10px;
   }
-  .menubar{
+  .menubar {
     margin-left: -1px;
     position: relative;
     width: 200px;
@@ -127,16 +122,16 @@ a.mainMenuItem{
   }
 }
 
-@media (min-width:960px) and (max-width: 1179px) {
+@media (min-width: 960px) and (max-width: 1179px) {
   .pagemenu {
     position: fixed;
     width: 190px;
     float: left;
-    left:0px;
+    left: 0px;
     height: 100vh;
     border-right: 1px solid #dbdde2;
   }
-  .menubar{
+  .menubar {
     margin-left: -1px;
     position: fixed;
     width: 190px;
@@ -157,49 +152,49 @@ a.mainMenuItem{
   }
 }
 @media (min-width: 1180px) {
-    body{
-      background-color: #F3F6FB;
-    }
-   .pagemenu {
-     position: fixed;
-     width: 190px;
-     float: left;
-     left:0px;
-     height: 100vh;
-     border-right: 1px solid#dbdde2;
-     background-color: #FFFFFF;
-   }
-   .menubar{
-     position: fixed;
-     width: 190px;
-     left: 200px;
-     height: calc(100% - 50px);
-     float: left;
-     border-left: 1px solid #dbdde2;
-     border-right: 0px solid #dbdde2;
-     padding: 50px 0px 0px 10px;
-     overflow-y: auto;
-     background-color: #FFFFFF;
-   }
-   .pushContent {
-     padding-left: 0px;
-     left:401px;
-     top: 25px;
-     width: 600px;
-     border-left: 1px solid #dbdde2;
-     border-right: 1px solid #dbdde2;
-     background-color: #FFFFFF;
-     height: 100vh;
-   }
-   .content {
-     width: 540px;
-     background-color: #FFFFFF;
-   }
-   p {
-     width: 540px !important;
-     padding: 10px;
-   }
-   .img-js {
+  body {
+    background-color: #f3f6fb;
+  }
+  .pagemenu {
+    position: fixed;
+    width: 190px;
+    float: left;
+    left: 0px;
+    height: 100vh;
+    border-right: 1px solid#dbdde2;
+    background-color: #ffffff;
+  }
+  .menubar {
+    position: fixed;
+    width: 190px;
+    left: 200px;
+    height: calc(100% - 50px);
+    float: left;
+    border-left: 1px solid #dbdde2;
+    border-right: 0px solid #dbdde2;
+    padding: 50px 0px 0px 10px;
+    overflow-y: auto;
+    background-color: #ffffff;
+  }
+  .pushContent {
+    padding-left: 0px;
+    left: 401px;
+    top: 25px;
+    width: 600px;
+    border-left: 1px solid #dbdde2;
+    border-right: 1px solid #dbdde2;
+    background-color: #ffffff;
+    height: 100vh;
+  }
+  .content {
+    width: 540px;
+    background-color: #ffffff;
+  }
+  p {
+    width: 540px !important;
+    padding: 10px;
+  }
+  .img-js {
     float: right !important;
     clear: both !important;
     margin-right: -570px;
@@ -211,11 +206,14 @@ a.mainMenuItem{
 }
 
 /* MD Files*/
-.content h1, .content h2, .content .big-heading, body.big-h3 .content h3 {
+.content h1,
+.content h2,
+.content .big-heading,
+body.big-h3 .content h3 {
   padding-top: 30px;
 }
 .content h3 {
-    border-bottom: solid 1px rgba(0,0,0,0.07);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.07);
 }
 .content p {
   padding: 3px 0;
@@ -225,23 +223,23 @@ a.mainMenuItem{
   height: auto;
   max-height: 250px;
 }
-.level-1{
-	font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
-	color: rgb(112,112,111) !important;
-	font-size: 18px;
+.level-1 {
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
+  color: rgb(112, 112, 111) !important;
+  font-size: 18px;
   padding: 2px;
 }
 .level-2 {
-	font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
-	color: rgb(112,112,111) !important;
-	font-size: 16px;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
+  color: rgb(112, 112, 111) !important;
+  font-size: 16px;
   padding: 2px;
 }
 .level-3 {
-	font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
-  color: rgb(112,112,111) !important;
-	text-transform: none !important;
-	width: 180px !important;
+  font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
+  color: rgb(112, 112, 111) !important;
+  text-transform: none !important;
+  width: 180px !important;
   padding: 2px;
-  	font-size: 14px;
+  font-size: 14px;
 }

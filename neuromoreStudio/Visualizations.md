@@ -1,38 +1,38 @@
-#Experiences for Neurofeedback
+# Custom Neurofeedback Experiences
 
 Neuromore Studio offers you three ways to give users neuro- and bio-feedback:
 
-1. through the integrated experience window (e.g., controlling the volume or screen brightness of a video or an audio file)
-2. using one of our interactive games (e.g., controlling the speed of a car or the weather)
+1. using one of our already existing **interactive games** (e.g., controlling the speed of a car or the weather)
+2. using state machine and the integrated experience window (e.g., controlling the volume or screen brightness of a video or an audio file)
 3. through any application of your choice using the OSC interface (e.g., we provide a Unity plugin but you could also use Ableton or a write a script for a Raspberry Pi to control the lights in your home).
 
-Below we'll show you how to build experiences using the experience window, the built-in visualizations, and the Unity plugin. For more information about the OSC integration see the OSC section.
+Below we'll show you how to build experiences using the built-in visualizations, the experience window, and the Unity plugin. For more information about the OSC integration see the OSC section.
 
-## The experience window
+## Using Pre-Built Games
 
-## Using Visualizations/ Games
-
-In many neurofeedback applications you want to have more interaction that adapting the screen brightness or the volume of the audio.
-That's why we've added 4 games to neuromore Studio that you can access through the "Visualizations" pane in the top bar or through the eye icon in the _Session Control_ window.
+The fastest way to create a neurofeedback experience is using one of our immersive, pre-built games.
+At the moment we have 4 games or visualizations that you can access through the "Visualizations" pane in the top bar or through the eye icon in the _Session Control_ window.
 ![Visualizations](../neuromoreStudio/Images/Visualizations/visualizations.png)
 ![Visualizations](../neuromoreStudio/Images/Visualizations/session_control_vis.png)
 
 Every game has a set of controllable feedback parameters that can be controlled from your classifier using the _Custom Feedback_ node.
-You can see an example of controlling various parameters of your game
+On the right you can see an example of controlling various parameters of your game like the weather or the movement speed of a car. Neuromore Studio communicates with the visualizations through the OSC interface: that means that for each parameter you want to control you need to specify the OSC address of the _Custom Feedback_ node by double clicking it. Also make sure that _Send OSC Msgs_ is enabled.
 For each existing visualization you can find the available feedback parameters below. Scroll down if you want to build your own games and experiences using Unity.
 
 ![Visualizations](../neuromoreStudio/Images/Visualizations/custom_feedback_osc.png)
 
-###Existing Visualizations
+### Existing Visualizations
 
-####Cartoon Town
+#### Cartoon Town
+
 Drive a little car through a cartoon style town. The feedback will control the speed of the car while it automatically moves through the city. Ideal for kids.
 ![Cartoon Town](../neuromoreStudio/Images/Visualizations/cartoon_town.gif)
 ####Infinite Tunnel
 Immmerse yourself into the infinite tunnel. Enable the space ship with smoke effects for more variation. Feedback changes color and camera speed.
 ![Infinite Tunnel](../neuromoreStudio/Images/Visualizations/infinite_tunnel.gif)
 
-####Forest Walk
+#### Forest Walk
+
 ![Forest Walk](../neuromoreStudio/Images/Visualizations/forest_walk.gif)
 
 Enjoy the peace and connect to nature while you're slowly walking through the forest.
@@ -41,7 +41,7 @@ Enjoy the peace and connect to nature while you're slowly walking through the fo
 ![Tropical Island](../neuromoreStudio/Images/Visualizations/tropical_island.gif)
 Master controlling the sky and sea. The tropical island visualization adapts the weather from a sunny beach to a tropical storm based on the feedback. Waves will push against the beach while palm trees fight against the wind.
 
-###Controllable feedback parameters
+### Controllable feedback parameters
 
 In the available visualizations you can control a variety of different parameters. Just add a _Custom Feedback_ node to your classifier, enable _Send OSC Messages_ and set the _OSC address_ to any of the values below.
 
@@ -87,7 +87,27 @@ In the available visualizations you can control a variety of different parameter
 
 /camera/fade-color-b
 
-##Building your own Games in Unity
+## Creating Custom Experiences using State Machine & Experience Window
+
+Let's say you want to build an experience where the user can control the screen brightness of a video using neurofeedback. Also you want to give them the choice which video to play, ask them how long they want to train or record a baseline before starting the experience.
+
+For that neuromore Studio offers you to configure the application flow using the _State Machine_ that then controls the experience in the built-in experience window.
+On the right you can see such an experience in which the user is first prompted to select how long they want to train their focus before controlling the screen brightness of a video with neuro-feedback. For the full example see our _Getting Started_ section.
+
+![Experience window](../neuromoreStudio/Images/Visualizations/experience_window.gif)
+
+### What is the State Machine?
+
+In the state machine you define the logic of the experience. Below you can find a couple of examples to use the state machine.
+
+####
+
+You can define which video or audio file you want to play, which text to show the user during the baseline recording, or define a state to let the user choose a video from
+
+If you want to play a custom audio file or a video and adapt its volume or brightness you can use the built-in experience window.
+The experience window is tightly coupled with your state machine where you define
+
+## Building your own Games in Unity
 
 ###Getting Started
 To enable you to build games and multisensory neurofeedback experiences we have developed an open source neuromore Unity prefab.
