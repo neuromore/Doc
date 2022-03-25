@@ -13,6 +13,7 @@ We don't want you to worry about the hardware integration which is why neuromore
 
 At the moment it supports a variety of EEG devices, from consumer headsets (e.g., Interaxon Muse 2, Neurosity Crown) over OpenBCI boards to medical grade amplifiers (e.g., ANT Neuro's Eego, Brainmaster Discovery), heart rate monitors, GSR sensors and other bluetooth devices that you can effortlessly connect to your applications.
 
+![Devices](../neuromoreStudio/Images/Introduction/integrations.png)
 ## Signal Processing without Coding
 
 We believe that you shouldn't need to be a developer to create advanced signal processing pipelines. That’s why one of the main features of neuromore Studio is its no-code visual editor that allows anyone from neuroscientists to clinicians, artists, researchers and developers to create neurofeedback protocols and data analysis pipelines.
