@@ -5,7 +5,7 @@
 - Platforms: Windows, OSX
 - Devices: OpenBCI 8/32-bit 8 channels (without Daisy module)
 
-Before connecting your board go to the Settings (on Windows: _Edit>Settings>Devices_, on MacOS: _NMStudio>Settings>Device_) and make sure that _Enable OpenBCI Devices_ is selected.
+Before connecting your board go to the Settings (on Windows: _Edit>Settings>Devices_, on MacOS: _NMStudio>Settings>Devices_) and make sure that _Enable OpenBCI Devices_ is selected.
 Then connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
 _Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
@@ -47,6 +47,54 @@ A few steps are necessary to get the Muse to work on OSX:
 4.  Press 'Tools'->'Start Muse IO' in the neuromore Studio menu and choose the Muse IO application from the folder where you extracted it
 5.  The data aquisition window will pop up. Keep it running while you stream data and check it for any connection errors that might appear
 6.  The Muse will automatically appear in neuromore Studio once the connection is established
+
+#Brainflow
+![Brainflow logo](../neuromoreStudio/Images/Biosensors/Brainflow_Logo.png)
+
+- Platforms: Windows, MacOS, Linux
+- Devices:
+  - [OpenBCI](https://openbci.com/) Cyton, Ganglion, Daisy, Galea, Cyton WIFI, Ganglion WIFI & Daisy WIFI
+  - [Brainbit EEG](https://brainbit.com/?gclid=Cj0KCQjw1ZeUBhDyARIsAOzAqQKLEdjZaoNE1iQWmrtR6HIyRxtxCdnkIePywI3daevRkn74qz5S760aAuifEALw_wcB)
+  - [G.TEC Unicorn](https://www.unicorn-bi.com/)
+  - [Callibri](https://callibri.com/) EEG, EMG, ECG
+  - [Neurosity](https://neurosity.co/) Notion & Notion2 (Crown coming soon)
+  - [Oymotion](http://www.oymotion.com/en/product32/149) GForcePro EMG Armband
+  - [FreeEEG32 board](https://www.crowdsupply.com/neuroidss/freeeeg32)
+  - [Brainflow Playback, Streaming & Synthetic board](https://brainflow.readthedocs.io/en/stable/SupportedBoards.html#brainflow-dummy-boards)
+
+Brainflow is a great library integrating a variety of different biosensors with APIs for different programming languages.
+Thanks to [Andrey](https://github.com/Andrey1994)'s amazing integration, neuromore Studio allows you to use all of those sensors as well to build your application through its no-code visual interface.
+
+To use a biosensor using Brainflow, you will have to set the board_id, the serial_port, and sometimes the mac_address or the ip_address/ ip_port fields.
+Please have a look at [their documentation](https://brainflow.readthedocs.io/en/stable/SupportedBoards.html) to find these parameters.
+
+#Neurosity
+![Neurosity logo](../neuromoreStudio/Images/Biosensors/Neurosity_Logo.png)
+
+- Platforms: Windows, MacOS, Linux
+- Devices: Notion, Notion2 (Crown coming soon)
+
+To use Neurosity devices with neuromore Studio, you'll have to prepare a few steps:
+
+##Enabling OSC in the Neurosity developer console
+You'll have to enable OSC support in the Neurosity developer console.
+
+1. In case you don't have a Neurosity dev account yet, follow [this short guide](https://support.neurosity.co/hc/en-us/articles/360036196792-Create-account-with-Neurosity) to set up your account.
+2. Go to your device settings in to the [developer console](https://console.neurosity.co/settings) and enable OSC.
+   ![Neurosity OSC](../neuromoreStudio/Images/Biosensors/Neurosity_Enable_OSC.png)
+
+##Connecting your device in neuromore Studio
+
+1. Go to the Network Settings (go to _Edit>Settings>Network_ (Windows) or _NMStudio>Settings>Network_ (MacOS)) and set the Input UDP port to 9000. This is necessary as the Notion devices stream their data through OSC to the Studio.
+   ![Neurosity settings](../neuromoreStudio/Images/Biosensors/Neurosity_Settings.png)
+
+2. Make sure the device is on the same WIFI network as your computer.
+3. Start the device, go to the "Devices" window and click on the search icon (if it is not automatically recognized)
+4. Find the device ID in the "Devices" window in neuromore Studio.
+   ![Neurosity Device ID](../neuromoreStudio/Images/Biosensors/Neurosity_Device_ID.png)
+5. Set the "Device Number" of the Neurosity node in the classifer to the device ID incremented by 1 (e.g. if the device ID is 33285 set it to 33286 in the classifier).
+   ![Neurosity Device Number](../neuromoreStudio/Images/Biosensors/Neurosity_Device_Number.png)
+   Note: at the moment we still experience a drift when streaming from Neurosity devices which means that the signal might not be consistently streamed. We are working on a fix for that at the moment with the Neurosity team.
 
 #NeuroSky
 
