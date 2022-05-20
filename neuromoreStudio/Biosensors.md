@@ -116,9 +116,9 @@ Uses public, but proprietary [community-sdk](https://github.com/pandark/emotiv-c
 
 **Steps**
 
-- Copy \*.h from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/include) and [here](https://github.com/pandark/emotiv-community-sdk/tree/master/include/Legacy%20header%20files) to [here](https://github.com/neuromore/studio/tree/master/deps/include/emotiv)
-- Copy _.lib from [here](hhttps://github.com/pandark/emotiv-community-sdk/tree/master/lib/win32) and _.dll from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/bin/win32) to [here](https://github.com/neuromore/studio/tree/master/deps/prebuilt/win/x86)
-- Copy _.lib from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/lib/win64) and _.dll from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/bin/win64) to [here](https://github.com/neuromore/studio/tree/master/deps/prebuilt/win/x64)
+- Copy \*.h from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/include) to [here](https://github.com/neuromore/studio/tree/master/deps/include/emotiv)
+- Win32: Copy _.lib from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/lib/win32) and _.dll from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/bin/win32) to [here](https://github.com/neuromore/studio/tree/master/deps/prebuilt/win/x86)
+- Win64: Copy _.lib from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/lib/win64) and _.dll from [here](https://github.com/pandark/emotiv-community-sdk/tree/master/bin/win64) to [here](https://github.com/neuromore/studio/tree/master/deps/prebuilt/win/x64)
 - Enable `INCLUDE_DEVICE_EMOTIV` in [Config.h](https://github.com/neuromore/studio/blob/master/src/Engine/Config.h) of Engine
 - Build
 
