@@ -76,18 +76,11 @@
           if (parameters.cat == i) {
             mainMenuLink.className = "subnavSelected";
 
-            for (
-              var j = 0;
-              j < data.chapters[parameters.cat].subchapters.length;
-              j++
-            ) {
+            for (var j = 0; j < data.chapters[parameters.cat].subchapters.length; j++) {
               var pageMenuLink = document.createElement("a");
-              var pageLinkText = document.createTextNode(
-                data.chapters[parameters.cat].subchapters[j].name
-              );
+              var pageLinkText = document.createTextNode(data.chapters[parameters.cat].subchapters[j].name);
               pageMenuLink.appendChild(pageLinkText);
-              pageMenuLink.title =
-                data.chapters[parameters.cat].subchapters[j].name;
+              pageMenuLink.title = data.chapters[parameters.cat].subchapters[j].name;
               pageMenuLink.href = "?cat=" + i + "&page=" + j;
 
               if (parameters.page == j) {
@@ -97,12 +90,11 @@
               }
               var div2 = document.getElementById("page_menu");
               div2.appendChild(pageMenuLink);
+              console.log(pageMenuLink);
             }
           }
         }
-        var link =
-          data.rootUrl +
-          data.chapters[parameters.cat].subchapters[parameters.page].relative;
+        var link = data.rootUrl + data.chapters[parameters.cat].subchapters[parameters.page].relative;
         Flatdoc.run({ fetcher: Flatdoc.file(link) });
       });
     </script>

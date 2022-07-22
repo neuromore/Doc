@@ -18,7 +18,7 @@ img {
 .table-float {
   float: left;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 50px;
 }
 /* Header Bar */
 .headline {
@@ -122,7 +122,7 @@ a.mainMenuItem {
   }
 }
 
-@media (min-width: 960px) and (max-width: 1179px) {
+@media (min-width: 860px) and (max-width: 1179px) {
   .pagemenu {
     position: fixed;
     width: 190px;
@@ -149,6 +149,7 @@ a.mainMenuItem {
   }
   .content {
     width: calc(100% - 500px);
+    /* width: 90%; */
   }
 }
 @media (min-width: 1180px) {
@@ -166,7 +167,7 @@ a.mainMenuItem {
   }
   .menubar {
     position: fixed;
-    width: 190px;
+    width: 250px;
     left: 200px;
     height: calc(100% - 50px);
     float: left;
@@ -178,26 +179,26 @@ a.mainMenuItem {
   }
   .pushContent {
     padding-left: 0px;
-    left: 401px;
+    left: 461px;
     top: 25px;
-    width: 600px;
+    /* width: 600px; */
     border-left: 1px solid #dbdde2;
     border-right: 1px solid #dbdde2;
     background-color: #ffffff;
     height: 100vh;
   }
   .content {
-    width: 540px;
+    width: calc(100% - 450px);
     background-color: #ffffff;
   }
   p {
-    width: 540px !important;
+    /* width: 540px !important; */
     padding: 10px;
   }
   .img-js {
-    float: right !important;
+    /* float: right !important; */
     clear: both !important;
-    margin-right: -570px;
+    /* margin-right: -570px; */
     margin-top: 12px;
   }
   .content-img img {
@@ -225,19 +226,19 @@ body.big-h3 .content h3 {
 }
 .level-1 {
   font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
-  color: rgb(112, 112, 111) !important;
+  color: rgb(112, 112, 111);
   font-size: 18px;
   padding: 2px;
 }
 .level-2 {
   font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
-  color: rgb(112, 112, 111) !important;
+  color: rgb(112, 112, 111);
   font-size: 16px;
   padding: 2px;
 }
 .level-3 {
   font-family: "SourceSansPro-Light", "Helvetica Neue", "Helvetica" !important;
-  color: rgb(112, 112, 111) !important;
+  color: rgb(112, 112, 111);
   text-transform: none !important;
   width: 180px !important;
   padding: 2px;

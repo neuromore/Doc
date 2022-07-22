@@ -130,13 +130,7 @@
     if (!filepath) filepath = "readme.md";
     if (!branch) branch = "default";
 
-    var url =
-      "https://bitbucket.org/api/1.0/repositories/" +
-      repo +
-      "/src/" +
-      branch +
-      "/" +
-      filepath;
+    var url = "https://bitbucket.org/api/1.0/repositories/" + repo + "/src/" + branch + "/" + filepath;
 
     return function (callback) {
       $.ajax({
@@ -349,14 +343,8 @@
       .replace(/\/\*(.*)\*\//gm, '<span class="comment">/*$1*/</span>')
       .replace(/(\d+\.\d+)/gm, '<span class="number">$1</span>')
       .replace(/(\d+)/gm, '<span class="number">$1</span>')
-      .replace(
-        /\bnew *(\w+)/gm,
-        '<span class="keyword">new</span> <span class="init">$1</span>'
-      )
-      .replace(
-        /\b(function|new|throw|return|var|if|else)\b/gm,
-        '<span class="keyword">$1</span>'
-      );
+      .replace(/\bnew *(\w+)/gm, '<span class="keyword">new</span> <span class="init">$1</span>')
+      .replace(/\b(function|new|throw|return|var|if|else)\b/gm, '<span class="keyword">$1</span>');
   };
 
   Highlighters.html = function (code) {
@@ -365,10 +353,7 @@
       .replace(/>/g, "&gt;")
       .replace(/("[^\"]*?")/g, '<span class="string">$1</span>')
       .replace(/('[^\']*?')/g, '<span class="string">$1</span>')
-      .replace(
-        /&lt;!--(.*)--&gt;/g,
-        '<span class="comment">&lt;!--$1--&gt;</span>'
-      )
+      .replace(/&lt;!--(.*)--&gt;/g, '<span class="comment">&lt;!--$1--&gt;</span>')
       .replace(/&lt;([^!][^\s&]*)/g, '&lt;<span class="keyword">$1</span>');
   };
 
@@ -517,12 +502,17 @@
     }
   }
   $(window).on("hashchange", function (data) {
-    var element = document.getElementById(
-      window.location.hash.replace("#", "")
-    );
+    var element = document.getElementById(window.location.hash.replace("#", ""));
     var offset = element.offsetTop - 30;
     smoothScroll(currentScrollPos, offset);
     currentScrollPos = offset;
+
+    // highlight level-1 navigation item
+    console.log(window.location.hash);
+    $(".level-2").removeClass("pageSelect");
+    $(".level-1").removeClass("pageSelect");
+
+    $(window.location.hash + "-link").addClass("pageSelect");
   });
 
   Runner.prototype.run = function () {
@@ -623,32 +613,16 @@
   t.bullet = /(?:[*+-]|\d+\.)/;
   t.item = /^( *)(bull) [^\n]*(?:\n(?!\1bull )[^\n]*)*/;
   t.item = l(t.item, "gm")(/bull/g, t.bullet)();
-  t.list = l(t.list)(/bull/g, t.bullet)(
-    "hr",
-    /\n+(?=(?: *[-*_]){3,} *(?:\n+|$))/
-  )();
-  t._tag =
-    "(?!(?:" +
-    "a|em|strong|small|s|cite|q|dfn|abbr|data|time|code" +
-    "|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo" +
-    "|span|br|wbr|ins|del|img)\\b)\\w+(?!:/|@)\\b";
-  t.html = l(t.html)("comment", /<!--[\s\S]*?-->/)(
-    "closed",
-    /<(tag)[\s\S]+?<\/\1>/
-  )("closing", /<tag(?:"[^"]*"|'[^']*'|[^'">])*?>/)(/tag/g, t._tag)();
-  t.paragraph = l(t.paragraph)("hr", t.hr)("heading", t.heading)(
-    "lheading",
-    t.lheading
-  )("blockquote", t.blockquote)("tag", "<" + t._tag)("def", t.def)();
+  t.list = l(t.list)(/bull/g, t.bullet)("hr", /\n+(?=(?: *[-*_]){3,} *(?:\n+|$))/)();
+  t._tag = "(?!(?:" + "a|em|strong|small|s|cite|q|dfn|abbr|data|time|code" + "|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo" + "|span|br|wbr|ins|del|img)\\b)\\w+(?!:/|@)\\b";
+  t.html = l(t.html)("comment", /<!--[\s\S]*?-->/)("closed", /<(tag)[\s\S]+?<\/\1>/)("closing", /<tag(?:"[^"]*"|'[^']*'|[^'">])*?>/)(/tag/g, t._tag)();
+  t.paragraph = l(t.paragraph)("hr", t.hr)("heading", t.heading)("lheading", t.lheading)("blockquote", t.blockquote)("tag", "<" + t._tag)("def", t.def)();
   t.normal = h({}, t);
   t.gfm = h({}, t.normal, {
     fences: /^ *(`{3,}|~{3,}) *(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n+|$)/,
     paragraph: /^/,
   });
-  t.gfm.paragraph = l(t.paragraph)(
-    "(?!",
-    "(?!" + t.gfm.fences.source.replace("\\1", "\\2") + "|"
-  )();
+  t.gfm.paragraph = l(t.paragraph)("(?!", "(?!" + t.gfm.fences.source.replace("\\1", "\\2") + "|")();
   t.tables = h({}, t.gfm, {
     nptable: /^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)\n*/,
     table: /^ *\|(.+)\n *\|( *[-:]+[-| :]*)\n((?: *\|.*(?:\n|$))*)\n*/,
@@ -777,9 +751,7 @@
           h = h.replace(/^ *([*+-]|\d+\.) +/, "");
           if (~h.indexOf("\n ")) {
             a -= h.length;
-            h = !this.options.pedantic
-              ? h.replace(new RegExp("^ {1," + a + "}", "gm"), "")
-              : h.replace(/^ {1,4}/gm, "");
+            h = !this.options.pedantic ? h.replace(new RegExp("^ {1," + a + "}", "gm"), "") : h.replace(/^ {1,4}/gm, "");
           }
           if (this.options.smartLists && u !== p - 1) {
             o = t.bullet.exec(r[u + 1])[0];
@@ -836,9 +808,7 @@
           }
         }
         for (u = 0; u < h.cells.length; u++) {
-          h.cells[u] = h.cells[u]
-            .replace(/^ *\| *| *\| *$/g, "")
-            .split(/ *\| */);
+          h.cells[u] = h.cells[u].replace(/^ *\| *| *\| *$/g, "").split(/ *\| */);
         }
         this.tokens.push(h);
         continue;
@@ -933,10 +903,7 @@
       if ((l = this.rules.autolink.exec(t))) {
         t = t.substring(l[0].length);
         if (l[2] === "@") {
-          s =
-            l[1][6] === ":"
-              ? this.mangle(l[1].substring(7))
-              : this.mangle(l[1]);
+          s = l[1][6] === ":" ? this.mangle(l[1].substring(7)) : this.mangle(l[1]);
           i = this.mangle("mailto:") + s;
         } else {
           s = r(l[1]);
@@ -1012,34 +979,14 @@
   };
   s.prototype.outputLink = function (t, e) {
     if (t[0][0] !== "!") {
-      return (
-        '<a href="' +
-        r(e.href) +
-        '"' +
-        (e.title ? ' title="' + r(e.title) + '"' : "") +
-        ' target="_blank">' +
-        this.output(t[1]) +
-        "</a>"
-      );
+      return '<a href="' + r(e.href) + '"' + (e.title ? ' title="' + r(e.title) + '"' : "") + ' target="_blank">' + this.output(t[1]) + "</a>";
     } else {
       //changes
       var prefixUrl = "";
       var imageUrl = e.href.split("../").join("");
-      var image =
-        '<img src="' +
-        r(prefixUrl + "/" + imageUrl) +
-        '" alt="' +
-        r(t[1]) +
-        '"' +
-        (e.title ? ' title="' + r(e.title) + '"' : "") +
-        ">";
+      var image = '<img src="' + r(prefixUrl + "/" + imageUrl) + '" alt="' + r(t[1]) + '"' + (e.title ? ' title="' + r(e.title) + '"' : "") + ">";
       // var link = '<a data-lightbox="image-1" data-title="image" style="float:right;padding-left:40px;" href="'+r(prefixUrl+'/'+imageUrl)+'" class="content-img">'+image+'</a>';
-      var link =
-        '<a data-lightbox="image-1" data-title="image" href="' +
-        r(prefixUrl + "/" + imageUrl) +
-        '" class="content-img">' +
-        image +
-        "</a>";
+      var link = '<a data-lightbox="image-1" data-title="image" href="' + r(prefixUrl + "/" + imageUrl) + '" class="content-img">' + image + "</a>";
       var lightbox = '<p class="img-js">' + link + "</p>";
       return lightbox;
     }
@@ -1106,15 +1053,7 @@
         return "<hr>\n";
       }
       case "heading": {
-        return (
-          "<h" +
-          this.token.depth +
-          ">" +
-          this.inline.output(this.token.text) +
-          "</h" +
-          this.token.depth +
-          ">\n"
-        );
+        return "<h" + this.token.depth + ">" + this.inline.output(this.token.text) + "</h" + this.token.depth + ">\n";
       }
       case "code": {
         if (this.options.highlight) {
@@ -1127,15 +1066,7 @@
         if (!this.token.escaped) {
           this.token.text = r(this.token.text, true);
         }
-        return (
-          "<pre><code" +
-          (this.token.lang
-            ? ' class="' + this.options.langPrefix + this.token.lang + '"'
-            : "") +
-          ">" +
-          this.token.text +
-          "</code></pre>\n"
-        );
+        return "<pre><code" + (this.token.lang ? ' class="' + this.options.langPrefix + this.token.lang + '"' : "") + ">" + this.token.text + "</code></pre>\n";
       }
       case "table": {
         var e = "",
@@ -1147,9 +1078,7 @@
         e += "<thead>\n<tr>\n";
         for (s = 0; s < this.token.header.length; s++) {
           n = this.inline.output(this.token.header[s]);
-          e += this.token.align[s]
-            ? '<th align="' + this.token.align[s] + '">' + n + "</th>\n"
-            : "<th>" + n + "</th>\n";
+          e += this.token.align[s] ? '<th align="' + this.token.align[s] + '">' + n + "</th>\n" : "<th>" + n + "</th>\n";
         }
         e += "</tr>\n</thead>\n";
         e += "<tbody>\n";
@@ -1158,9 +1087,7 @@
           e += "<tr>\n";
           for (o = 0; o < i.length; o++) {
             l = this.inline.output(i[o]);
-            e += this.token.align[o]
-              ? '<td align="' + this.token.align[o] + '">' + l + "</td>\n"
-              : "<td>" + l + "</td>\n";
+            e += this.token.align[o] ? '<td align="' + this.token.align[o] + '">' + l + "</td>\n" : "<td>" + l + "</td>\n";
           }
           e += "</tr>\n";
         }
@@ -1197,9 +1124,7 @@
         return "<li>" + e + "</li>\n";
       }
       case "html": {
-        return !this.token.pre && !this.options.pedantic
-          ? this.inline.output(this.token.text)
-          : this.token.text;
+        return !this.token.pre && !this.options.pedantic ? this.inline.output(this.token.text) : this.token.text;
       }
       case "paragraph": {
         return "<p>" + this.inline.output(this.token.text) + "</p>\n";
@@ -1287,9 +1212,7 @@
     } catch (f) {
       f.message += "\nPlease report this to https://github.com/chjj/marked.";
       if ((n || a.defaults).silent) {
-        return (
-          "<p>An error occured:</p><pre>" + r(f.message + "", true) + "</pre>"
-        );
+        return "<p>An error occured:</p><pre>" + r(f.message + "", true) + "</pre>";
       }
       throw f;
     }
@@ -1354,22 +1277,10 @@
   var u = function (r) {
     if (r.length < 2) {
       var e = r.charCodeAt(0);
-      return e < 128
-        ? r
-        : e < 2048
-        ? o(192 | (e >>> 6)) + o(128 | (e & 63))
-        : o(224 | ((e >>> 12) & 15)) +
-          o(128 | ((e >>> 6) & 63)) +
-          o(128 | (e & 63));
+      return e < 128 ? r : e < 2048 ? o(192 | (e >>> 6)) + o(128 | (e & 63)) : o(224 | ((e >>> 12) & 15)) + o(128 | ((e >>> 6) & 63)) + o(128 | (e & 63));
     } else {
-      var e =
-        65536 + (r.charCodeAt(0) - 55296) * 1024 + (r.charCodeAt(1) - 56320);
-      return (
-        o(240 | ((e >>> 18) & 7)) +
-        o(128 | ((e >>> 12) & 63)) +
-        o(128 | ((e >>> 6) & 63)) +
-        o(128 | (e & 63))
-      );
+      var e = 65536 + (r.charCodeAt(0) - 55296) * 1024 + (r.charCodeAt(1) - 56320);
+      return o(240 | ((e >>> 18) & 7)) + o(128 | ((e >>> 12) & 63)) + o(128 | ((e >>> 6) & 63)) + o(128 | (e & 63));
     }
   };
   var c = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g;
@@ -1378,16 +1289,8 @@
   };
   var f = function (r) {
     var e = [0, 2, 1][r.length % 3],
-      t =
-        (r.charCodeAt(0) << 16) |
-        ((r.length > 1 ? r.charCodeAt(1) : 0) << 8) |
-        (r.length > 2 ? r.charCodeAt(2) : 0),
-      a = [
-        n.charAt(t >>> 18),
-        n.charAt((t >>> 12) & 63),
-        e >= 2 ? "=" : n.charAt((t >>> 6) & 63),
-        e >= 1 ? "=" : n.charAt(t & 63),
-      ];
+      t = (r.charCodeAt(0) << 16) | ((r.length > 1 ? r.charCodeAt(1) : 0) << 8) | (r.length > 2 ? r.charCodeAt(2) : 0),
+      a = [n.charAt(t >>> 18), n.charAt((t >>> 12) & 63), e >= 2 ? "=" : n.charAt((t >>> 6) & 63), e >= 1 ? "=" : n.charAt(t & 63)];
     return a.join("");
   };
   var h =
@@ -1414,26 +1317,15 @@
   var g = function (r) {
     return v(r, true);
   };
-  var l = new RegExp(
-    ["[À-ß][-¿]", "[à-ï][-¿]{2}", "[ð-÷][-¿]{3}"].join("|"),
-    "g"
-  );
+  var l = new RegExp(["[À-ß][-¿]", "[à-ï][-¿]{2}", "[ð-÷][-¿]{3}"].join("|"), "g");
   var A = function (r) {
     switch (r.length) {
       case 4:
-        var e =
-            ((7 & r.charCodeAt(0)) << 18) |
-            ((63 & r.charCodeAt(1)) << 12) |
-            ((63 & r.charCodeAt(2)) << 6) |
-            (63 & r.charCodeAt(3)),
+        var e = ((7 & r.charCodeAt(0)) << 18) | ((63 & r.charCodeAt(1)) << 12) | ((63 & r.charCodeAt(2)) << 6) | (63 & r.charCodeAt(3)),
           t = e - 65536;
         return o((t >>> 10) + 55296) + o((t & 1023) + 56320);
       case 3:
-        return o(
-          ((15 & r.charCodeAt(0)) << 12) |
-            ((63 & r.charCodeAt(1)) << 6) |
-            (63 & r.charCodeAt(2))
-        );
+        return o(((15 & r.charCodeAt(0)) << 12) | ((63 & r.charCodeAt(1)) << 6) | (63 & r.charCodeAt(2)));
       default:
         return o(((31 & r.charCodeAt(0)) << 6) | (63 & r.charCodeAt(1)));
     }
@@ -1444,11 +1336,7 @@
   var p = function (r) {
     var e = r.length,
       t = e % 4,
-      n =
-        (e > 0 ? a[r.charAt(0)] << 18 : 0) |
-        (e > 1 ? a[r.charAt(1)] << 12 : 0) |
-        (e > 2 ? a[r.charAt(2)] << 6 : 0) |
-        (e > 3 ? a[r.charAt(3)] : 0),
+      n = (e > 0 ? a[r.charAt(0)] << 18 : 0) | (e > 1 ? a[r.charAt(1)] << 12 : 0) | (e > 2 ? a[r.charAt(2)] << 6 : 0) | (e > 3 ? a[r.charAt(3)] : 0),
       u = [o(n >>> 16), o((n >>> 8) & 255), o(n & 255)];
     u.length -= [0, 0, 2, 1][t];
     return u.join("");
@@ -1846,10 +1734,7 @@
         Downcoder.chars += c;
       }
     }
-    Downcoder.regex = new RegExp(
-      "[" + Downcoder.chars + "]|[^" + Downcoder.chars + "]+",
-      "g"
-    );
+    Downcoder.regex = new RegExp("[" + Downcoder.chars + "]|[^" + Downcoder.chars + "]+", "g");
   };
   downcode = function (slug) {
     Downcoder.Initialize();

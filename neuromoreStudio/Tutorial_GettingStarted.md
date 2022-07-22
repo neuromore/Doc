@@ -2,27 +2,21 @@
 
 ## What will we build?
 
-In this tutorial we will build a basic neuro-feedback meditation app from end to end using an OpenBCI board to bring the user's mind into a state of relaxation and open awareness.
-If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with its core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
+In this tutorial we will build a basic neuro-feedback meditation app from end to end using an OpenBCI board to bring the user's mind into a state of relaxation and open awareness. If you're new to neuromore Studio we would highly recommend to follow the tutorial to get familiar with its core concepts and capabilities and to get confident with the user interface. You will learn about building signal processing pipelines, defining application logic, and working with the customisable layout.
 
-The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's awareness. In this basic example we will use the user's average Alpha band activity as a proxy for awareness or attention.
-You can also find the already built application in the backend file system in the top right corner in the "examples->GettingStarted->FocusTrainer" folder.
-![What we will build](../neuromoreStudio/Images/FirstApplication/00_Demo_Video.gif)
+The application we'll build will first prompt the user for how long they want to train before playing a video whose brightness depends on the user's awareness. In this basic example we will use the user's average Alpha band activity as a proxy for awareness or attention. You can also find the already built application in the backend file system in the top right corner in the "examples->GettingStarted->FocusTrainer" folder. ![What we will build](../neuromoreStudio/Images/FirstApplication/00_Demo_Video.gif)
 
 ## A neuromore application in a nutshell
 
 A neuro-/ bio-feedback application created in neuromore Studio consists of 3 parts:
 
-1. a _classifier_ in which we define the graph of the **signal processing pipeline**. Here we can define all sorts of common signal processing operations like FFTs or filters on the biosensor data and either stream it into custom variables, visualise it, or store it in a log file.
-   In our example we want to **dynamically measure the user's awareness** for which we will use their neural Alpha band activity as a simple proxy - the higher the average Alpha amplitude (compared to the amplitude of the other bands) the higher the user's awareness for their surroundings.
+1. a _classifier_ in which we define the graph of the **signal processing pipeline**. Here we can define all sorts of common signal processing operations like FFTs or filters on the biosensor data and either stream it into custom variables, visualise it, or store it in a log file. In our example we want to **dynamically measure the user's awareness** for which we will use their neural Alpha band activity as a simple proxy - the higher the average Alpha amplitude (compared to the amplitude of the other bands) the higher the user's awareness for their surroundings.
 2. a _state machine_ in which you define the **application logic**. In our example the state machine will handle the flow from starting the experience over selecting the training duration to adapting the screen brightness based on the current average amplitute on the alpha band.
 3. the _actual experience_ that your users will interact with. This can be an **application using simple widgets available in neuromore Studio** as in this example, a **game built in Unity**, or an **app running on a mobile phone**.
 
 ## Creating a blank project
 
-Projects are stored in the **neuromore back-end file system**. When you first open neuromore Studio you will find a window in the top-right corner where you can see example projects.
-To create our new project, let's create a folder with the name of your choice.
-![Creating a folder](../neuromoreStudio/Images/FirstApplication/01_Folder.png)
+Projects are stored in the **neuromore back-end file system**. When you first open neuromore Studio you will find a window in the top-right corner where you can see example projects. To create our new project, let's create a folder with the name of your choice. ![Creating a folder](../neuromoreStudio/Images/FirstApplication/01_Folder.png)
 
 ![Naming your project](../neuromoreStudio/Images/FirstApplication/02_Folder_Name.png)
 
@@ -34,9 +28,7 @@ Classifiers and state machines are stored in separate files. Let's select our ne
 
 ## Adding a biosensor
 
-In the _Sensors_ category you have a variety of devices to choose from. For this example we will use an OpenBCI board. If you have a Cyton or Daisy board use the corresponding nodes instead of the OpenBCI node.
-Before connecting your board go to the Settings (on Windows: _Edit>Settings>Devices_, on MacOS: _NMStudio>Settings>Devices_) and make sure that _Enable OpenBCI Devices_ is selected.
-Then connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
+In the _Sensors_ category you have a variety of devices to choose from. For this example we will use an OpenBCI board. If you have a Cyton or Daisy board use the corresponding nodes instead of the OpenBCI node. Before connecting your board go to the Settings (on Windows: _Edit>Settings>Devices_, on MacOS: _NMStudio>Settings>Devices_) and make sure that _Enable OpenBCI Devices_ is selected. Then connect your OpenBCI board to your computer. Make sure to take the following steps before using it with neuromore Studio:
 
 _Windows_: Make sure your board is recognized as a COM port and that its latency is set to 1 ms. To troubleshoot, read the [OpenBCI on Windows tutorial on their official site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Windows/).
 
@@ -44,17 +36,13 @@ _Mac OS_: Make sure your board is connected and visible as a device. To check yo
 
 `neuromore-MacBook:~ neuromore$ ls /dev/tty.* /dev/tty.OpenBCI-DN00959R`
 
-To troubleshoot, visit OpenBCI's [FTDI buffer fix for MacOS site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/).
-Drag the OpenBCI device into your classifier to start designing the signal processing pipeline.
-![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/04_OpenBCI.png)
-![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/05_OpenBCI_1.png)
+To troubleshoot, visit OpenBCI's [FTDI buffer fix for MacOS site](https://docs.openbci.com/Troubleshooting/FTDI_Fix_Mac/). Drag the OpenBCI device into your classifier to start designing the signal processing pipeline. ![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/04_OpenBCI.png) ![Adding the OpenBCI](../neuromoreStudio/Images/FirstApplication/05_OpenBCI_1.png)
 
 ## Getting the frequency band
 
 To get the average alpha band activity we first need to map the signal onto the frequency domain. For that we drag a _[Fast Fourier Transformation (FFT)](https://en.wikipedia.org/wiki/Fast_Fourier_transform)_ node into the graph and connect itto the EEG output pin of the OpenBCI device.
 
-![Adding the FFT](../neuromoreStudio/Images/FirstApplication/06_FFT.png)
-![Adding the FFT](../neuromoreStudio/Images/FirstApplication/07_FFT.png)
+![Adding the FFT](../neuromoreStudio/Images/FirstApplication/06_FFT.png) ![Adding the FFT](../neuromoreStudio/Images/FirstApplication/07_FFT.png)
 
 ## Visualising the frequency spectrum
 
@@ -78,76 +66,51 @@ Back to our classifier: we can now filter the frequency spectrum for the Alpha b
 
 ![Adding a frequency band node](../neuromoreStudio/Images/FirstApplication/11_Frequency_Band.png)
 
-We now want to stream the average Alpha amplitude into a variable so that we can control the video brightness based on its value.
-In neuromore Studio we can expose custom variables of the classifier using _Custom Feedback_ nodes available under the _Output_ tab.
+We now want to stream the average Alpha amplitude into a variable so that we can control the video brightness based on its value. In neuromore Studio we can expose custom variables of the classifier using _Custom Feedback_ nodes available under the _Output_ tab.
 
-As we drag the node in and connect it to the output of the _Frequency Band_ node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the _Custom Feedback_ node. Let's set it to a range of 0 to 30 where maximal awareness is reached when the Alpha amplitude is at 30. This is of course not a real awareness/ attention trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore. Feel free to adjust the max value of the average Alpha amplitude later depending on your actual Alpha activity.
-![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png)
-![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
+As we drag the node in and connect it to the output of the _Frequency Band_ node we see the average Alpha amplitude being streamed between the two nodes. Also the graph shows us that the value is not in range: we hence need to adapt the value range of the _Custom Feedback_ node. Let's set it to a range of 0 to 30 where maximal awareness is reached when the Alpha amplitude is at 30. This is of course not a real awareness/ attention trainer - for that we would have to assess a baseline first or dynamically compare the Alpha activity with the activity of the other bands. But for now it should be enough to get the idea of creating an end-to-end neuro-feedback application in neuromore. Feel free to adjust the max value of the average Alpha amplitude later depending on your actual Alpha activity. ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/12_Custom_Feedback.png) ![Adding a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/13_Avg_Alpha.png)
 
-To control the brightness of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 30 and its output range to 0 - 1 while enabling output clamping.
-Then place it in between the _Frequency Band_ and the _Custom Feedback_ node and remove the link between those two nodes by right-clicking it.
+To control the brightness of our video we need to map the average Alpha amplitude to a range of 0 to 1. neuromore Studio offers a variety of mathematical operations under the _Math_ tab: one of them is a _Remap_ node which we now drag into the graph. Set its input range to 0 - 30 and its output range to 0 - 1 while enabling output clamping. Then place it in between the _Frequency Band_ and the _Custom Feedback_ node and remove the link between those two nodes by right-clicking it.
 
-_Tipp: This mapping will make the screen brighter when the user gets deeper into a meditative state of relaxation and higher awareness and darker if thoughts come up and the user's mind starts racing. To build a simplified focus trainer you could filter for Average Beta Amplitude instead of the Alpha band._
-![Adding a remap node](../neuromoreStudio/Images/FirstApplication/14_Remap.png)
-![Remove the connection](../neuromoreStudio/Images/FirstApplication/15_Remove.png)
-![Reconnect the nodes](../neuromoreStudio/Images/FirstApplication/16_Reconnect.png)
+_Tipp: This mapping will make the screen brighter when the user gets deeper into a meditative state of relaxation and higher awareness and darker if thoughts come up and the user's mind starts racing. To build a simplified focus trainer you could filter for Average Beta Amplitude instead of the Alpha band._ ![Adding a remap node](../neuromoreStudio/Images/FirstApplication/14_Remap.png) ![Remove the connection](../neuromoreStudio/Images/FirstApplication/15_Remove.png) ![Reconnect the nodes](../neuromoreStudio/Images/FirstApplication/16_Reconnect.png)
 
-We could now access this feedback variable called Average Alpha Amplitude from the state machine.
-As we want to control the brightness of our video though, a very common feedback operation in neurofeedback applications, we can also directly call it "ScreenBrightness" - the neuromore Engine running the state machine will then automatically map the value of this node to the screen brightness of the running experience.
-Let's also drag in an additional statistics node to smoothen the brightness signal by averaging it over the last 3 seconds.
-![Renaming the feedback node](../neuromoreStudio/Images/FirstApplication/16_a_Rename.png)
-![Adding a statistics node](../neuromoreStudio/Images/FirstApplication/16_b_Statistics.png)
+We could now access this feedback variable called Average Alpha Amplitude from the state machine. As we want to control the brightness of our video though, a very common feedback operation in neurofeedback applications, we can also directly call it "ScreenBrightness" - the neuromore Engine running the state machine will then automatically map the value of this node to the screen brightness of the running experience. Let's also drag in an additional statistics node to smoothen the brightness signal by averaging it over the last 3 seconds. ![Renaming the feedback node](../neuromoreStudio/Images/FirstApplication/16_a_Rename.png) ![Adding a statistics node](../neuromoreStudio/Images/FirstApplication/16_b_Statistics.png)
 
 _Note: besides "ScreenBrightness" you can also control the volume of the experience within neuromore Studio if you give your custom feedback node the name "Volume"._
 
 ## Creating the state machine
 
-Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose brightness depends on their attention level (the average Alpha amplitude).
-For that flow we now need to first change the layout in the top right corner to the _State Machine Designer_ before creating a _state machine_.
+Let's now add our application logic. Our user flow will primarily consist of 2 steps: first the user will see a screen with 3 buttons to choose the duration of the training from; then they will see a video whose brightness depends on their attention level (the average Alpha amplitude). For that flow we now need to first change the layout in the top right corner to the _State Machine Designer_ before creating a _state machine_.
 
-![Changing the layout](../neuromoreStudio/Images/FirstApplication/16_c_Layout.png)
-![Creating the state machine](../neuromoreStudio/Images/FirstApplication/17_SM.png)
+![Changing the layout](../neuromoreStudio/Images/FirstApplication/16_c_Layout.png) ![Creating the state machine](../neuromoreStudio/Images/FirstApplication/17_SM.png)
 
 ![Naming the state machine](../neuromoreStudio/Images/FirstApplication/18_SM_Name.png)
 
-## Adding the first states to the state machine
+## Adding states to the state machine
 
-A state machine always consists of at least two states, a _start_ and an _end_ state which mark the beginning and the end of a neurofeedback session.
-In between those are _action_ states to which the state machine transitions when the transision condition is met.
-In the _action_ states we can then fire events like showing text or starting a video on enter or on exit.
+A state machine always consists of at least two states, a _start_ and an _end_ state which mark the beginning and the end of a neurofeedback session. In between those are _action_ states to which the state machine transitions when the transision condition is met. In the _action_ states we can then fire events like showing text or starting a video on enter or on exit.
 
 Let's look at an example: right-click into the state machine window and add a _start_ state and an _action_ state to the new state machine.
 
-![Adding the start state](../neuromoreStudio/Images/FirstApplication/19_SM_Start.png)
-![Adding an action state](../neuromoreStudio/Images/FirstApplication/20_SM_Action.png)
-![Setting up the action state](../neuromoreStudio/Images/FirstApplication/21_Action.png)
+![Adding the start state](../neuromoreStudio/Images/FirstApplication/19_SM_Start.png) ![Adding an action state](../neuromoreStudio/Images/FirstApplication/20_SM_Action.png) ![Setting up the action state](../neuromoreStudio/Images/FirstApplication/21_Action.png)
 
-## Setting up the training duration prompt
+## Setting up the training duration
 
 At the first _action_ state we want to prompt the user to select the duration of the training. For that let's rename the node and add an on-enter action to show the text 'How long do you want to train?' on the screen.
 
-![Adding an on-enter action](../neuromoreStudio/Images/FirstApplication/22_Action_Show_Text.png)
-![Setting the text on the show text action](../neuromoreStudio/Images/FirstApplication/23_Action_Text.png)
+![Adding an on-enter action](../neuromoreStudio/Images/FirstApplication/22_Action_Show_Text.png) ![Setting the text on the show text action](../neuromoreStudio/Images/FirstApplication/23_Action_Text.png)
 
 ## Adding the experience window
 
-To see our experience in action we need an _Experience_ and a _Session Control_ window which we can add via the _Windows_ pane on the top bar. We can also switch the layout through the dropdown in the top-right corner: let's select the _Experience Designer_ layout and add the _Session Control_ there.
-If we do that and then click on _Start Session_ in the _Session Control_ we now see our UI.
+To see our experience in action we need an _Experience_ and a _Session Control_ window which we can add via the _Windows_ pane on the top bar. We can also switch the layout through the dropdown in the top-right corner: let's select the _Experience Designer_ layout and add the _Session Control_ there. If we do that and then click on _Start Session_ in the _Session Control_ we now see our UI.
 
-![Adding the experience window](../neuromoreStudio/Images/FirstApplication/23_a_Experience_Designer.png)
-![Adding the session control](../neuromoreStudio/Images/FirstApplication/23_b_Session_Control.png)
-![Starting the session](../neuromoreStudio/Images/FirstApplication/23_c_Session.png)
+![Adding the experience window](../neuromoreStudio/Images/FirstApplication/23_a_Experience_Designer.png) ![Adding the session control](../neuromoreStudio/Images/FirstApplication/23_b_Session_Control.png) ![Starting the session](../neuromoreStudio/Images/FirstApplication/23_c_Session.png)
 
 ## Adding buttons to select the training duration
 
-We want to give the user 3 options: training for 1, 3 or 5 minutes. One way to do that is to add 3 action states with a _button condition_ each on the transition.
-For all button conditions of outgoing transitions of a state the experience window will display a button on the bottom of the screen, in this case below the duration prompt. Let's add 3 more actions for each training option with button conditions reading '1 minute', '3 minutes' and '5 minutes'.
+We want to give the user 3 options: training for 1, 3 or 5 minutes. One way to do that is to add 3 action states with a _button condition_ each on the transition. For all button conditions of outgoing transitions of a state the experience window will display a button on the bottom of the screen, in this case below the duration prompt. Let's add 3 more actions for each training option with button conditions reading '1 minute', '3 minutes' and '5 minutes'.
 
-![Adding more actions](../neuromoreStudio/Images/FirstApplication/24_More_Actions.png)
-![Setting the button conditions](../neuromoreStudio/Images/FirstApplication/25_Button_Condition.png)
-![Setting the button text](../neuromoreStudio/Images/FirstApplication/26_1_min.png)
-![Renaming the actions](../neuromoreStudio/Images/FirstApplication/28_All_Labeled.png)
+![Adding more actions](../neuromoreStudio/Images/FirstApplication/24_More_Actions.png) ![Setting the button conditions](../neuromoreStudio/Images/FirstApplication/25_Button_Condition.png) ![Setting the button text](../neuromoreStudio/Images/FirstApplication/26_1_min.png) ![Renaming the actions](../neuromoreStudio/Images/FirstApplication/28_All_Labeled.png)
 
 The result will then look as follows in the experience window.
 
@@ -155,44 +118,31 @@ The result will then look as follows in the experience window.
 
 ## Sending data from state machine to classifier
 
-To check if the training duration is over we need to write the duration value into a parameter.
-We can then use that parameter in the classifier to compare it against the session time.
-Let's create a parameter action for each of the 3 options actions and set the "Duration" parameter to either 60, 180, or 300.
+To check if the training duration is over we need to write the duration value into a parameter. We can then use that parameter in the classifier to compare it against the session time. Let's create a parameter action for each of the 3 options actions and set the "Duration" parameter to either 60, 180, or 300.
 
-![Setting parameter actions](../neuromoreStudio/Images/FirstApplication/28_a_Parameter.png)
-![Setting parameter actions](../neuromoreStudio/Images/FirstApplication/28_b_Parameter.png)
+![Setting parameter actions](../neuromoreStudio/Images/FirstApplication/28_a_Parameter.png) ![Setting parameter actions](../neuromoreStudio/Images/FirstApplication/28_b_Parameter.png)
 
 ## Checking if the duration is over
 
-We now need to add a check in the classifier if the session time is over.
-For that we drag in a _Session Info_ node and a _Parameter_ node which we call "Duration". This parameter will be set from the state machine.
-We connect both outputs to the inputs of a _Comparator_ node and define the output to be 1 when the session time is greater than the duration.
-To expose this variable to the state machine again we now need to stream the output into a _Custom Feedback_ node which we call "TimerEnded".
+We now need to add a check in the classifier if the session time is over. For that we drag in a _Session Info_ node and a _Parameter_ node which we call "Duration". This parameter will be set from the state machine. We connect both outputs to the inputs of a _Comparator_ node and define the output to be 1 when the session time is greater than the duration. To expose this variable to the state machine again we now need to stream the output into a _Custom Feedback_ node which we call "TimerEnded".
 
-![Adding a session info node](../neuromoreStudio/Images/FirstApplication/28_c.png)
-![Adding a parameter node](../neuromoreStudio/Images/FirstApplication/28_d.png)
-![Adding the comparator](../neuromoreStudio/Images/FirstApplication/28_e.png)
-![Streaming the output into a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/28_f.png)
+![Adding a session info node](../neuromoreStudio/Images/FirstApplication/28_c.png) ![Adding a parameter node](../neuromoreStudio/Images/FirstApplication/28_d.png) ![Adding the comparator](../neuromoreStudio/Images/FirstApplication/28_e.png) ![Streaming the output into a _Custom Feedback_ node](../neuromoreStudio/Images/FirstApplication/28_f.png)
 
 ## Playing the video
 
-After the user selected the duration we now want to play a video (& audio) whose brightness is controlled by neuro-feedback.
-Add another state and add 3 actions: one to play a video of your choice, one to play an audio (in case your video doesn't have audio), and one to hide the text.
+After the user selected the duration we now want to play a video (& audio) whose brightness is controlled by neuro-feedback. Add another state and add 3 actions: one to play a video of your choice, one to play an audio (in case your video doesn't have audio), and one to hide the text.
 
 ![Adding the video actions](../neuromoreStudio/Images/FirstApplication/30_Video_Actions.png)
 
 ## Ending the neurofeedback session
 
-We're almost there. The last thing to add is the _end_ state.
-We want to end the training if one of 3 conditions is met: either the video is finished, the audio is finished, or the elapsed session time equals the "Duration" parameter.
-While the audio and video conditions are straight forward, for the parameter condition we need to define the name of the feedback node ("TimerEnded") and that we only want to transition when its value is 1.
+We're almost there. The last thing to add is the _end_ state. We want to end the training if one of 3 conditions is met: either the video is finished, the audio is finished, or the elapsed session time equals the "Duration" parameter. While the audio and video conditions are straight forward, for the parameter condition we need to define the name of the feedback node ("TimerEnded") and that we only want to transition when its value is 1.
 
 ![Adding the end state](../neuromoreStudio/Images/FirstApplication/31_End.png)
 
 ## Running the session
 
-Congratulations, you've just built your first neuro-feedback application!
-Start the session and enjoy your meditation!
+Congratulations, you've just built your first neuro-feedback application! Start the session and enjoy your meditation!
 
 ![Running a session](../neuromoreStudio/Images/FirstApplication/32_Session_Final.png)
 

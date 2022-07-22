@@ -7,8 +7,8 @@ Instead, edit the stylus (.styl) files and compile it to CSS on your machine.
 /* ----------------------------------------------------------------------------
  * Fonts
  */
-@font-face{
-  font-family:"SourceSansPro-Light";
+@font-face {
+  font-family: "SourceSansPro-Light";
   src: url("../fonts/SourceSansPro-Light.otf") format("opentype");
 }
 /* ----------------------------------------------------------------------------
@@ -182,7 +182,7 @@ a:hover {
   position: relative;
 }
 .content ul > li:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: -17px;
@@ -277,7 +277,7 @@ a:hover {
   padding-left: 40px;
   padding-right: 40px;
   zoom: 1;
-  max-width: 700px;
+  /* max-width: 700px; */
 }
 .content:before,
 .content:after {
@@ -289,7 +289,7 @@ a:hover {
 }
 .content blockquote {
   color: #9090aa;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .content h1,
 .content h2,
@@ -348,13 +348,13 @@ body.big-h3 .content h3:before {
   .content h1,
   .content h2,
   .content .big-heading,
-body.big-h3 .content h3 {
+  body.big-h3 .content h3 {
     padding-top: 40px;
   }
   .content h1:before,
   .content h2:before,
   .content .big-heading:before,
-body.big-h3 .content h3:before {
+  body.big-h3 .content h3:before {
     background: #dfe2e7;
     left: -40px;
     top: -20px;
@@ -365,7 +365,7 @@ body.big-h3 .content h3:before {
 .content h5,
 .content .small-heading,
 body:not(.big-h3) .content h3 {
-  border-bottom: solid 1px rgba(0,0,0,0.07);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.07);
   color: #9090aa;
   padding-top: 30px;
   padding-bottom: 10px;
@@ -430,8 +430,8 @@ body.no-literate .content pre > code::-webkit-scrollbar-thumb {
 }
 body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   background: #999;
-  -webkit-box-shadow: inset 2px 2px 3px rgba(0,0,0,0.2);
-  box-shadow: inset 2px 2px 3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 1180px) {
   .content pre > code {
@@ -460,8 +460,8 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   }
   .content pre > code:hover::-webkit-scrollbar-thumb {
     background: #999;
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0,0,0,0.2);
-    box-shadow: inset 2px 2px 3px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
   }
 }
 .button {
@@ -506,15 +506,15 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
 @media (min-width: 1180px) {
   body:not(.no-literate) .content-root {
     background-color: #f3f6fb;
-    -webkit-box-shadow: inset 780px 0 #fff, inset 781px 0 #dfe2e7, inset 790px 0 5px -10px rgba(0,0,0,0.1);
-    box-shadow: inset 780px 0 #fff, inset 781px 0 #dfe2e7, inset 790px 0 5px -10px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 780px 0 #fff, inset 781px 0 #dfe2e7, inset 790px 0 5px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 780px 0 #fff, inset 781px 0 #dfe2e7, inset 790px 0 5px -10px rgba(0, 0, 0, 0.1);
   }
 }
 @media (min-width: 1180px) {
   body:not(.no-literate) .content {
     padding-left: 0;
     padding-right: 0;
-    width: 100%;
+    /* width: 100%; */
     max-width: none;
   }
   body:not(.no-literate) .content > p,
@@ -528,7 +528,8 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   body:not(.no-literate) .content > h6,
   body:not(.no-literate) .content > pre,
   body:not(.no-literate) .content > blockquote {
-    width: 550px;
+    /* width: 750px; */
+    max-width: 90%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -597,7 +598,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
 }
 .header {
   background: #f3f6fb;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   border-bottom: solid 1px #dfe2e7;
   padding: 15px 15px 15px 30px;
   zoom: 1;
@@ -665,7 +666,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
     margin-left: 15px;
   }
   .header li {
-    border-left: solid 1px rgba(255,255,255,0.5);
+    border-left: solid 1px rgba(255, 255, 255, 0.5);
     border-right: solid 1px #dfe2e7;
   }
   .header li:last-child {
@@ -776,8 +777,8 @@ a.big.button:hover:visited {
   }
   .menubar.fixed:hover::-webkit-scrollbar-thumb {
     background: #999;
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0,0,0,0.2);
-    box-shadow: inset 2px 2px 3px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
   }
 }
 .menubar {
@@ -832,7 +833,7 @@ a.big.button:hover:visited {
   color: #505050 !important;
 }
 .menu a.active:after {
-  content: '';
+  content: "";
   display: block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
