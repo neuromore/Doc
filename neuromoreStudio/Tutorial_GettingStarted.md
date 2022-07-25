@@ -104,7 +104,7 @@ At the first _action_ state we want to prompt the user to select the duration of
 
 To see our experience in action we need an _Experience_ and a _Session Control_ window which we can add via the _Windows_ pane on the top bar. We can also switch the layout through the dropdown in the top-right corner: let's select the _Experience Designer_ layout and add the _Session Control_ there. If we do that and then click on _Start Session_ in the _Session Control_ we now see our UI.
 
-![Adding the experience window](../neuromoreStudio/Images/FirstApplication/23_a_Experience_Designer.png) ![Adding the session control](../neuromoreStudio/Images/FirstApplication/23_b_Session_Control.png) ![Starting the session](../neuromoreStudio/Images/FirstApplication/23_c_Session.png)
+![Adding the experience window](../neuromoreStudio/Images/FirstApplication/23_a_Experience_Designer.png) ![Adding the session control window](../neuromoreStudio/Images/FirstApplication/23_b_Session_Control.png) ![Starting the session](../neuromoreStudio/Images/FirstApplication/23_c_Session.png)
 
 ## Adding buttons to select the training duration
 
