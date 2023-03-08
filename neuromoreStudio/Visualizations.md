@@ -16,12 +16,6 @@ At the moment we have 4 visualizations that you can access through the "Visualiz
 ![Visualizations](../neuromoreStudio/Images/Visualizations/visualizations.png)
 ![Visualizations](../neuromoreStudio/Images/Visualizations/session_control_vis.png)
 
-Every game has a set of controllable feedback parameters that can be controlled from your classifier through the _Custom Feedback_ node.
-On the right you can see an example of controlling various parameters of your game like the weather or the movement speed of a car. Neuromore Studio communicates with the visualizations through the OSC interface: that means that for each parameter you want to control you need to specify the OSC address of the _Custom Feedback_ node by double clicking it. Also make sure that _Send OSC Msgs_ is enabled.
-For each existing visualization you can find the available feedback parameters below. Scroll down if you want to build your own games and experiences using Unity.
-
-![Visualizations](../neuromoreStudio/Images/Visualizations/custom_feedback_osc.png)
-
 ### What Visualizations Exist?
 
 #### Cartoon Town
@@ -41,6 +35,23 @@ Enjoy the peace and connect to nature while you're slowly walking through the fo
 ####Tropical Island
 ![Tropical Island](../neuromoreStudio/Images/Visualizations/tropical_island.gif)
 Master controlling the sky and sea. The tropical island visualization adapts the weather from a sunny beach to a tropical storm based on the feedback. Waves will push against the beach while palm trees fight against the wind.
+
+### How can I Control the Feedback in the Visualizations?
+
+Every game has a set of controllable feedback parameters that can be controlled from your classifier through _Custom Feedback_ nodes. 
+
+#### Studio 1.7.0 and Later
+From neuromore Studio 1.7.0 onwards, it will be possible to use specific feedback nodes from the _Output_ pane in the classifier menu. This makes it very easy to control specific available parameters like Speed, Volume, Screen Brightness, Weather, etc. by just dragging the node into the classifier and connecting it to your signal processing pipeline.
+
+![Available Feedback Nodes](../neuromoreStudio/Images/Visualizations/feedback_nodes.png)
+
+#### Before Studio 1.7.0
+
+Before Studio 1.7.0, you can control various parameters of your game like the weather or the movement speed of a car using _Custom Feedback_ nodes that you drag into the classifier. Neuromore Studio communicates with the visualizations through the OSC interface: that means that for each parameter you want to control you need to specify the OSC address of the _Custom Feedback_ node by double clicking it. Also make sure that _Send OSC Msgs_ is enabled.
+
+For each existing visualization you can find the available feedback parameters below. Scroll down if you want to build your own games and experiences using Unity.
+
+![Visualizations](../neuromoreStudio/Images/Visualizations/custom_feedback_osc.png)
 
 ### What Feedback Parameters Can I Control?
 
