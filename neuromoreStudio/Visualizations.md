@@ -36,6 +36,18 @@ Enjoy the peace and connect to nature while you're slowly walking through the fo
 ![Tropical Island](../neuromoreStudio/Images/Visualizations/tropical_island.gif)
 Master controlling the sky and sea. The tropical island visualization adapts the weather from a sunny beach to a tropical storm based on the feedback. Waves will push against the beach while palm trees fight against the wind.
 
+### How to Start a Visualization?
+
+When you start a visualization by clicking on it in the visualization selection, it will prompt you to select the settings like screen resolution and graphics quality. 
+
+![Visualization Settings](../neuromoreStudio/Images/Visualizations/vis_settings.png)
+
+When you click on "Play" you will notice that the screen is blank and only shows the "neuromore" logo in the bottom left corner (see below). This is expected behaviour as the visualizations only become visable, when a session is running in the Studio. 
+
+To start a visualization, you hence need to open a classifier or design file and click on "Go" in the “Session Control”. Then go back to the window running the visualization and enjoy controlling wind and weather, movement speed and other effects using the power of your mind. :)
+
+![Blank Screen](../neuromoreStudio/Images/Visualizations/blank_screen.png)
+
 ### How can I Control the Feedback in the Visualizations?
 
 Every game has a set of controllable feedback parameters that can be controlled from your classifier through _Custom Feedback_ nodes. 
