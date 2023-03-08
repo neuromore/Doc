@@ -1,27 +1,28 @@
-# Custom Neurofeedback Experiences
+# How to Give Users Feedback?
 
 Neuromore Studio offers you three ways to give users neuro- and bio-feedback:
 
-1. using one of our already existing **interactive games** (e.g., controlling the speed of a car or the weather)
-2. using state machine and the integrated experience window (e.g., controlling the volume or screen brightness of a video or an audio file)
-3. through any application of your choice using the OSC interface (e.g., we provide a Unity plugin but you could also use Ableton or a write a script for a Raspberry Pi to control the lights in your home).
+1. Using one of our already existing **interactive games** (e.g., controlling the speed of a car or the weather)
+2. Using a state machine and the integrated experience window (e.g., controlling the volume or screen brightness of a video or an audio file)
+3. Controlling through any application of your choice using the OSC interface (e.g., we provide a Unity plugin but you could also use Ableton or a write a script for a Raspberry Pi to control the lights in your home).
 
 Below we'll show you how to build experiences using the built-in visualizations, the experience window, and the Unity plugin. For more information about the OSC integration see the OSC section.
 
-## Using Pre-Built Games
+## Using Pre-Built Games and Visualizations
 
-The fastest way to create a neurofeedback experience is using one of our immersive, pre-built games.
-At the moment we have 4 games or visualizations that you can access through the "Visualizations" pane in the top bar or through the eye icon in the _Session Control_ window.
+The fastest way to create a neurofeedback experience is using one of the pre-built games and visualizations that come with the Studio.
+
+At the moment we have 4 visualizations that you can access through the "Visualizations" pane in the top bar of the Studio or through the eye icon in the _Session Control_ window.
 ![Visualizations](../neuromoreStudio/Images/Visualizations/visualizations.png)
 ![Visualizations](../neuromoreStudio/Images/Visualizations/session_control_vis.png)
 
-Every game has a set of controllable feedback parameters that can be controlled from your classifier using the _Custom Feedback_ node.
+Every game has a set of controllable feedback parameters that can be controlled from your classifier through the _Custom Feedback_ node.
 On the right you can see an example of controlling various parameters of your game like the weather or the movement speed of a car. Neuromore Studio communicates with the visualizations through the OSC interface: that means that for each parameter you want to control you need to specify the OSC address of the _Custom Feedback_ node by double clicking it. Also make sure that _Send OSC Msgs_ is enabled.
 For each existing visualization you can find the available feedback parameters below. Scroll down if you want to build your own games and experiences using Unity.
 
 ![Visualizations](../neuromoreStudio/Images/Visualizations/custom_feedback_osc.png)
 
-### Existing Visualizations
+### What Visualizations Exist?
 
 #### Cartoon Town
 
@@ -41,7 +42,7 @@ Enjoy the peace and connect to nature while you're slowly walking through the fo
 ![Tropical Island](../neuromoreStudio/Images/Visualizations/tropical_island.gif)
 Master controlling the sky and sea. The tropical island visualization adapts the weather from a sunny beach to a tropical storm based on the feedback. Waves will push against the beach while palm trees fight against the wind.
 
-### Controllable feedback parameters
+### What Feedback Parameters Can I Control?
 
 In the available visualizations you can control a variety of different parameters. Just add a _Custom Feedback_ node to your classifier, enable _Send OSC Messages_ and set the _OSC address_ to any of the values below.
 
@@ -87,7 +88,7 @@ In the available visualizations you can control a variety of different parameter
 
 /camera/fade-color-b
 
-## Creating Custom Experiences using State Machine & Experience Window
+## How Can I Create Experiences with Video and Audio Feedback?
 
 Let's say you want to build an experience where the user can control the screen brightness of a video using neurofeedback. Also you want to give them the choice which video to play, ask them how long they want to train or record a baseline before starting the experience.
 
@@ -96,24 +97,13 @@ On the right you can see such an experience in which the user is first prompted 
 
 ![Experience window](../neuromoreStudio/Images/Visualizations/experience_window.gif)
 
-### What is the State Machine?
+## How Can I Build My Own Games?
 
-In the state machine you define the logic of the experience. Below you can find a couple of examples to use the state machine.
-
-####
-
-You can define which video or audio file you want to play, which text to show the user during the baseline recording, or define a state to let the user choose a video from
-
-If you want to play a custom audio file or a video and adapt its volume or brightness you can use the built-in experience window.
-The experience window is tightly coupled with your state machine where you define
-
-## Building your own Games in Unity
-
-###Getting Started
+### Building Your Own Games in Unity
 To enable you to build games and multisensory neurofeedback experiences we have developed an open source neuromore Unity prefab.
 To add neurofeedback to your games you need to download the neuromore prefab from [this repository](https://github.com/neuromore/studio-visualizations-free) and add it to your project. where you can get inspired how you can use the neuromore prefab.
 
-###How do I use the Unity prefab?
+### How Do I Use the Unity Prefab?
 
 [Here is a video](https://www.youtube.com/watch?v=-kPzBAyA-og) that shows you the process of adding neurofeedback to your Unity games.
 
@@ -125,7 +115,7 @@ Now go to neuromore Studio and open a classifier with OSC output nodes. To get s
 
 Start a session in neuromore Studio using the _Session Control_ widget. You will now see the weather and the camera speed update in real time in the forest scene in Unity.
 
-###Which feedback parameters can I use?
+### What Feedback Parameters Can I Use?
 In the forest scene you can also get a great inspiration how to implement feedback actions. Some pre-configured feedback parameters that work in the Forest Scene are
 
 - /weather-sun

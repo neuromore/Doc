@@ -1,20 +1,20 @@
 # What is neuromore Studio?
 
-Neuromore Studio is your platform to easily build neurotech products, applications and services.
+Neuromore Studio is your platform to easily build neurotech applications and services.
 
-## What tools and applications can I create with neuromore Studio?
+## What Applications Can I Create with neuromore Studio?
 
-With neuromore Studio you can build interactive neuro-/ bio-feedback applications and advanced data analysis solutions for a variety of use cases in the medical, therapeutical and personal development domains.
+With neuromore Studio you can build interactive neuro-/ bio-feedback applications and data analysis/ diagnosis solutions for a variety of use cases in the medical, therapeutical and personal development domains.
 For example, applications that have already been built using neuromore's platform are being used from burnout prevention and performance increasement over depression treatment, stress relief, focus training for ADHD, stroke therapy and trauma therapy to neuromarketing and breath pacers.
 
-## A hardware-agnostic platform to interface all major bio-sensors
+## A Hardware-Agnostic Platform to Interface a Variety of Bio-Sensors
 
 We don't want you to worry about the hardware integration which is why neuromore Studio is hardware-agnostic, designed to support all major EEG devices and other bio-sensors.
 
 At the moment it supports a variety of EEG devices, from consumer headsets (e.g., Interaxon Muse 2, Neurosity Crown) over OpenBCI boards to medical grade amplifiers (e.g., ANT Neuro's Eego, Brainmaster Discovery), heart rate monitors, GSR sensors and other bluetooth devices that you can effortlessly connect to your applications.
 
 ![Devices](../neuromoreStudio/Images/Introduction/integrations.png)
-## Signal Processing without Coding
+## Signal Processing Without Coding
 
 We believe that you shouldn't need to be a developer to create advanced signal processing pipelines. That’s why one of the main features of neuromore Studio is its no-code visual editor that allows anyone from neuroscientists to clinicians, artists, researchers and developers to create neurofeedback protocols and data analysis pipelines.
 
